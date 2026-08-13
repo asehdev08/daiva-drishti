@@ -1,0 +1,444 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "image_with_text_f46aYx": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_hdRGB9": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our Philosophy",
+            "heading_size": "h1"
+          }
+        },
+        "text_LxRj33": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_hdRGB9",
+        "text_LxRj33"
+      ],
+      "disabled": true,
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Gemini_Generated_Image_ysy683ysy683ysy6.png",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-1b41725b-bbc1-4dea-a870-10c67130b008",
+        "color_scheme": "scheme-c87bf4f7-bf22-4081-9f50-735b1918e5b6",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_zWAyzX": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_rGjtMt": {
+          "type": "heading",
+          "settings": {
+            "heading": "Modern Rituals",
+            "heading_size": "h1"
+          }
+        },
+        "text_d3FMFL": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Driven by a passion for health and wellness, we’ve dedicated ourselves to sourcing the best natural ingredients and crafting products that truly supportyour well-being.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_rGjtMt",
+        "text_d3FMFL"
+      ],
+      "disabled": true,
+      "name": "Rich Text with BG & Arrow",
+      "settings": {
+        "background_image": "shopify://shop_images/Dark_Textured_Water.png",
+        "show_arrow": false,
+        "arrow_color": "#000000",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-763d6e6f-86f3-489f-913c-57e9c7015165",
+        "full_width": true,
+        "padding_top": 68,
+        "padding_bottom": 68
+      }
+    },
+    "image_with_text_DFYKdG": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_TD4QH8": {
+          "type": "heading",
+          "settings": {
+            "heading": "Founder's Note",
+            "heading_size": "h1"
+          }
+        },
+        "text_YWXqR8": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_TD4QH8",
+        "text_YWXqR8"
+      ],
+      "disabled": true,
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/IMG_8458.png",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-c87bf4f7-bf22-4081-9f50-735b1918e5b6",
+        "color_scheme": "scheme-1b41725b-bbc1-4dea-a870-10c67130b008",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_x7zKFB": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_CiK6nq": {
+          "type": "heading",
+          "settings": {
+            "heading": "About Us",
+            "heading_size": "h1"
+          }
+        },
+        "text_zdpADw": {
+          "type": "text",
+          "settings": {
+            "text": "<p>DAIVA Drishti™ was born from a simple belief — you can’t pour from an empty cup. <br/><br/>We spend so much of our lives showing up for others, <br/>that we forget to show up for ourselves. <br/><br/>At its core, DAIVA Drishti™ is built around this idea: <br/>when you take care of yourself, everything else flows better. <br/><br/>Every product we create is designed to fit into your daily life — not as a ritual you have to follow, but as a moment you get to enjoy. <br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_CiK6nq",
+        "text_zdpADw"
+      ],
+      "custom_css": [
+        ".rich-text__wrapper {width: 100%;}",
+        "p {line-height: 1.5;}",
+        "h2 {text-transform: uppercase;}",
+        ".custom-rich-p {text-align: justify; max-width: 370px; margin: auto;}",
+        "@media (max-width: 768px) {.custom-rich-p.rich-text__text.rte.gsap-rich-text {padding: 0px 40px; text-align: justify; max-width: 370px; margin: auto; }}"
+      ],
+      "name": "Rich Text with BG & Arrow",
+      "settings": {
+        "show_arrow": false,
+        "arrow_color": "#000000",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1b41725b-bbc1-4dea-a870-10c67130b008",
+        "full_width": true,
+        "padding_top": 68,
+        "padding_bottom": 68
+      }
+    },
+    "noir_image_with_text_pc6n3K": {
+      "type": "noir-image-with-text",
+      "blocks": {
+        "heading_Xc3tai": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our Philosophy",
+            "heading_size": "h1"
+          }
+        },
+        "text_9hVMYy": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Life gets loud. You don’t have to. <br/>Our philosophy is simple — create small moments that bring you back to calm, clarity, and yourself. <br/>Because how you show up for yourself shapes everything else. <br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Xc3tai",
+        "text_9hVMYy"
+      ],
+      "custom_css": [
+        "p {max-width: 400px; text-align: justify;}"
+      ],
+      "name": "Noir Image with Text",
+      "settings": {
+        "image": "shopify://shop_images/DSC00890_HighRes.jpg",
+        "layout": "image_first",
+        "content_alignment": "left",
+        "vertical_alignment": "center",
+        "full_width": true,
+        "show_arrow": false,
+        "color_scheme": "scheme-c87bf4f7-bf22-4081-9f50-735b1918e5b6",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "noir_image_with_text_JhTpgt": {
+      "type": "noir-image-with-text",
+      "blocks": {
+        "heading_K9A9MJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Modern Rituals",
+            "heading_size": "h1"
+          }
+        },
+        "text_NY9YBM": {
+          "type": "text",
+          "settings": {
+            "text": "<p>In a world of constant doing, DAIVA Drishti™ focuses on how you feel through the day. <br/>Not just what you use — but why you use it. <br/><br/>A fragrance that helps you slow down or shift your mood. <br/>A candle that feels like a reset after a long, overwhelming day. <br/>A small moment that brings you back to yourself, without effort. <br/><br/>Every product is created with intention — where scent, words, and design come together to support how you want to feel. <br/><br/>Because sometimes, the smallest things can change the way your entire day unfolds.<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_K9A9MJ",
+        "text_NY9YBM"
+      ],
+      "custom_css": [
+        "p {max-width: 400px; text-align: justify;}"
+      ],
+      "name": "Noir Image with Text",
+      "settings": {
+        "image": "shopify://shop_images/Modernritual.jpg",
+        "layout": "image_last",
+        "content_alignment": "left",
+        "vertical_alignment": "center",
+        "full_width": true,
+        "show_arrow": false,
+        "color_scheme": "scheme-c87bf4f7-bf22-4081-9f50-735b1918e5b6",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "noir_image_with_text_3yAa3D": {
+      "type": "noir-image-with-text",
+      "blocks": {
+        "heading_rgxQhH": {
+          "type": "heading",
+          "settings": {
+            "heading": "Founder’s Note",
+            "heading_size": "h1"
+          }
+        },
+        "text_D6eaX9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>DAIVA Drishti™ comes from what has quietly worked over the last five years.     <br/><br/>Be it reading the Gita with a fragrant candle lit, ending the day in mediation and mantra chants , letting my space feel calm through scent  and beginning mornings with a simple affirmation over coffee. <br/><br/>Over time, I began to notice something shift.<br/>Not in big, dramatic ways.. but in how I felt, responded and moved through my days. <br/><br/>Things started to slow down.<br/>The anxiety softened and faith grew. <br/>Everything felt a little more steady, a little more clear. <br/><br/>And somewhere along the way, it became clear - it was never about doing more.<br/>Just about having small, meaningful moments to return to.<br/><br/>That’s what DAIVA Drishti™ is built around.<br/><br/>A way to bring these moments into everyday life — gently, without pressure, without overcomplicating it.<br/><br/>It comes from a deep respect for Indian wisdom, and years of working closely with design, products, and people.<br/><br/>Not to tell you how to live, but to offer something you can make your own. <br/><br/>Something that meets you where you are, and stays with you, in the simplest way.<br/><br/>— Founder, DAIVA Drishti™</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_rgxQhH",
+        "text_D6eaX9"
+      ],
+      "custom_css": [
+        "p {max-width: 400px; text-align: justify;}"
+      ],
+      "name": "Noir Image with Text",
+      "settings": {
+        "image": "shopify://shop_images/Foundersnote.webp",
+        "layout": "image_first",
+        "content_alignment": "left",
+        "vertical_alignment": "center",
+        "full_width": true,
+        "show_arrow": false,
+        "color_scheme": "scheme-c87bf4f7-bf22-4081-9f50-735b1918e5b6",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "noir_image_with_text_MLUfjd": {
+      "type": "noir-image-with-text",
+      "blocks": {
+        "heading_PUYyY3": {
+          "type": "heading",
+          "settings": {
+            "heading": "About the founder",
+            "heading_size": "h1"
+          }
+        },
+        "text_ywzYE9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Trisha Om Banerjee, Founder of DAIVA Drishti™, is a marketing and fashion professional with over a decade of experience across luxury branding, retail strategy, and consumer psychology.  <br/><br/>With academic roots in commerce and sustainable fashion from the London College of Fashion, she has worked with leading brands like Superdry, Dune London, and Lakme Fashion Week across India, and gained international exposure with Stella McCartney (Kering Group) and H&M <br/>in London. <br/><br/>Her journey across global markets and diverse consumer spaces shapes DAIVA Drishti™ a brand that blends luxury, intention, and Indian wisdom into modern everyday rituals. <br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_PUYyY3",
+        "text_ywzYE9"
+      ],
+      "custom_css": [
+        "p {max-width: 400px; text-align: justify;}",
+        "@media (max-width: 768px) {h2.rich-text__heading.rte.h1.gsap-rich-text {max-width: 300px; margin: 0 auto; }}"
+      ],
+      "name": "Noir Image with Text",
+      "settings": {
+        "image": "shopify://shop_images/About_the_founder.png",
+        "layout": "image_last",
+        "content_alignment": "left",
+        "vertical_alignment": "center",
+        "full_width": true,
+        "show_arrow": true,
+        "color_scheme": "scheme-c87bf4f7-bf22-4081-9f50-735b1918e5b6",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "noir_image_with_text_6iVfk6": {
+      "type": "noir-image-with-text",
+      "blocks": {
+        "heading_YM8WL9": {
+          "type": "heading",
+          "settings": {
+            "heading": "DAIVA Drishti™ Foundation",
+            "heading_size": "h1"
+          }
+        },
+        "text_wQqfhq": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At its core, DAIVA Drishti™ is built on the belief that abundance becomes meaningful when it is shared.<br/><br/>A portion of every sale supports initiatives that bring care, dignity, healing, and opportunity to those who need it most.<br/><br/>Our current efforts include supporting St. Catherine’s Home, an orphanage in Andheri West, Mumbai, and Karma Foundation, Pune, an organization dedicated to rescuing, treating, rehabilitating, and caring for stray animals through its advanced veterinary facilities and welfare programs.<br/><br/>As the DAIVA Drishti™ Foundation grows, we aspire to expand our impact across education, healthcare, animal welfare, and community development.<br/><br/>For those who wish to contribute directly, links to the organizations we currently support can be found below.<br/><br/>St Catherine’s Home - <br/><a href=\"https://stcatherineshome.org/donate/ \" target=\"_blank\" title=\"https://stcatherineshome.org/donate/ \">https://stcatherineshome.org/donate/ </a><br/><br/>Karma Foundation - <br/><a href=\"https://www.karmafoundation.ngo/DonateNow.aspx?utm_source=daiva_drishti&utm_medium=referral&utm_campaign\" target=\"_blank\" title=\"https://www.karmafoundation.ngo/DonateNow.aspx?utm_source=daiva_drishti&utm_medium=referral&utm_campaign\">https://www.karmafoundation.ngo/DonateNow.aspx?utm_source=daiva_drishti&utm_medium=referral&utm_campaign</a><br/><br/>Because true abundance is shared.<br/><br/>PS – Images associated with St. Catherine’s Home are AI-generated and used solely for illustrative purposes, and do not depict the actual children of the organization. Images associated with Karma Foundation have been shared with us by the organization and feature real animals, volunteers, and facilities connected to their work.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_YM8WL9",
+        "text_wQqfhq"
+      ],
+      "custom_css": [
+        ".rich-text__blocks {max-width: 500px !important;}",
+        "p {max-width: 400px; text-align: justify;}"
+      ],
+      "name": "Noir Image with Text",
+      "settings": {
+        "image": "shopify://shop_images/St_Catherine.png",
+        "layout": "image_first",
+        "content_alignment": "left",
+        "vertical_alignment": "center",
+        "full_width": true,
+        "show_arrow": true,
+        "color_scheme": "scheme-c87bf4f7-bf22-4081-9f50-735b1918e5b6",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "noir_image_with_text_cH8acV": {
+      "type": "noir-image-with-text",
+      "blocks": {
+        "heading_Vpx7mP": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "DAIVA Drishti™ Karma Foundation",
+            "heading_size": "h1"
+          }
+        },
+        "text_TdFQqP": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>At its core, DAIVA Drishti™ is built on the belief that abundance becomes meaningful when it is shared.<br/><br/>A portion of every sale supports initiatives that bring care, dignity, healing, and opportunity to those who need it most.<br/><br/>Our current efforts include supporting St. Catherine’s Home, an orphanage in Andheri West, Mumbai, and Karma Foundation, Pune, an organization dedicated to rescuing, treating, rehabilitating, and caring for stray animals through its advanced veterinary facilities and welfare programs.<br/><br/>As the DAIVA Drishti™ Foundation grows, we aspire to expand our impact across education, healthcare, animal welfare, and community development.<br/><br/>For those who wish to contribute directly, links to the organizations we currently support can be found below.<br/><br/>St Catherine’s Home - <br/><a href=\"https://stcatherineshome.org/donate/ \" target=\"_blank\" title=\"https://stcatherineshome.org/donate/ \">https://stcatherineshome.org/donate/ </a><br/><br/>Karma Foundation - <br/><a href=\"https://www.karmafoundation.ngo/DonateNow.aspx?utm_source=daiva_drishti&utm_medium=referral&utm_campaign\" target=\"_blank\" title=\"https://www.karmafoundation.ngo/DonateNow.aspx?utm_source=daiva_drishti&utm_medium=referral&utm_campaign\">https://www.karmafoundation.ngo/DonateNow.aspx?utm_source=daiva_drishti&utm_medium=referral&utm_campaign</a><br/><br/>Because true abundance is shared.<br/><br/>PS – Images associated with St. Catherine’s Home are AI-generated and used solely for illustrative purposes, and do not depict the actual children of the organization. Images associated with Karma Foundation have been shared with us by the organization and feature real animals, volunteers, and facilities connected to their work.</p>"
+          }
+        },
+        "button_rRfpEM": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_Vpx7mP",
+        "text_TdFQqP",
+        "button_rRfpEM"
+      ],
+      "name": "Noir Image with Text",
+      "settings": {
+        "image": "shopify://shop_images/1600_x_1200.png",
+        "layout": "image_last",
+        "content_alignment": "left",
+        "vertical_alignment": "center",
+        "full_width": true,
+        "show_arrow": true,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "image_banner_wrNRtU": {
+      "type": "image-banner",
+      "disabled": true,
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Karma_Foundation_1.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": true,
+        "color_scheme": "",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_with_text_f46aYx",
+    "rich_text_zWAyzX",
+    "image_with_text_DFYKdG",
+    "rich_text_x7zKFB",
+    "noir_image_with_text_pc6n3K",
+    "noir_image_with_text_JhTpgt",
+    "noir_image_with_text_3yAa3D",
+    "noir_image_with_text_MLUfjd",
+    "noir_image_with_text_6iVfk6",
+    "noir_image_with_text_cH8acV",
+    "image_banner_wrNRtU"
+  ]
+}

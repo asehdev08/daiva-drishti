@@ -1,0 +1,696 @@
+{% comment %}
+  Noir Dynamic Email Popup
+  - Full-screen mobile lock (100svh)
+  - Customizable Frequency (Daily/Weekly)
+  - Separate Mobile Background Image
+  - AJAX / Background Submission with Fixed Page Scroll Lock
+{% endcomment %}
+
+<style>
+  :root {
+    --noir-scroll-lock-padding: 0px;
+  }
+
+  .noir-scroll-locked {
+    overflow: hidden !important;
+    touch-action: none !important;
+    position: relative !important;
+    padding-right: var(--noir-scroll-lock-padding) !important;
+  }
+
+  #NoirPopupOverlay-{{ section.id }} {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: {{ section.settings.overlay_color | color_modify: 'alpha', 0.7 }};
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    backdrop-filter: blur(5px);
+  }
+
+  .noir-container-{{ section.id }} {
+    background: {{ section.settings.bg_color }};
+    width: 90%;
+    max-width: {{ section.settings.container_width }}px;
+    display: flex;
+    position: relative;
+    border-radius: {{ section.settings.border_radius }}px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  }
+
+  .noir-image-side {
+    flex: 1;
+    display: flex;
+    min-height: 450px;
+  }
+
+  .noir-image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .noir-content-side {
+    flex: 1;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    {% if section.settings.content_bg_image != blank %}
+      background-image: url({{ section.settings.content_bg_image | image_url: width: 1000 }});
+      background-size: cover;
+      background-position: center;
+    {% endif %}
+  }
+
+  .noir-content-side::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, {{ section.settings.content_overlay_opacity | divided_by: 100.0 }});
+    z-index: -1;
+  }
+
+  .noir-content-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .noir-logo-el {
+    max-width: {{ section.settings.logo_width }}px;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .noir-heading-el {
+    background: linear-gradient(180deg, #f2e4ad, #f3dbc4 45%, #cfb37b 75%, #f3dbc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, .3));
+    text-transform: uppercase;
+    font-size: 40px;
+    margin: 0;
+    border-bottom: 1px solid #d3b783;
+    padding-bottom: 6px;
+  }
+
+  .noir-subtext-el {
+    color: {{ section.settings.text_color | color_modify: 'alpha', 0.8 }};
+    font-size: 15px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+
+  .noir-subtext-el p {
+    margin: 0;
+    background: linear-gradient(180deg, #f2e4ad, #f3dbc4 45%, #cfb37b 75%, #f3dbc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, .3));
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: normal;
+    padding-top: 10px;
+  }
+
+  .noir-form-wrapper {
+    width: 100%;
+    max-width:35rem;
+  }
+
+  .noir-input-field {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid {{ section.settings.text_color | color_modify: 'alpha', 0.2 }};
+    background: {{ section.settings.input_bg_color }};
+    background: #0000006b;
+    color: black;
+    font-size: 14px;
+    outline: none;
+   box-shadow:unset !important;
+    background: linear-gradient(180deg, #f2e4ad, #f3dbc4 45%, #cfb37b 75%, #f3dbc4) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, .3));
+    caret-color: #ffffff;
+  }
+
+  .noir-submit-btn {
+    width: 100%;
+    padding: 14px;
+    cursor: pointer;
+    border: none;
+    background: radial-gradient(circle, rgba(245, 217, 105, 1) 0%, rgba(74, 39, 0, 1) 100%);
+    color: black;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: opacity 0.3s ease;
+  }
+
+  .noir-close-trigger {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 45px;
+    cursor: pointer;
+    color: {{ section.settings.text_color }};
+    z-index: 10;
+    line-height: 1;
+  }
+
+  .noir-popup-content {
+    width: 100%;
+  }
+
+  .noir-input-field::placeholder {
+    color: black;
+    opacity: 1;
+  }
+
+  .noir-thanks-mobile {
+    display: none;
+  }
+
+  .noir-thanks-desktop {
+    display: block;
+    width: 100%;
+  }
+
+  @media (max-width: 767px) {
+    .noir-thanks-mobile {
+      display: block;
+      width: 100%;
+    }
+    .noir-thanks-desktop {
+      display: none;
+    }
+
+    .noir-input-field {
+      width: 100%;
+      padding: 14px;
+      border-radius: 5px;
+      /*
+      margin-bottom: 12px;
+      border: 2px solid #eab9899e;
+      background: #00000063;
+      color: #fbd8b6;
+      font-size: 16px;
+      outline: none;
+      */
+    }
+
+    .noir-input-field:focus-visible {
+      box-shadow: none !important;
+    }
+
+    .noir-submit-btn {
+      /*background: #000000ab;
+      border-radius: 50px;
+      border: 1px solid #fcd7b6a3;
+      font-family: 'Cormorant Garamond';
+      font-size: 20px;
+      text-transform: unset;
+      color: #fbd8b6;*/
+    }
+
+    #NoirPopupOverlay-{{ section.id }} {
+      inset: 0 !important;
+      touch-action: none;
+    }
+
+    .noir-container-{{ section.id }} {
+      width: 100% !important;
+      height: 100svh !important;
+      max-height: 100svh !important;
+      border-radius: 0 !important;
+      position: fixed;
+      top: 0svh;
+      left: 0%;
+      align-items: center;
+    }
+
+    .noir-heading-el {
+      font-size: 30px;
+      line-height: 1.2;
+      letter-spacing: 1px;
+      padding-bottom: 12px;
+      border-bottom: 0.1px solid #fbd8b69c;
+      margin: 8px 0;
+      text-transform: uppercase;
+    }
+
+    .noir-subtext-el p {
+      margin: 0;
+      font-size: 14px;
+      line-height: normal;
+      padding-bottom: 10px;
+      color: #fcd7b6;
+    }
+
+    .noir-input-field::placeholder {
+      color: #fbd8b6;
+      opacity: 1;
+    }
+
+    .noir-image-side {
+      display: none !important;
+    }
+
+    .noir-content-side {
+      padding: 30px 25px 50px 25px;
+      height: 100%;
+      min-height: 100svh;
+      justify-content: space-between;
+      background-size: cover;
+      background-position: center;
+      {% if section.settings.mobile_image != blank %}
+        background-image: url({{ section.settings.mobile_image | image_url: width: 800 }});
+      {% elsif section.settings.side_image != blank %}
+        background-image: url({{ section.settings.side_image | image_url: width: 800 }});
+      {% endif %}
+    }
+
+    .noir-content-side::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0, {{ section.settings.mobile_overlay_opacity | divided_by: 100.0 }});
+      z-index: -1;
+    }
+  }
+
+  /* Completely hidden background frame helper */
+  #NoirFormTarget-{{ section.id }} {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    border: none !important;
+    visibility: hidden !important;
+  }
+</style>
+
+<div id="NoirPopupOverlay-{{ section.id }}">
+  <div class="noir-container-{{ section.id }}">
+    <span class="noir-close-trigger" onclick="closeNoirPopup()">&times;</span>
+
+    <!-- ORIGINAL POPUP CONTENT -->
+    <div class="noir-popup-content">
+      <div class="noir-content-side">
+        <div class="noir-content-flex">
+          {% if section.settings.logo %}
+            <img src="{{ section.settings.logo | image_url: width: 400 }}" class="noir-logo-el" alt="Logo">
+          {% endif %}
+          <h2 class="noir-heading-el">{{ section.settings.heading }}</h2>
+          <div class="noir-subtext-el">{{ section.settings.subtext }}</div>
+        </div>
+
+        <!-- PURE CLASSIC SUBMISSION (No Iframe Target) -->
+        <form
+          method="post"
+          action="/contact"
+          id="NoirPopupForm"
+          class="noir-form-wrapper"
+          accept-charset="UTF-8"
+        >
+          <input type="hidden" name="form_type" value="customer">
+          <input type="hidden" name="utf8" value="✓">
+          <input type="hidden" name="contact[tags]" value="prospect, newsletter, Noir Popup">
+          <input
+            type="hidden"
+            name="contact[body]"
+            value="Subscriber securely logged via traditional submission."
+          >
+
+          <div class="noir-form-wrapper">
+            <input
+              type="email"
+              name="contact[email]"
+              id="NoirEmailField"
+              class="noir-input-field"
+              placeholder="{{ section.settings.placeholder }}"
+              required
+              autocomplete="email"
+              autocorrect="off"
+              autocapitalize="off"
+              spellcheck="false"
+            >
+            <button type="submit" class="noir-submit-btn" id="NoirSubmitButton">{{ section.settings.btn_label }}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- THANK YOU IMAGE (hidden by default) -->
+    <div class="noir-thankyou-screen" style="display:none;">
+      {% if section.settings.thanks_image_mobile %}
+        <img
+          src="{{ section.settings.thanks_image_mobile | image_url: width: 800 }}"
+          alt="Thank You"
+          class="noir-thanks-mobile"
+        >
+      {% endif %}
+      {% if section.settings.thanks_image %}
+        <img
+          src="{{ section.settings.thanks_image | image_url: width: 1200 }}"
+          alt="Thank You"
+          class="noir-thanks-desktop"
+        >
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<script>
+  function getScrollbarWidth() {
+    return window.innerWidth - document.documentElement.clientWidth;
+  }
+
+  function closeNoirPopup() {
+    const overlay = document.getElementById('NoirPopupOverlay-{{ section.id }}');
+    if (!overlay) return;
+    
+    overlay.style.display = 'none';
+    
+    document.documentElement.classList.remove('noir-scroll-locked');
+    document.body.classList.remove('noir-scroll-locked');
+
+    // Remove the sticky thank you state once they manually click close
+    sessionStorage.removeItem('noir_just_submitted');
+  }
+
+  function openNoirPopup() {
+    const overlay = document.getElementById('NoirPopupOverlay-{{ section.id }}');
+    if (!overlay) return;
+
+    const sbWidth = getScrollbarWidth();
+    document.documentElement.style.setProperty('--noir-scroll-lock-padding', `${sbWidth}px`);
+
+    overlay.style.display = 'flex';
+    
+    document.documentElement.classList.add('noir-scroll-locked');
+    document.body.classList.add('noir-scroll-locked');
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const overlay = document.getElementById('NoirPopupOverlay-{{ section.id }}');
+    const form = document.getElementById('NoirPopupForm');
+    if(!overlay || !form) return;
+
+    const isTestMode = {{ section.settings.test_mode | json }};
+    const popupId = 'noir_popup_{{ section.id }}';
+    const limit = {{ section.settings.frequency_limit | default: 1 }};
+    const timeframe = "{{ section.settings.frequency_type }}";
+    
+    const storageKey = timeframe === 'day' ? 
+      `noir_limit_day_${new Date().toISOString().slice(0, 10)}` : 
+      `noir_limit_week_${popupId}`;
+
+    let showCount = parseInt(localStorage.getItem(storageKey) || 0);
+
+    const contentSide = overlay.querySelector('.noir-popup-content');
+    const thanksSide = overlay.querySelector('.noir-thankyou-screen');
+
+    // 1. CHECK STICKY THANK YOU STATE ON RELOAD
+    // If the browser session registers a submission OR Shopify returns the posted URL flag:
+    if (sessionStorage.getItem('noir_just_submitted') === 'true' || window.location.search.includes('customer_posted=true')) {
+      if (contentSide) contentSide.style.display = 'none';
+      if (thanksSide) thanksSide.style.display = 'block';
+      
+      // Force popup open instantly to show the sticky thank you layout
+      openNoirPopup();
+      return; 
+    }
+
+    // Standard popup showing rule for normal visits
+    if (isTestMode || window.Shopify.designMode || showCount < limit) {
+      setTimeout(() => {
+        openNoirPopup();
+        if(!window.Shopify.designMode && !isTestMode) {
+          localStorage.setItem(storageKey, showCount + 1);
+        }
+      }, {{ section.settings.delay | times: 1000 }});
+    }
+
+    // 2. SET STICKY MEMORY FLAG ON SUBMIT
+    form.addEventListener('submit', function() {
+      // Drop a temporary marker in the browser memory before page changes
+      sessionStorage.setItem('noir_just_submitted', 'true');
+      
+      const submitBtn = document.getElementById('NoirSubmitButton');
+      if (submitBtn) {
+        submitBtn.value = "Submitting...";
+        submitBtn.innerText = "Submitting...";
+      }
+      // Let the browser naturally reload and post data seamlessly to Shopify
+    });
+  });
+
+  // Manual Trigger Popup link handler (#noir-popup)
+  document.addEventListener("click", function(e) {
+    const trigger = e.target.closest('a[href="#noir-popup"]');
+    if (trigger) {
+      e.preventDefault();
+      
+      const overlay = document.getElementById('NoirPopupOverlay-{{ section.id }}');
+      if (overlay) {
+        const contentSide = overlay.querySelector('.noir-popup-content');
+        const thanksSide = overlay.querySelector('.noir-thankyou-screen');
+        if (contentSide) contentSide.style.display = 'block';
+        if (thanksSide) thanksSide.style.display = 'none';
+      }
+      
+      openNoirPopup();
+    }
+  });
+</script>
+{% schema %}
+{
+  "name": "Noir Email Popup",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "thanks_image",
+      "label": "Thank You Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "thanks_image_mobile",
+      "label": "Thank You Image (Mobile)"
+    },
+    {
+      "type": "header",
+      "content": "Behavior"
+    },
+    {
+      "type": "checkbox",
+      "id": "test_mode",
+      "label": "Enable Test Mode",
+      "info": "Bypasses frequency limits for design testing.",
+      "default": false
+    },
+    {
+      "type": "number",
+      "id": "delay",
+      "label": "Delay (seconds)",
+      "default": 10
+    },
+    {
+      "type": "select",
+      "id": "frequency_type",
+      "label": "Frequency Timeframe",
+      "options": [
+        {
+          "value": "day",
+          "label": "Per Day"
+        },
+        {
+          "value": "week",
+          "label": "Per Week"
+        }
+      ],
+      "default": "day"
+    },
+    {
+      "type": "range",
+      "id": "frequency_limit",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "label": "Maximum views in timeframe",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "container_width",
+      "min": 500,
+      "max": 1000,
+      "step": 10,
+      "unit": "px",
+      "label": "Desktop Container Width",
+      "default": 850
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Corner Radius",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Media"
+    },
+    {
+      "type": "image_picker",
+      "id": "content_bg_image",
+      "label": "Content Side Background Image"
+    },
+    {
+      "type": "range",
+      "id": "content_overlay_opacity",
+      "label": "Desktop Overlay",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 40,
+      "unit": "%"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Background Image",
+      "info": "Specifically for the full-screen mobile view."
+    },
+    {
+      "type": "range",
+      "id": "mobile_overlay_opacity",
+      "min": 0,
+      "max": 90,
+      "step": 5,
+      "unit": "%",
+      "label": "Mobile Image Overlay Opacity",
+      "default": 20
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo Image"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 40,
+      "max": 300,
+      "step": 5,
+      "unit": "px",
+      "label": "Logo Width",
+      "default": 120
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Join the Movement"
+    },
+    {
+      "type": "richtext",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "<p>Be the first to know about new drops.</p>"
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "Input Placeholder",
+      "default": "Your email address"
+    },
+    {
+      "type": "text",
+      "id": "btn_label",
+      "label": "Button Label",
+      "default": "Subscribe"
+    },
+    {
+      "type": "text",
+      "id": "thanks_msg",
+      "label": "Success Message",
+      "default": "Thank you! You're on the list."
+    },
+    {
+      "type": "header",
+      "content": "Style & Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay Shadow",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "input_bg_color",
+      "label": "Input Background",
+      "default": "#f9f9f9"
+    },
+    {
+      "type": "color",
+      "id": "btn_bg_color",
+      "label": "Button Background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "btn_text_color",
+      "label": "Button Text",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Noir Email Popup"
+    }
+  ]
+}
+{% endschema %}

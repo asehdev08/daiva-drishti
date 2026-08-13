@@ -1,0 +1,287 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "noir_banner_gzrJNp": {
+      "type": "noir-banner",
+      "blocks": {
+        "liquid_PyPQj6": {
+          "type": "liquid",
+          "settings": {
+            "custom_html": "<h2 class=\"banner__heading brand-heading h0\">{{ page.title }} </h2>"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_PyPQj6"
+      ],
+      "disabled": true,
+      "name": "Noir Banner",
+      "settings": {
+        "image": "shopify://shop_images/Dark_Textured_Water.png",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-4",
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "noir_faq_7bz8we": {
+      "type": "noir-faq",
+      "blocks": {
+        "faq_group_EyCRLb": {
+          "type": "faq_group",
+          "settings": {
+            "title": "Account & Ordering",
+            "question_1": "",
+            "answer_1": "",
+            "question_2": "Q: Can I place orders online?",
+            "answer_2": "<p>Yes — once your wholesale account is active, you can browse products and place orders 24/7 directly through our website.</p>",
+            "question_3": "",
+            "answer_3": "",
+            "question_4": "Q: How can I request product samples?",
+            "answer_4": "<p>If you’d like to feel or test our blanks before placing a larger order, you can request samples by contacting our customer support team or through your account representative.</p>",
+            "question_5": "Q: What payment methods do you accept?",
+            "answer_5": "<p>We accept major credit cards (Visa, MasterCard, AmEx, Discover), ACH, wire transfers, and approved checks where applicable. Payment is required before orders ship unless credit terms have been approved.</p>"
+          }
+        },
+        "faq_group_9EXfkg": {
+          "type": "faq_group",
+          "disabled": true,
+          "settings": {
+            "title": "Pricing & Catalog",
+            "question_1": "Q: Are the prices on the site wholesale?",
+            "answer_1": "<p>Yes — all pricing you see once logged into your account is wholesale pricing, tailored to your business level.</p>",
+            "question_2": "Q: How do pricing tiers work?",
+            "answer_2": "<p>Some products may offer tiered pricing based on order quantity. If applicable, the best price tier will display automatically in your cart.</p>",
+            "question_3": "Q: How do I get an up-to-date catalog or color card?",
+            "answer_3": "<p>Digital catalogs and color cards are available for download once you’re logged in. Contact support if you need a printed version mailed to you.</p>",
+            "question_4": "",
+            "answer_4": "",
+            "question_5": "",
+            "answer_5": ""
+          }
+        },
+        "faq_group_zBBqrN": {
+          "type": "faq_group",
+          "settings": {
+            "title": "Shipping & Delivery",
+            "question_1": "Q: Where do you ship from?",
+            "answer_1": "<p>Orders are currently fulfilled from our Los Angeles distribution hub. </p>",
+            "question_2": "Q: Do you ship internationally?",
+            "answer_2": "<p>Yes — we offer international shipping on a case-by-case basis. Please do not use the e-commerce feature if based outside of USA and contact us for detailed pricing and lead times.</p>",
+            "question_3": "Q: Can I check my order status?",
+            "answer_3": "<p>Yes! Log into your account and go to “Order Status” to view tracking and fulfillment updates.</p>",
+            "question_4": "",
+            "answer_4": "",
+            "question_5": "",
+            "answer_5": ""
+          }
+        },
+        "faq_group_NRqRwc": {
+          "type": "faq_group",
+          "settings": {
+            "title": "Returns & Claims",
+            "question_1": "Q: Can I return or exchange items?",
+            "answer_1": "<p>Because we operate strictly B2B and products are sold final, we do not accept returns, issue credits, or allow exchanges for any reason once merchandise leaves our warehouse or after customization.</p>",
+            "question_2": "Q: What if items arrive damaged or incorrect?",
+            "answer_2": "<p>Please inspect all items upon receipt. If there’s a shipping error or defect, notify us in writing with photos within five business days so we can review a claim.</p>",
+            "question_3": "",
+            "answer_3": "",
+            "question_4": "",
+            "answer_4": "",
+            "question_5": "",
+            "answer_5": ""
+          }
+        },
+        "faq_group_QwM6jk": {
+          "type": "faq_group",
+          "disabled": true,
+          "settings": {
+            "title": "Product & Usage Questions",
+            "question_1": "Q: What types of products do you offer?",
+            "answer_1": "<p>We offer a wide range of blank apparel including tees, hoodies, sweatshirts, fleece, and more — all designed for customization via printing, embroidery, or embellishment.</p>",
+            "question_2": "Q: Can I sell your blanks as-is?",
+            "answer_2": "<p>Blank apparel is intended for customization. Selling items without decoration may be restricted depending on your account and reseller terms. If you would like to become a reseller, use our registration form to sign up.</p>",
+            "question_3": "",
+            "answer_3": "",
+            "question_4": "",
+            "answer_4": "",
+            "question_5": "",
+            "answer_5": ""
+          }
+        },
+        "faq_group_gzpbhf": {
+          "type": "faq_group",
+          "disabled": true,
+          "settings": {
+            "title": "Private Label & Custom Requests",
+            "question_1": "Q: Do you offer private-label or custom branding options?",
+            "answer_1": "<p>Yes! We have private-label programs where you can place custom labels or branding on products. Contact our sales team for minimums, lead times, and setup details.</p>",
+            "question_2": "Q: What’s involved in private-label production?",
+            "answer_2": "<p>Typically, you’ll provide the branding assets, and we’ll build the label and handle application during production. We keep you notified throughout the process. Custom programs may have minimums and longer lead times.</p>",
+            "question_3": "",
+            "answer_3": "",
+            "question_4": "",
+            "answer_4": "",
+            "question_5": "",
+            "answer_5": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq_group_EyCRLb",
+        "faq_group_9EXfkg",
+        "faq_group_zBBqrN",
+        "faq_group_NRqRwc",
+        "faq_group_QwM6jk",
+        "faq_group_gzpbhf"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "h1,h2,h3,h4 {font-weight: 600;}"
+      ],
+      "name": "Noir FAQ",
+      "settings": {
+        "policy_menu": "",
+        "color_scheme": "scheme-c87bf4f7-bf22-4081-9f50-735b1918e5b6",
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_UVniQc": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_LqPMKU": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>ACCOUNT & ORDERING</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_MnpnqY": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Orders can be placed directly through our website and are confirmed once payment has been successfully processed. Upon placing an order, you will receive an email confirmation containing your order details.<br/><br/>If you need assistance before or after placing an order, please reach out to us at wecare@daivadrishti.com and our team will be happy to assist.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_LqPMKU",
+        "text_MnpnqY"
+      ],
+      "custom_css": [
+        "p {text-align: justify; max-width: 600px; margin: 0 auto;}"
+      ],
+      "name": "Rich Text with BG & Arrow",
+      "settings": {
+        "show_arrow": true,
+        "arrow_color": "#000000",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_gDBACD": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_VyxmqX": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>SHIPPING & DELIVERY</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_HFEL66": {
+          "type": "text",
+          "settings": {
+            "text": "<p>All orders are carefully packed and dispatched from Mumbai, India.<br/><br/>For orders within Mumbai, delivery typically takes 2–4 business days from the date of dispatch. Orders being shipped to other locations across India are typically delivered within 4–5 business days.<br/><br/>Delivery timelines may occasionally be impacted by public holidays, weather conditions, courier delays, or other unforeseen circumstances.<br/><br/>Once your order has been shipped, you will receive tracking details via email or SMS. We currently ship across India.<br/><br/>For corporate gifting or bulk orders, kindly fill out the enquiry form under our Corporate Gifting section and our team will get back to you at the earliest.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_VyxmqX",
+        "text_HFEL66"
+      ],
+      "custom_css": [
+        "p {text-align: justify; max-width: 600px; margin: 0 auto;}"
+      ],
+      "name": "Rich Text with BG & Arrow",
+      "settings": {
+        "show_arrow": true,
+        "arrow_color": "#000000",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_7Gctr3": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_8tEVJR": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>RETURN & CLAIM</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_zLLG3a": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At DAIVA DRISHTI, every order is thoughtfully packed and quality-checked before dispatch to ensure it reaches you in perfect condition.<br/><br/>CANDLES, REED DIFFUSERS, PERFUMES, MUGS & HOME FRAGRANCE PRODUCTS<br/><br/>Due to the personal nature of these products, we do not offer returns, refunds, or exchanges once an order has been placed.<br/><br/>APPAREL<br/><br/>We offer size exchanges only for apparel products, subject to availability. Requests for size exchanges must be raised within 48 hours of delivery. The product must be unused, unwashed, in its original condition, and returned with all tags and packaging intact.<br/><br/>DAMAGED PRODUCTS<br/><br/>In the unlikely event that you receive a damaged product, please email a clear unboxing video, along with your order number and invoice, to wecare@daivadrishti.com within 24 hours of delivery.<br/><br/>Our team will review the request on a case-by-case basis and, where applicable, arrange a replacement or suitable resolution.<br/><br/>SALE & PROMOTIONAL ITEMS<br/><br/>Products purchased during sale periods, promotional offers, clearance events, or using special discount codes are not eligible for return or exchange.<br/><br/>For any questions, please reach out to us at wecare@daivadrishti.com.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_8tEVJR",
+        "text_zLLG3a"
+      ],
+      "custom_css": [
+        "p {text-align: justify; max-width: 600px; margin: 0 auto;}"
+      ],
+      "name": "Rich Text with BG & Arrow",
+      "settings": {
+        "show_arrow": true,
+        "arrow_color": "#000000",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "noir_banner_gzrJNp",
+    "noir_faq_7bz8we",
+    "rich_text_UVniQc",
+    "rich_text_gDBACD",
+    "rich_text_7Gctr3"
+  ]
+}

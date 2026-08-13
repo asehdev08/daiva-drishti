@@ -1,0 +1,316 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .icon-and-text-wrapper {
+    border: 1px solid rgba(243, 222, 190, 0.4);
+    padding: 20px 10px;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+  }
+
+  .icon-and-text-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+  }
+
+  .icon-and-text-header h2 {
+    margin: 0;
+    font-size: calc(var(--font-heading-scale) * 2rem);
+  }
+  
+  .icon-and-text-header-icon {
+    color: #f2e4ad;
+  }
+
+  .icon-and-text-header-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+  }
+
+  .icon-and-text-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  @media screen and (min-width: 750px) {
+    .icon-and-text-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .icon-and-text-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 25px 20px;
+    border-bottom: 1px solid rgba(243, 222, 190, 0.2);
+    position: relative;
+  }
+
+  @media screen and (max-width: 749px) {
+    .icon-and-text-item:last-child {
+      border-bottom: none;
+    }
+  }
+  
+  @media screen and (min-width: 750px) {
+    .icon-and-text-item {
+      border-right: 1px solid rgba(243, 222, 190, 0.2);
+    }
+    .icon-and-text-item:nth-child(3n) {
+      border-right: none;
+    }
+    .icon-and-text-item:nth-last-child(-n+3) {
+      border-bottom: none;
+    }
+  }
+
+  .icon-and-text-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: #f2e4ad;
+  }
+
+  .icon-and-text-icon img, .icon-and-text-icon svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .icon-and-text-content {
+    flex-grow: 1;
+  }
+
+  .icon-and-text-content h3 {
+    margin: 0 0 5px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: linear-gradient(180deg, #f2e4ad, #f3dbc4 45%, #cfb37b 75%, #f3dbc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+  }
+
+  .icon-and-text-content .rte,
+  .icon-and-text-content .rte p,
+  .icon-and-text-content .rte a {
+    margin: 0;
+    font-size: 1.3rem;
+    line-height: 1.4;
+    background: linear-gradient(180deg, #f2e4ad, #f3dbc4 45%, #cfb37b 75%, #f3dbc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    text-decoration: none;
+  }
+  
+  .icon-and-text-content .rte a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width page-width--narrow section-{{ section.id }}-padding">
+    <div class="icon-and-text-wrapper">
+      {%- if section.settings.heading != blank -%}
+        <div class="icon-and-text-header">
+           {%- if section.settings.icon != blank -%}
+             <div class="icon-and-text-header-icon">
+               {{ section.settings.icon }}
+             </div>
+           {%- endif -%}
+          <h2 class="title inline-richtext {{ section.settings.heading_size }}">
+            {{ section.settings.heading }}
+          </h2>
+        </div>
+      {%- endif -%}
+
+      <div class="icon-and-text-grid">
+        {%- for block in section.blocks -%}
+          <div class="icon-and-text-item" {{ block.shopify_attributes }}>
+            {%- if block.settings.svg_icon != blank or block.settings.image != blank -%}
+              <div class="icon-and-text-icon">
+                {%- if block.settings.svg_icon != blank -%}
+                  {{ block.settings.svg_icon }}
+                {%- elsif block.settings.image != blank -%}
+                  <img src="{{ block.settings.image | image_url: width: 50 }}" width="24" height="24" loading="lazy">
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+            <div class="icon-and-text-content">
+              {%- if block.settings.heading != blank -%}
+                <h3>{{ block.settings.heading }}</h3>
+              {%- endif -%}
+              {%- if block.settings.text != blank -%}
+                <div class="rte">{{ block.settings.text }}</div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Icon and text",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "Registered Information",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "icon",
+      "label": "Heading Icon SVG"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_block",
+      "name": "Text block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Icon image"
+        },
+        {
+          "type": "textarea",
+          "id": "svg_icon",
+          "label": "Custom SVG Icon",
+          "info": "Priority over image"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Text content here.</p>",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Icon and text",
+      "blocks": [
+        {
+          "type": "text_block",
+          "settings": {
+            "heading": "Registered Address",
+            "text": "<p>1st Floor, 6/24, Aram Nagar - 2,<br>J.P. Road, Behind Moonwalk Studios,<br>Versova, Andheri West,<br>Mumbai - 400061</p>",
+            "svg_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z\"/><circle cx=\"12\" cy=\"10\" r=\"3\"/></svg>"
+          }
+        },
+        {
+          "type": "text_block",
+          "settings": {
+            "heading": "GST Number",
+            "text": "<p>27AKSPB2944E1Z6</p>",
+            "svg_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"16\" height=\"20\" x=\"4\" y=\"2\" rx=\"2\" ry=\"2\"/><path d=\"M9 22v-4h6v4\"/><path d=\"M8 6h.01\"/><path d=\"M16 6h.01\"/><path d=\"M12 6h.01\"/><path d=\"M12 10h.01\"/><path d=\"M12 14h.01\"/><path d=\"M16 10h.01\"/><path d=\"M16 14h.01\"/><path d=\"M8 10h.01\"/><path d=\"M8 14h.01\"/></svg>"
+          }
+        },
+        {
+          "type": "text_block",
+          "settings": {
+            "heading": "Legal Name (as per GST)",
+            "text": "<p>Trisha Banerjee</p>",
+            "svg_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2\"/><circle cx=\"12\" cy=\"7\" r=\"4\"/></svg>"
+          }
+        },
+        {
+          "type": "text_block",
+          "settings": {
+            "heading": "Trade Name (as per GST)",
+            "text": "<p>Spotlight Incorporationn</p>",
+            "svg_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2 7h20v14H2z\"/><path d=\"M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16\"/></svg>"
+          }
+        },
+        {
+          "type": "text_block",
+          "settings": {
+            "heading": "Email",
+            "text": "<p>wecare@daivadrishti.com</p>",
+            "svg_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"20\" height=\"16\" x=\"2\" y=\"4\" rx=\"2\"/><path d=\"m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7\"/></svg>"
+          }
+        },
+        {
+          "type": "text_block",
+          "settings": {
+            "heading": "Contact Number",
+            "text": "<p>+91 9136716237</p>",
+            "svg_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z\"/></svg>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,111 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  .noir-policy-content__grid .rte h3{
+    font-size: 16px;
+    color: #000000;
+    font-weight: 500;
+    font-family: "Inter", sans-serif !important;
+    text-decoration: underline;
+  }
+  .rte ul li {
+  display: list-item !important;
+  list-style-position: outside !important;
+}
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="section-{{ section.id }}-padding">
+    <div class="noir-policy-content__header">
+      <h2 class="noir-policy-content__heading inline-richtext">
+        {{ page.title }}
+      </h2>
+    </div>
+
+    <div class="policy-page noir-policy-page">
+      {% if section.settings.policy_menu != blank %}
+        <nav class="noir-policy-menu">
+          <ul class="noir-policy-menu__list">
+            {% for link in section.settings.policy_menu.links %}
+              <li class="noir-policy-menu__item">
+                <a
+                  href="{{ link.url }}"
+                  class="noir-policy-menu__link{% if request.path == link.url %} active{% endif %}"
+                >
+                  {{ link.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      {% endif %}
+
+      <div class="noir-policy-content">
+        <div class="noir-policy-content__grid">
+          {% comment %}
+             <h6>{{ page.title }}</h6>
+          {% endcomment %}
+          <div class="rte">{{ page.content }}</div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Noir Policy",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "policy_menu",
+      "label": "Policy menu"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Noir Policy"
+    }
+  ]
+}
+{% endschema %}

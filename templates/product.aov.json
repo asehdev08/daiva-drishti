@@ -1,0 +1,226 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "custom_liquid_6dfnAA": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<span class=\"noir-badge badge badge--bottom-left color-1\"\n>{{ product.metafields.custom.badge }}</span>"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "custom_liquid_xV8KbW": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'product-details' %}"
+          }
+        },
+        "text_N4TJt9": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.metafields.custom.product_info.value }}",
+            "text_style": "body"
+          }
+        },
+        "judge_me_reviews_preview_badge_hX3qXH": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "custom_liquid_F6dWNm": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'product-sibling-options' %}"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "square"
+          }
+        },
+        "aov_ai_bundle_mix_match_offer_inline_VeaUXF": {
+          "type": "shopify://apps/aov-ai-bundle/blocks/mix-match-offer-inline/0335d423-143c-4ad7-b224-99a1db74a9ee",
+          "settings": {}
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "complementary_rPVTHh": {
+          "type": "complementary",
+          "settings": {
+            "block_heading": "Pairs well with",
+            "make_collapsible_row": false,
+            "icon": "price_tag",
+            "product_list_limit": 3,
+            "products_per_page": 1,
+            "pagination_style": "dots",
+            "image_ratio": "square",
+            "enable_quick_add": false
+          }
+        },
+        "collapsible_tab_EJjg3K": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Product Details",
+            "icon": "box",
+            "content": "{{ product.description }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab_jwHpr6": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping",
+            "icon": "truck",
+            "content": "",
+            "page": ""
+          }
+        },
+        "collapsible_tab_wmnGqE": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Return & Refund",
+            "icon": "star",
+            "content": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "custom_liquid_6dfnAA",
+        "title",
+        "custom_liquid_xV8KbW",
+        "text_N4TJt9",
+        "judge_me_reviews_preview_badge_hX3qXH",
+        "price",
+        "custom_liquid_F6dWNm",
+        "variant_picker",
+        "aov_ai_bundle_mix_match_offer_inline_VeaUXF",
+        "quantity_selector",
+        "buy_buttons",
+        "complementary_rPVTHh",
+        "collapsible_tab_EJjg3K",
+        "collapsible_tab_jwHpr6",
+        "collapsible_tab_wmnGqE"
+      ],
+      "settings": {
+        "background_image": "shopify://shop_images/DD4.png",
+        "overlay_opacity": 50,
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1b41725b-bbc1-4dea-a870-10c67130b008",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "gallery_layout": "columns",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 48
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-c87bf4f7-bf22-4081-9f50-735b1918e5b6",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "noir_banner_JqgeNi": {
+      "type": "noir-banner",
+      "blocks": {
+        "liquid_hPHf8z": {
+          "type": "liquid",
+          "settings": {
+            "custom_html": "<h2 class=\"banner__heading brand-heading h0\">{{ product.title }} </h2>"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_hPHf8z"
+      ],
+      "disabled": true,
+      "name": "Noir Banner",
+      "settings": {
+        "image": "shopify://shop_images/Dark_Textured_Water.png",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-4",
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "17733883400ce1e5f1": {
+      "type": "apps",
+      "blocks": {
+        "aov_ai_bundle_mix_match_offer_inline_wfEYfL": {
+          "type": "shopify://apps/aov-ai-bundle/blocks/mix-match-offer-inline/0335d423-143c-4ad7-b224-99a1db74a9ee",
+          "disabled": true,
+          "settings": {}
+        },
+        "aov_ai_bundle_offer_bundle_builder_m7NbTm": {
+          "type": "shopify://apps/aov-ai-bundle/blocks/offer-bundle-builder/0335d423-143c-4ad7-b224-99a1db74a9ee",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "aov_ai_bundle_mix_match_offer_inline_wfEYfL",
+        "aov_ai_bundle_offer_bundle_builder_m7NbTm"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related-products",
+    "noir_banner_JqgeNi",
+    "17733883400ce1e5f1"
+  ]
+}

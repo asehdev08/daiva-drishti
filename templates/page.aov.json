@@ -1,0 +1,51 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "noir_banner_gzrJNp": {
+      "type": "noir-banner",
+      "blocks": {
+        "liquid_JMTFk8": {
+          "type": "liquid",
+          "settings": {
+            "custom_html": "<h2 class=\"banner__heading brand-heading h0\">{{ page.title }} </h2>"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_JMTFk8"
+      ],
+      "name": "Noir Banner",
+      "settings": {
+        "image": "shopify://shop_images/Dark_Textured_Water.png",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-4",
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "noir_banner_gzrJNp"
+  ]
+}

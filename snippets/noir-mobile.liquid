@@ -1,0 +1,383 @@
+<style>
+  /**************************************** Mobile Menu *******************************/
+  /* --- Global & Overlay --- */
+  body.menu-open {
+    overflow: hidden;
+    height: 100vh;
+  }
+    .custom-menu-trigger{
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0px;
+        color: currentColor;
+        justify-content: start !important;
+        height: 2.2rem;
+        width: 2.2rem;
+    }
+    .custom-menu-trigger svg{
+
+    }
+  #drawer-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 100000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  #drawer-overlay.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* --- Main Drawer Node --- */
+  .custom-drawer-node {
+    /*position: fixed;*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 400px;
+    height: 110vh;
+    max-height: 100%;
+    background: #fff;
+    background: url(https://cdn.shopify.com/s/files/1/1000/2232/1446/files/Desktop_version_-_DD.png?v=1772359698);
+    background-size: cover;
+    background-position: center center;
+    z-index: 100001;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: translateX(-100%); /* Hidden state */
+  }
+
+  .custom-drawer-node.is-active {
+    transform: translateX(0); /* Visible state */
+  }
+
+  /* --- Header Section --- */
+  .drawer-header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: .5px solid #CFB37B;
+    min-height: 50px;
+  }
+
+  .drawer-back {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #CFB37B;
+  }
+
+  .drawer-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    color: #CFB37B;
+  }
+
+  /* --- Viewport & Canvas --- */
+  .drawer-viewport {
+    flex: 1;
+    position: relative;
+    overflow: hidden; /* Clips the sliding panels */
+  }
+
+  .drawer-canvas {
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+
+  /* --- Sliding Panels --- */
+  .drawer-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(https://cdn.shopify.com/s/files/1/1000/2232/1446/files/Objects_Lower_-_Version_2.png?v=1772435883);
+    background-size: cover;
+    background-position: bottom center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    visibility: hidden;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), visibility 0.4s;
+    transform: translateX(100%); /* All panels start tucked to the right */
+  }
+
+  /* Initial Panel state */
+  #panel-main.drawer-panel {
+    visibility: visible;
+    transform: translateX(0);
+    z-index: 2;
+  }
+
+  /* Panel being viewed */
+  .drawer-panel.is-visible {
+    visibility: visible;
+    transform: translateX(0);
+    z-index: 3;
+  }
+
+  /* Panel moved to the background */
+  .drawer-panel.is-parent {
+    visibility: visible;
+    transform: translateX(-30%);
+    z-index: 1;
+  }
+
+  /* --- Links & Buttons --- */
+  .drawer-panel li {
+    border-bottom: .5px solid #CFB37B;
+  }
+
+  .drawer-panel a,
+  .drawer-panel button {
+    width: 100%;
+    padding: 15px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    border: none;
+    font-size: 14px;
+    letter-spacing: normal;
+    text-transform: uppercase;
+    color: #F3DBC4 !important;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: left;
+    font-family: var(--font-body-family);
+    font-weight: 500;
+  }
+  .menu_active{
+    font-weight: 600 !important;
+  }
+  .drawer-panel button svg {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+</style>
+{%- assign menu_handle = 'main-menu' -%}
+{%- assign menu_handle = 'mobile-menu' -%}
+{%- assign menu_links = linklists[menu_handle].links -%}
+<div id="custom-drawer" class="custom-drawer-node">
+  <div class="drawer-header">
+    <button class="drawer-back" id="drawer-back" onclick="slideBack()" style="visibility: hidden;">
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        fill="none"
+        width="12"
+        viewBox="0 0 10 10"
+        style="transform: scaleX(-1);"
+      >
+        <path d="m3 9 4-4-4-4" stroke="currentColor" stroke-linecap="square"></path>
+      </svg>
+      <span>BACK</span>
+    </button>
+    
+    <button class="drawer-close" onclick="toggleCustomMenu(false)">
+      <svg aria-hidden="true" focusable="false" fill="none" width="16" viewBox="0 0 16 16">
+        <path d="m1 1 14 14M1 15 15 1" stroke="currentColor" stroke-width="1.5"></path>
+      </svg>
+    </button>
+  </div>
+
+  <div class="drawer-viewport">
+    <div class="drawer-canvas" id="drawer-canvas">
+      <ul class="drawer-panel is-visible" id="panel-main" data-title="MENU">
+        {%- for link in menu_links -%}
+          <li>
+            {%- if link.links != blank -%}
+              <button
+                class="{% if link.current %} menu_active{% endif %}"
+                type="button"
+                onclick="slideForward('panel-{{ forloop.index }}', '{{ link.title | escape }}')"
+              >
+                {{ link.title | escape }}
+                <svg aria-hidden="true" focusable="false" fill="none" width="12" viewBox="0 0 10 10">
+                  <path d="m3 9 4-4-4-4" stroke="currentColor" stroke-linecap="square"></path>
+                </svg>
+              </button>
+            {%- else -%}
+              <a href="{{ link.url }}" class="{% if link.current %} menu_active{% endif %}">
+                {{- link.title | escape -}}
+              </a>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+
+                <li>
+  <a href="#noir-popup" class="noir-popup">
+
+    DAIVA INNER CIRCLE
+
+  </a>
+</li>
+
+            {%- if shop.customer_accounts_enabled -%}
+              <li>
+                <a
+                  href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
+                  class="{% if link.current %} menu_active{% endif %}"
+                  rel="nofollow"
+                >
+                  <span>
+                    {%- liquid
+                      if customer
+                        echo 'customer.account_fallback' | t
+                      else
+                        echo 'Account'
+                      endif
+                    -%}
+                  </span>
+                </a>
+              </li>
+            {%- endif -%}
+      </ul>
+
+      {%- for link in menu_links -%}
+        {%- if link.links != blank -%}
+          {%- assign l1_index = forloop.index -%}
+          <ul class="drawer-panel" id="panel-{{ l1_index }}" data-title="{{ link.title | escape }}">
+            {%- for childlink in link.links -%}
+              <li>
+                {%- if childlink.links != blank -%}
+                  <button
+                    class="{% if link.current %} menu_active{% endif %}"
+                    type="button"
+                    onclick="slideForward('panel-{{ l1_index }}-{{ forloop.index }}', '{{ childlink.title | escape }}')"
+                  >
+                    {{ childlink.title | escape }}
+                    <svg aria-hidden="true" focusable="false" fill="none" width="12" viewBox="0 0 10 10">
+                      <path d="m3 9 4-4-4-4" stroke="currentColor" stroke-linecap="square"></path>
+                    </svg>
+                  </button>
+                {%- else -%}
+                  <a href="{{ childlink.url }}" class="{% if link.current %} menu_active{% endif %}">
+                    {{- childlink.title | escape -}}
+                  </a>
+                {%- endif -%}
+              </li>
+            {%- endfor -%}
+          </ul>
+
+          {%- for childlink in link.links -%}
+            {%- if childlink.links != blank -%}
+              <ul
+                class="drawer-panel"
+                id="panel-{{ l1_index }}-{{ forloop.index }}"
+                data-title="{{ childlink.title | escape }}"
+              >
+                {%- for grandchildlink in childlink.links -%}
+                  <li>
+                    <a href="{{ grandchildlink.url }}" class="{% if link.current %} menu_active{% endif %}">
+                      {{- grandchildlink.title | escape -}}
+                    </a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+<div id="drawer-overlay" onclick="toggleCustomMenu(false)"></div>
+
+<script>
+  let drawerHistory = ['panel-main']; // Start with main panel in history
+
+  function toggleCustomMenu(open) {
+    const drawer = document.getElementById('custom-drawer');
+    const overlay = document.getElementById('drawer-overlay');
+
+    if (open) {
+      drawer.classList.add('is-active');
+      overlay.classList.add('is-active');
+      document.body.classList.add('menu-open');
+    } else {
+      drawer.classList.remove('is-active');
+      overlay.classList.remove('is-active');
+      document.body.classList.remove('menu-open');
+      setTimeout(resetDrawer, 400);
+    }
+  }
+
+  function slideForward(panelId, title) {
+    const currentPanelId = drawerHistory[drawerHistory.length - 1];
+    const targetPanel = document.getElementById(panelId);
+
+    if (!targetPanel) return;
+
+    // Move current to left, move target to center
+    document.getElementById(currentPanelId).classList.replace('is-visible', 'is-parent');
+    targetPanel.classList.add('is-visible');
+
+    drawerHistory.push(panelId);
+
+    // UI Updates
+    const backBtn = document.getElementById('drawer-back');
+    backBtn.style.visibility = 'visible';
+    backBtn.querySelector('span').innerText = title;
+  }
+
+  function slideBack() {
+    if (drawerHistory.length <= 1) return;
+
+    const currentPanelId = drawerHistory.pop();
+    const prevPanelId = drawerHistory[drawerHistory.length - 1];
+
+    // Move current back to right, move prev back to center
+    document.getElementById(currentPanelId).classList.remove('is-visible');
+    document.getElementById(prevPanelId).classList.replace('is-parent', 'is-visible');
+
+    // Update Back Button Text
+    const backBtn = document.getElementById('drawer-back');
+    if (drawerHistory.length === 1) {
+      backBtn.style.visibility = 'hidden';
+    } else {
+      const prevPanel = document.getElementById(prevPanelId);
+      backBtn.querySelector('span').innerText = prevPanel.getAttribute('data-title') || 'BACK';
+    }
+  }
+
+  function resetDrawer() {
+    document.querySelectorAll('.drawer-panel').forEach((p) => {
+      p.classList.remove('is-visible', 'is-parent');
+    });
+    document.getElementById('panel-main').classList.add('is-visible');
+    document.getElementById('drawer-back').style.visibility = 'hidden';
+    drawerHistory = ['panel-main'];
+  }
+
+  // --- NEW CODE TO CLOSE DRAWER ON LINK CLICK ---
+  document.addEventListener('DOMContentLoaded', () => {
+    const popupLink = document.querySelector('.noir-popup');
+    if (popupLink) {
+      popupLink.addEventListener('click', () => {
+        toggleCustomMenu(false); // Closes the drawer
+      });
+    }
+  });
+</script>

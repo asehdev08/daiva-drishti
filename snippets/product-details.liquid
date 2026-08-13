@@ -1,0 +1,98 @@
+{% if product.description != blank %}
+
+<div class="product-details-readmore">
+  
+  <div class="product-details-text">
+    {{ product.description }}
+  </div>
+
+  <button class="product-details-toggle" aria-label="Toggle details" style="display: none;">
+    
+    {% comment %} 
+      To show text again, simply remove the comment tags below 
+    {% endcomment %}
+    {% comment %}
+    <span class="btn-text">Read more</span>
+    {% endcomment %}
+
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="icon icon-plus" viewBox="0 0 10 10"><path fill="currentColor" fill-rule="evenodd" d="M1 4.51a.5.5 0 0 0 0 1h3.5l.01 3.5a.5.5 0 0 0 1-.01V5.5l3.5-.01a.5.5 0 0 0-.01-1H5.5L5.49.99a.5.5 0 0 0-1 .01v3.5l-3.5.01z" clip-rule="evenodd"></path></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="icon icon-minus" viewBox="0 0 10 2"><path fill="currentColor" fill-rule="evenodd" d="M.5 1C.5.7.7.5 1 .5h8a.5.5 0 1 1 0 1H1A.5.5 0 0 1 .5 1" clip-rule="evenodd"></path></svg>
+  </button>
+
+</div>
+
+<style>
+.product-details-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product-details-text p { margin: 0; }
+
+.product-details-readmore.active .product-details-text {
+  -webkit-line-clamp: unset;
+}
+
+.product-details-toggle {
+  background: none;
+  border: 1px solid #F3DBC4; 
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 4px;
+  margin-top: 10px;
+  color: #F3DBC4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.product-details-toggle svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* Icon Toggle Logic */
+.product-details-toggle .icon-minus { display: none; }
+.product-details-readmore.active .icon-plus { display: none; }
+.product-details-readmore.active .icon-minus { display: block; }
+
+.product-details-toggle:hover {
+  opacity: 0.8;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const container = document.querySelector(".product-details-readmore");
+  if(!container) return;
+
+  const textBlock = container.querySelector(".product-details-text");
+  const btn = container.querySelector(".product-details-toggle");
+  const btnText = btn.querySelector(".btn-text");
+
+  // Check if content overflows to show/hide the toggle button
+  setTimeout(() => {
+    if (textBlock.scrollHeight > textBlock.clientHeight) {
+      btn.style.display = "flex";
+    } else {
+      btn.style.display = "none";
+    }
+  }, 100);
+
+  btn.addEventListener("click", function(){
+    container.classList.toggle("active");
+    
+    // If you uncomment the text in HTML, this logic will automatically work
+    if(btnText) {
+       btnText.textContent = container.classList.contains("active") ? "Read less" : "Read more";
+    }
+  });
+});
+</script>
+
+{% endif %}

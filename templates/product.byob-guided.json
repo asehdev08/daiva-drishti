@@ -1,0 +1,331 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "custom_liquid_6dfnAA": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% if product.metafields.custom.badge != blank %}\n  <span class=\"noir-badge badge badge--bottom-left color-1\">\n    {{ product.metafields.custom.badge }}\n  <\/span>\n{% endif %}"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "custom_liquid_xV8KbW": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'product-details' %}"
+          }
+        },
+        "text_N4TJt9": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.metafields.custom.product_info.value }}",
+            "text_style": "body"
+          }
+        },
+        "judge_me_reviews_preview_badge_hX3qXH": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "custom_liquid_F6dWNm": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'product-sibling-options' %}"
+          }
+        },
+        "custom_liquid_Dmk3bB": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<style>\n  .hide-media {\n    display: none !important; \/* Added !important to ensure layout overrides *\/\n    width: 0;\n  }\n<\/style>\n\n<script>\n  const handle = \"products\/\" + \"{{ product.handle }}\" + \".js\";\n\n  fetch(window.Shopify.routes.root + handle)\n    .then(response => response.json())\n    .then(product => {\n      \/\/ 1. Get the list of allowed option names from settings (e.g., \"Color, Material, Type\")\n      const optionsToWatch = \"{{settings.media_grouping_option}}\".split(\",\").map(item => item.trim());\n      \n      \/\/ 2. Find the FIRST option from your list that this specific product actually uses\n      const groupOption = product.options.find(option => optionsToWatch.includes(option.name)) || null;\n      \n      if (!groupOption) {\n        console.log(\"No matching grouping options found for this product.\");\n        return;\n      }\n\n      \/\/ Retrieve the applicable option values (could be Colors, Types, Materials, etc.)\n      const groupValues = groupOption.values;\n      \n      \/\/ Build an object to store the starting image positions for each variant value\n      const groupImagePositions = {};\n      \n      groupValues.forEach(value => {\n        \/\/ Find the first variant matching this value and get its featured image position\n        const variant = product.variants.find(variant => variant.options[groupOption.position - 1] === value);\n        \n        if (variant && variant.featured_media) {\n          groupImagePositions[value] = variant.featured_media.position;\n        }\n      });    \n      \n      \/\/ Sort values based on their starting positions to calculate image ranges\n      const sortedValues = Object.entries(groupImagePositions).sort((a, b) => a[1] - b[1]);\n      \n      \/\/ Calculate ranges\n      const groupImageRanges = {};\n      sortedValues.forEach((item, index) => {\n        const valueName = item[0];\n        const startPos = item[1];\n        const endPos = sortedValues[index + 1] ? sortedValues[index + 1][1] : null;\n        \n        groupImageRanges[valueName] = endPos ? [startPos, endPos] : [startPos];\n      });\n\n      \/\/ Build an object to store image IDs grouped by the variant value\n      const groupImageIDs = {};\n      Object.entries(groupImageRanges).forEach(([value, range]) => {\n        const startPos = range[0];\n        const endPos = range[1] || product.media.length + 1;\n        \n        const imageIDs = product.media\n          .filter((media, index) => {\n            const imagePosition = index + 1; \n            return imagePosition >= startPos && imagePosition < endPos;\n          })\n          .map(media => media.id);\n\n        groupImageIDs[value] = imageIDs;\n      });\n\n      const mediaGallery = document.querySelector('media-gallery');\n      const productSection = document.querySelector(\".product-variant-id\");\n      const sectionID = \"{{ section.id }}\";\n\n      \/\/ Apply data-media-group attribute to DOM elements\n      Object.entries(groupImageIDs).forEach(([value, imageIDs]) => {\n        imageIDs.forEach(mediaID => {\n          const selector = `[data-media-id=\"${sectionID}-${mediaID}\"], [data-target=\"${sectionID}-${mediaID}\"]`;\n          const mediaItems = mediaGallery.querySelectorAll(`li${selector}`);\n          mediaItems.forEach(mediaItem => {\n            mediaItem.setAttribute('data-media-group', value);\n          });\n        });\n      });\n\n      \/\/ Function to show\/hide based on current selection\n      const showVariantImage = () => {\n        const variantSelects = document.querySelector('variant-selects');\n        if (!variantSelects) return;\n\n        \/\/ Get all selected option values on the page right now\n        let currentValues = Array.from(\n          variantSelects.querySelectorAll('select option[selected], select, fieldset input:checked')\n        ).map(el => el.value);\n        \n        \/\/ Find which selected value matches our dynamic ranges\n        let selectedValue = currentValues.find(value => groupImageRanges.hasOwnProperty(value));\n      \n        \/\/ Fallback for native select elements if .value array extraction varies\n        if (!selectedValue) {\n          variantSelects.querySelectorAll('select').forEach(select => {\n            if(groupImageRanges.hasOwnProperty(select.value)) {\n              selectedValue = select.value;\n            }\n          });\n        }\n\n        \/\/ Show\/Hide images based on selected value\n        mediaGallery.querySelectorAll('ul li[data-media-group]').forEach((mediaItem) => {\n          if (mediaItem.getAttribute('data-media-group') === selectedValue) {\n            mediaItem.classList.remove('hide-media');\n          } else {\n            mediaItem.classList.add('hide-media');\n          }\n        });\n      \n        \/\/ Reinitialize the slider if Dawn theme component exists\n        mediaGallery.querySelectorAll('slider-component').forEach(slider => {\n          if (typeof slider.initPages === 'function') slider.initPages();\n        });\n      }\n\n      showVariantImage();\n      \n      if (productSection) {\n        productSection.addEventListener('change', showVariantImage); \n      }\n    })\n    .catch(error => console.error(\"Error fetching product data:\", error));\n<\/script>"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "square"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "complementary_rPVTHh": {
+          "type": "complementary",
+          "settings": {
+            "block_heading": "Pairs well with",
+            "make_collapsible_row": false,
+            "icon": "price_tag",
+            "product_list_limit": 20,
+            "products_per_page": 1,
+            "pagination_style": "dots",
+            "image_ratio": "square",
+            "enable_quick_add": false
+          }
+        },
+        "collapsible_tab_EJjg3K": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Product Details",
+            "icon": "box",
+            "content": "{{ product.metafields.custom.product_details | metafield_tag }}{{ product.metafields.custom.perfect_for | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab_jwHpr6": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping",
+            "icon": "truck",
+            "content": "<p>We aim to deliver your order with care and efficiency. <br\/>• Mumbai: 2–3 working days <br\/>• Rest of India: 4–5 working days <br\/><br\/>A flat ₹50 shipping charge is applicable on all orders below ₹1,050. <br\/>Free shipping on orders above ₹1,499. <br\/><br\/>Delivery timelines may vary slightly during peak periods or unforeseen delays, but we always strive to get your order to you at the earliest. <br\/><br\/><\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_wmnGqE": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "Return & Refund",
+            "icon": "star",
+            "content": "<p>We currently do not offer refunds on any orders. <br\/>• Candles, mugs, and apparel are eligible for exchange only in case of damage or manufacturing issues. <br\/>• Liquid Fragrance-led products (including perfumes and reed diffusers) are not eligible for return or exchange once purchased. <br\/><br\/>To request an exchange, please reach out to us within 48 hours of delivery with relevant details. <br\/><br\/>For an exchange to be successfully processed, the product must be returned unused, with invoice, in its original condition, and with all packaging intact. <br\/>Items that are damaged, used, or returned without proper packaging or broken seals will not be eligible for exchange. <br\/><br\/>All approved exchanges will be processed promptly. <br\/><br\/><\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_giefpB": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "FAQ's",
+            "icon": "chat_bubble",
+            "content": "{{ product.metafields.custom.faq_s | metafield_tag }}",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "custom_liquid_6dfnAA",
+        "title",
+        "custom_liquid_xV8KbW",
+        "text_N4TJt9",
+        "judge_me_reviews_preview_badge_hX3qXH",
+        "price",
+        "custom_liquid_F6dWNm",
+        "custom_liquid_Dmk3bB",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "complementary_rPVTHh",
+        "collapsible_tab_EJjg3K",
+        "collapsible_tab_jwHpr6",
+        "collapsible_tab_wmnGqE",
+        "collapsible_tab_giefpB"
+      ],
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/DD4.png",
+        "overlay_opacity": 50,
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1b41725b-bbc1-4dea-a870-10c67130b008",
+        "media_size": "medium",
+        "constrain_to_viewport": false,
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 48
+      }
+    },
+    "177300034139447878": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_DgBNh6": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_DgBNh6"
+      ],
+      "custom_css": [
+        "section {background: #f3e6e0;}"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "noir_grid_E37fMc": {
+      "type": "noir-grid",
+      "blocks": {
+        "grid_item_RfBU9q": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_8479.jpg",
+            "content_position": "absolute",
+            "title": "Alchemy Mugs",
+            "block_heading_size": "h3",
+            "content": "",
+            "link": "shopify:\/\/collections\/alchemy-mugs"
+          }
+        },
+        "grid_item_bgk8f9": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_8458_e89b1c52-7997-4a58-8a6f-d4896cdbe6f7.jpg",
+            "content_position": "absolute",
+            "title": "Scented Candles",
+            "block_heading_size": "h3",
+            "content": "",
+            "link": "shopify:\/\/collections\/ritual-candles"
+          }
+        },
+        "grid_item_Nt3wd4": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_8471.jpg",
+            "content_position": "absolute",
+            "title": "Affirmation Cards",
+            "block_heading_size": "h3",
+            "content": "",
+            "link": "shopify:\/\/collections\/affirmation-cards"
+          }
+        },
+        "grid_item_kp8EjG": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_8388_c11b0215-085d-4f0c-94a0-ceb59a7e2f2c.jpg",
+            "content_position": "absolute",
+            "title": "Ritual Apparel",
+            "block_heading_size": "h3",
+            "content": "",
+            "link": "shopify:\/\/collections\/soulwear"
+          }
+        }
+      },
+      "block_order": [
+        "grid_item_RfBU9q",
+        "grid_item_bgk8f9",
+        "grid_item_Nt3wd4",
+        "grid_item_kp8EjG"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "h2 {\/*color: #cfb37b;*\/}"
+      ],
+      "name": "Noir Grid",
+      "settings": {
+        "title": "Shop by Ritual",
+        "heading_size": "h1",
+        "show_arrow": true,
+        "background_image": "shopify:\/\/shop_images\/DD4.png",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1b41725b-bbc1-4dea-a870-10c67130b008",
+        "padding_top": 36,
+        "padding_bottom": 48,
+        "enable_mobile_slider": true
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1b41725b-bbc1-4dea-a870-10c67130b008",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "17822133820257a03b": {
+      "type": "apps",
+      "blocks": {
+        "simple_bundles_kits_infinite_options_selector_AkY4WA": {
+          "type": "shopify:\/\/apps\/simple-bundles-kits\/blocks\/infinite-options-selector\/e553276b-36b2-446d-b80a-aa47fe5f96ac",
+          "settings": {
+            "select_placeholder": "Please select an option",
+            "disable_oos_options": true,
+            "show_price_variance": true,
+            "rank_options_by_price_diff": true,
+            "custom_css": "",
+            "custom_js": ""
+          }
+        }
+      },
+      "block_order": [
+        "simple_bundles_kits_infinite_options_selector_AkY4WA"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "1782213385870ff7b6": {
+      "type": "apps",
+      "blocks": {
+        "simple_bundles_kits_infinite_options_selector_7tXBVY": {
+          "type": "shopify:\/\/apps\/simple-bundles-kits\/blocks\/infinite-options-selector\/e553276b-36b2-446d-b80a-aa47fe5f96ac",
+          "settings": {
+            "select_placeholder": "Please select an option",
+            "disable_oos_options": true,
+            "show_price_variance": true,
+            "rank_options_by_price_diff": true,
+            "custom_css": "",
+            "custom_js": ""
+          }
+        }
+      },
+      "block_order": [
+        "simple_bundles_kits_infinite_options_selector_7tXBVY"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "177300034139447878",
+    "noir_grid_E37fMc",
+    "related-products",
+    "17822133820257a03b",
+    "1782213385870ff7b6"
+  ]
+}

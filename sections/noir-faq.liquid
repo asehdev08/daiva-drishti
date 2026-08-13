@@ -1,0 +1,163 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  /* ===============================
+     SECTION PADDING
+  ================================ */
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="section-{{ section.id }}-padding">
+    {% comment %}
+       {% endcomment %}
+   
+    <div class="noir-policy-content__header">
+      <h2 class="noir-policy-content__heading inline-richtext">
+        {{ page.title }}
+      </h2>
+    </div>
+    
+    <div class="policy-page noir-policy-page">
+      {% if section.settings.policy_menu != blank %}
+        <nav class="noir-policy-menu">
+          <ul class="noir-policy-menu__list">
+            {% for link in section.settings.policy_menu.links %}
+              <li>
+                <a
+                  href="{{ link.url }}"
+                  class="noir-policy-menu__link{% if request.path == link.url %} active{% endif %}"
+                >
+                  {{ link.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      {% endif %}
+
+      <div class="noir-policy-content">
+        <div class="noir-policy-content__grid">
+          {% for block in section.blocks %}
+            <section class="noir-faq-group">
+                <div class="noir-faq-group__header">
+                    <h3>{{ block.settings.title }}</h3>
+                </div>
+              <div class="noir-accordion">
+                {% for i in (1..5) %}
+                  {% assign q = 'question_' | append: i %}
+                  {% assign a = 'answer_' | append: i %}
+
+                  {% if block.settings[q] != blank %}
+                    <div class="accordion-item">
+                      <button type="button" class="accordion-header">
+                        {{ block.settings[q] }}
+                      </button>
+                      <div class="accordion-content">
+                        {{ block.settings[a] }}
+                      </div>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </section>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% javascript %}
+  document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+      header.parentElement.classList.toggle('active');
+    });
+  });
+{% endjavascript %}
+
+
+
+{% schema %}
+{
+  "name": "Noir FAQ",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "policy_menu",
+      "label": "Policy menu"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_group",
+      "name": "FAQ group",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Group title"
+        },
+
+        { "type": "text", "id": "question_1", "label": "Question 1" },
+        { "type": "richtext", "id": "answer_1", "label": "Answer 1" },
+
+        { "type": "text", "id": "question_2", "label": "Question 2" },
+        { "type": "richtext", "id": "answer_2", "label": "Answer 2" },
+
+        { "type": "text", "id": "question_3", "label": "Question 3" },
+        { "type": "richtext", "id": "answer_3", "label": "Answer 3" },
+
+        { "type": "text", "id": "question_4", "label": "Question 4" },
+        { "type": "richtext", "id": "answer_4", "label": "Answer 4" },
+
+        { "type": "text", "id": "question_5", "label": "Question 5" },
+        { "type": "richtext", "id": "answer_5", "label": "Answer 5" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Noir FAQ"
+    }
+  ]
+}
+{% endschema %}
+
+	
+	
+	

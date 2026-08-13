@@ -1,0 +1,542 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: calc({{ section.settings.padding_top }}px * 0.75);
+    padding-bottom: calc({{ section.settings.padding_bottom }}px * 0.75);
+    position: relative;
+    {% if section.settings.background_image != blank %}
+      background-image: url('{{ section.settings.background_image | image_url: width: 2000 }}');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    {% endif %}
+  }
+
+  /* Background Overlay */
+  .section-{{ section.id }}-padding::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0, {{ section.settings.overlay_opacity | divided_by: 100.0 }});
+    z-index: 1;
+  }
+
+  .section-{{ section.id }}-padding > div {
+    position: relative;
+    z-index: 2;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  /* Base Card Styling - Enforce 4:5 Aspect Ratio */
+  .testimonial-card-base {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    transition: transform 0.3s ease;
+  }
+
+  /* 1. Normal Review Styling (Original) */
+  .testimonial-card-normal {
+    background: #000000b0;
+    color: #fff;
+    padding: 2.5rem;
+    border: 1px solid #333;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* 2. Video Review Styling (Full Video Only) */
+  .testimonial-card-video {
+    width: 100%;
+  }
+  .testimonial-card-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .testimonial-card-video {
+  position: relative;
+  background: #000;
+}
+
+.noir_video_play_button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.noir_video_play_button svg {
+  fill: #fff; /* Changes the SVG color to white */
+  filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.5));
+}
+
+.noir_video_play_button:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Hide button when video is playing */
+.video-is-playing .noir_video_play_button {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.review-video-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+  /* 3. Image Review Styling (Split 50/50) */
+  .testimonial-card-image-split {
+    flex-direction: column;
+    background: #fff;
+    color: #000;
+  }
+  .image-split-media {
+    flex: 0 0 50%;
+    height: 100%;
+  }
+  .image-split-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+.image-split-content {
+    flex: 0 0 50%;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #F3E6E0;
+}
+  .testimonial-stars { color: #FFD700; margin-bottom: 1rem; }
+  .testimonial-text-split { font-size: 1.8rem; line-height: 1.2; font-weight: 500; color: #000; }
+  .customer-info-split { color: #666; font-size: 1.2rem; text-transform: uppercase; margin-bottom: 1rem; }
+
+  /* Original Meta for Normal Review */
+  .customer-meta { display: flex; align-items: center; gap: 1rem; margin-top: auto; }
+  .customer-pic { width: 55px; height: 55px; border-radius: 50%; object-fit: cover; filter: grayscale(100%); border: 1px solid #444; }
+  .customer-info h4 { margin: 0; font-size: 1.2rem; text-transform: uppercase; }
+
+  @media screen and (max-width: 749px) {
+    .testimonial-card-image-split { flex-direction: column; }
+    .image-split-media, .image-split-content { flex: 0 0 50%; }
+  }
+
+  .swiper-pagination-bullet { background: #CFB37B !important; opacity: 0.5; }
+  .swiper-pagination-bullet-active { opacity: 1; transform: scale(1.2); }
+  .testimonial-swiper-{{ section.id }} .swiper-pagination { position: relative; margin-top: 3rem; }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="section-{{ section.id }}-padding">
+    <div class="page-width">
+      {%- unless section.settings.title == blank -%}
+        <div class="title-wrapper-{{ section.id }}" style="text-align: {{ section.settings.heading_alignment }};">
+          <h2 class="title inline-richtext h1  {{ section.settings.heading_size }}">{{ section.settings.title }}</h2>
+        </div>
+      {%- endunless -%}
+
+      <div class="swiper testimonial-swiper-{{ section.id }}">
+        <div class="swiper-wrapper">
+          {%- for block in section.blocks -%}
+            <div class="swiper-slide" {{ block.shopify_attributes }}>
+              
+              {%- case block.type -%}
+                
+                {%- when 'testimonial' -%}
+                  {%- comment -%} NORMAL REVIEW {%- endcomment -%}
+                  <div class="testimonial-card-base testimonial-card-normal">
+                    <div>
+                      <div class="testimonial-stars">
+                        {%- for i in (1..block.settings.rating) -%}★{%- endfor -%}
+                      </div>
+                      <div class="testimonial-text" style="font-style: italic; font-size: 1.6rem;">"{{ block.settings.message }}"</div>
+                    </div>
+                    <div class="customer-meta">
+                      {%- if block.settings.image != blank -%}
+                        <img src="{{ block.settings.image | image_url: width: 110 }}" class="customer-pic" loading="lazy">
+                      {%- endif -%}
+                      <div class="customer-info">
+                        <h4>{{ block.settings.name }}</h4>
+                        <span>{{ block.settings.subtext }}</span>
+                      </div>
+                    </div>
+                  </div>
+
+{%- when 'video_review' -%}
+  <div class="testimonial-card-base testimonial-card-video" data-video-wrapper>
+    <div class="noir_video_play_button" data-play-button>
+      <svg width="64px" height="64px" viewBox="0 0 64 64">
+        <g><g transform="translate(128.000000, 278.000000)">
+          <path d="M-95.9-222c-13.2,0-23.9-10.7-23.9-23.9s10.7-23.9,23.9-23.9S-72-259.1-72-245.9 S-82.7-222-95.9-222L-95.9-222z M-95.9-267.2c-11.7,0-21.3,9.6-21.3,21.3c0,11.7,9.6,21.3,21.3,21.3s21.3-9.6,21.3-21.3 C-74.6-257.7-84.2-267.2-95.9-267.2L-95.9-267.2z"></path>
+          <path d="M-103-233.6v-24.7l21.2,12.4L-103-233.6L-103-233.6z M-100.2-253.4v14.9l12.7-7.4 L-100.2-253.4L-100.2-253.4z"></path>
+        </g></g>
+      </svg>
+    </div>
+    {%- if block.settings.video_file != blank -%}
+      {{ block.settings.video_file | video_tag: 
+        image_size: '800x', 
+        autoplay: false, 
+        loop: true, 
+        muted: false, 
+        controls: false,
+        class: 'review-video-element' 
+      }}
+    {%- endif -%}
+  </div>
+
+                {%- when 'image_review' -%}
+                  {%- comment -%} IMAGE SPLIT REVIEW {%- endcomment -%}
+                  <div class="testimonial-card-base testimonial-card-image-split">
+                    <div class="image-split-media">
+                      {%- if block.settings.image != blank -%}
+                        <img src="{{ block.settings.image | image_url: width: 800 }}" loading="lazy">
+                      {%- endif -%}
+                    </div>
+                    <div class="image-split-content">
+                      <div class="customer-info-split">
+                        {{ block.settings.name }} | {{ block.settings.subtext }} | {{ block.settings.age }}
+                      </div>
+                      <div class="testimonial-stars">
+                        {%- for i in (1..block.settings.rating) -%}★{%- endfor -%}
+                      </div>
+                      <div class="testimonial-text-split">
+                        {{ block.settings.message }}
+                      </div>
+                    </div>
+                  </div>
+
+              {%- endcase -%}
+
+            </div>
+          {%- endfor -%}
+        </div>
+        {%- if section.settings.show_pagination -%}
+          <div class="swiper-pagination"></div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/*  document.addEventListener('DOMContentLoaded', function() {
+    new Swiper('.testimonial-swiper-{{ section.id }}', {
+      slidesPerView: {{ section.settings.mobile_columns }},
+      spaceBetween: 20,
+      loop: true,
+      pagination: { el: '.swiper-pagination', clickable: true },
+      breakpoints: {
+        750: { slidesPerView: {{ section.settings.desktop_columns }} }
+      }
+    });
+  });
+*/
+  
+document.addEventListener('DOMContentLoaded', function() {
+  const swiperElement = document.querySelector('.testimonial-swiper-{{ section.id }}');
+  
+  // 1. Initialize Swiper and store it in a constant
+  const testimonialSwiper = new Swiper(swiperElement, {
+    slidesPerView: {{ section.settings.mobile_columns }},
+    spaceBetween: 20,
+    grabCursor: true,
+    loop: true,
+    speed: 3000,  
+    autoplay: {
+      delay: 0,  
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
+    pagination: { el: '.swiper-pagination', clickable: true },
+    breakpoints: {
+      750: { slidesPerView: {{ section.settings.desktop_columns }} }
+    }
+  });
+
+  const allVideoWrappers = document.querySelectorAll('[data-video-wrapper]');
+
+  allVideoWrappers.forEach(wrapper => {
+    const video = wrapper.querySelector('video');
+    
+    if (video) {
+      wrapper.addEventListener('click', () => {
+        if (video.paused) {
+          // --- NEW: STOP SWIPER AUTOPLAY WHEN VIDEO STARTS ---
+          if (testimonialSwiper.autoplay) {
+            testimonialSwiper.autoplay.stop();
+          }
+
+          // Pause all other videos
+          allVideoWrappers.forEach(otherWrapper => {
+            const otherVid = otherWrapper.querySelector('video');
+            if (otherVid && otherVid !== video) {
+              otherVid.pause();
+              otherWrapper.classList.remove('video-is-playing');
+            }
+          });
+
+          video.play();
+          wrapper.classList.add('video-is-playing');
+        } else {
+          video.pause();
+          wrapper.classList.remove('video-is-playing');
+          
+          // --- OPTIONAL: RESUME SWIPER IF YOU WANT ---
+          // testimonialSwiper.autoplay.start();
+        }
+      });
+
+      // Reset UI if video ends
+      video.addEventListener('ended', () => {
+        wrapper.classList.remove('video-is-playing');
+        // Resume slider when video finishes
+        if (testimonialSwiper.autoplay) {
+          testimonialSwiper.autoplay.start();
+        }
+      });
+    }
+  });
+
+  // Pause videos on slide change (manual swipe)
+  testimonialSwiper.on('slideChange', function () {
+    allVideoWrappers.forEach(wrapper => {
+      const video = wrapper.querySelector('video');
+      if (video) {
+        video.pause();
+        wrapper.classList.remove('video-is-playing');
+      }
+    });
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Noir Testimonial",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "Customer Reviews",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Small"
+        },
+        {
+          "value": "h1",
+          "label": "Medium"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "text_alignment",
+      "id": "heading_alignment",
+      "label": "Heading Alignment",
+      "default": "center"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 90,
+      "step": 10,
+      "unit": "%",
+      "label": "Overlay Opacity",
+      "default": 0
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_pagination",
+      "label": "Show Pagination",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "desktop_columns",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "label": "Desktop Columns",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "mobile_columns",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "label": "Mobile Columns",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 52
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Normal Review",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Customer Image"
+        },
+        {
+          "type": "textarea",
+          "id": "message",
+          "label": "Message",
+          "default": "Great service!"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Customer Name",
+          "default": "John Doe"
+        },
+        {
+          "type": "text",
+          "id": "subtext",
+          "label": "Subtext",
+          "default": "New York"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "label": "Stars",
+          "default": 5
+        }
+      ]
+    },
+    {
+      "type": "video_review",
+      "name": "Video Review (Full)",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video_file",
+          "label": "Video File"
+        }
+      ]
+    },
+    {
+      "type": "image_review",
+      "name": "Image Review (Split)",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Review Image"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "KASHISH"
+        },
+        {
+          "type": "text",
+          "id": "subtext",
+          "label": "Role",
+          "default": "ANALYST"
+        },
+        {
+          "type": "text",
+          "id": "age",
+          "label": "Age",
+          "default": "25"
+        },
+        {
+          "type": "textarea",
+          "id": "message",
+          "label": "Review Text",
+          "default": "The quality is unmatched. Truly a premium experience."
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "label": "Stars",
+          "default": 5
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Noir Testimonial Slider",
+      "blocks": [
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "video_review"
+        },
+        {
+          "type": "image_review"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,425 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "noir_banner_DkpqPA": {
+      "type": "noir-banner",
+      "blocks": {
+        "heading_aXzcgL": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Gift of Mindfulness",
+            "text_style": "default",
+            "heading_size": "h1"
+          }
+        },
+        "text_rG6mXa": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Transforming corporate gifting into a meaningful experience of well-being.</p><p>At DAIVA Drishti, corporate gifting goes beyond products.</p><p>It becomes a thoughtful experience — one that inspires calm, intention, and everyday moments of mindfulness.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_aXzcgL",
+        "text_rG6mXa"
+      ],
+      "custom_css": [
+        ".button {background: transparent;}",
+        "p {font-weight: 400; line-height: 1.25; font-size: 18px !important;}",
+        ".noir-banner .banner__content {align-items: center;}",
+        "@media screen and (max-width: 989px) {.noir-banner .banner__content {min-height: 55rem !important; align-items: end; } p {margin: 0 auto; }}"
+      ],
+      "name": "Noir Banner",
+      "settings": {
+        "image": "shopify://shop_images/Gift_of_Mindfulness_1360_x_768_px_41048f2a-9b80-404b-97f0-b99e76ee50da.jpg",
+        "image_mobile": "shopify://shop_images/Gift_of_Mindfulness_832_x_1248px_5d004ba3-104d-4c9f-a8a8-134d18a016ce.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "top-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-4",
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "rich_text_x7zKFB": {
+      "type": "rich-text",
+      "blocks": {
+        "text_zdpADw": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our corporate gifting editions are thoughtfully crafted into three curated edits — designed to suit different corporate moments, team sizes, and gifting needs. From employee appreciation to leadership recognition and premium corporate gifting, each edit is created to deliver a meaningful and elevated gifting experience.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_zdpADw"
+      ],
+      "custom_css": [
+        ".rich-text__wrapper {width: 100%;}",
+        "p {line-height: 1.5;}"
+      ],
+      "name": "Rich Text with BG & Arrow",
+      "settings": {
+        "background_image": "shopify://shop_images/Dark_Textured_Water.png",
+        "show_arrow": false,
+        "arrow_color": "#000000",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1b41725b-bbc1-4dea-a870-10c67130b008",
+        "full_width": true,
+        "padding_top": 68,
+        "padding_bottom": 68
+      }
+    },
+    "noir_grid_NBTFPa": {
+      "type": "noir-grid",
+      "blocks": {
+        "grid_item_jRbVpp": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Daiva_Signature_Hamper.png",
+            "content_position": "below",
+            "title": "Prestige Gifting Collection",
+            "block_heading_size": "h3",
+            "content": "",
+            "link": "shopify://products/prestige-gifting-collection"
+          }
+        },
+        "grid_item_wWJYmV": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/DaivaPremiumHamper.png",
+            "content_position": "below",
+            "title": "Woody & Sacred",
+            "block_heading_size": "h3",
+            "content": "",
+            "link": "shopify://products/whispering-oud-collection"
+          }
+        },
+        "grid_item_3eEcGx": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Corporate_Gift_Hamper_3.png",
+            "content_position": "below",
+            "title": "Timeless Aura Gift Set",
+            "block_heading_size": "h3",
+            "content": "",
+            "link": "shopify://products/timeless-aura-gift-set"
+          }
+        },
+        "grid_item_hqkXen": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Upscaled_Image.png",
+            "content_position": "below",
+            "title": "Daiva Aura Collection",
+            "block_heading_size": "h3",
+            "content": "",
+            "link": "shopify://products/daiva-aura-collection"
+          }
+        }
+      },
+      "block_order": [
+        "grid_item_jRbVpp",
+        "grid_item_wWJYmV",
+        "grid_item_3eEcGx",
+        "grid_item_hqkXen"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".noir-grid__title {text-align: center;}"
+      ],
+      "name": "Noir Grid",
+      "settings": {
+        "title": "Our Signature Hampers",
+        "heading_size": "h1",
+        "show_arrow": false,
+        "background_image": "shopify://shop_images/DD-BG.png",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-c87bf4f7-bf22-4081-9f50-735b1918e5b6",
+        "padding_top": 36,
+        "padding_bottom": 48,
+        "enable_mobile_slider": true
+      }
+    },
+    "featured_collection_HBpehG": {
+      "type": "featured-collection",
+      "disabled": true,
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "gift-card",
+        "products_to_show": 4,
+        "title": "",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 3,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-c87bf4f7-bf22-4081-9f50-735b1918e5b6",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "noir_manual_product_eWkmHU": {
+      "type": "noir-manual-product",
+      "name": "Noir Manual Products",
+      "settings": {
+        "product_list": [
+          "the-alchemy-edit™️-complete-ritual",
+          "the-alchemy-edit™️-essential-ritual",
+          "the-alchemy-edit-signature-ritual"
+        ],
+        "title": "",
+        "heading_size": "h1",
+        "description": "",
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "color_scheme": "scheme-c87bf4f7-bf22-4081-9f50-735b1918e5b6",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "noir_image_with_text_NF6qRT": {
+      "type": "noir-image-with-text",
+      "blocks": {
+        "heading_9WNLcx": {
+          "type": "heading",
+          "settings": {
+            "heading": "Corporates (For Offices & HR Teams)",
+            "heading_size": "h1"
+          }
+        },
+        "text_ETJrpL": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Thoughtfully curated gifting solutions designed to strengthen professional relationships and celebrate milestones. From employee appreciation to client gifting, our hampers reflect your brand’s values with elegance, consistency, and attention to detail.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_9WNLcx",
+        "text_ETJrpL"
+      ],
+      "disabled": true,
+      "name": "Noir Image with Text",
+      "settings": {
+        "image": "shopify://shop_images/Corporates_Section.png",
+        "layout": "image_first",
+        "content_alignment": "left",
+        "vertical_alignment": "center",
+        "full_width": true,
+        "show_arrow": false,
+        "color_scheme": "scheme-c87bf4f7-bf22-4081-9f50-735b1918e5b6",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "noir_image_with_text_JKG9Th": {
+      "type": "noir-image-with-text",
+      "blocks": {
+        "heading_X3z687": {
+          "type": "heading",
+          "settings": {
+            "heading": "Hotels & Boutiques",
+            "heading_size": "h1"
+          }
+        },
+        "text_m3xCCh": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Enhance your guest experience with refined fragrance and gifting solutions. Our collections are crafted to complement luxury spaces—perfect for in-room experiences, boutique retail, and memorable takeaways that leave a lasting impression.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_X3z687",
+        "text_m3xCCh"
+      ],
+      "disabled": true,
+      "name": "Noir Image with Text",
+      "settings": {
+        "image": "shopify://shop_images/13374.jpg",
+        "layout": "image_last",
+        "content_alignment": "left",
+        "vertical_alignment": "center",
+        "full_width": true,
+        "show_arrow": false,
+        "color_scheme": "scheme-c87bf4f7-bf22-4081-9f50-735b1918e5b6",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "noir_image_with_text_6NtaTq": {
+      "type": "noir-image-with-text",
+      "blocks": {
+        "heading_mQxy67": {
+          "type": "heading",
+          "settings": {
+            "heading": "Looking for Something More Personalized?",
+            "heading_size": "h1"
+          }
+        },
+        "text_gfzY4N": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Every company is different — and so are your gifting needs.</p><p>If you’re looking to create personalized curated hampers for your team, clients, or special occasions, we’d be happy to create something tailored specifically for you.</p><p>Whether it’s:</p><ul><li>Custom combinations</li><li>Budget-based gifting</li><li>Event-specific hampers</li><li>Personalized notes or branding</li></ul><p>Our team will work closely with you to create thoughtful gifting experiences aligned with your company needs.</p><p>Get in touch with us for corporate enquiries and custom gifting solutions.</p>"
+          }
+        },
+        "button_rfd9Ap": {
+          "type": "button",
+          "settings": {
+            "button_label": "Corporate Inquiry",
+            "button_link": "#",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_mQxy67",
+        "text_gfzY4N",
+        "button_rfd9Ap"
+      ],
+      "custom_css": [
+        "p {font-size: 16px;}",
+        ".rich-text__buttons {justify-content: start;}",
+        ".button {font-size: 14px;}",
+        ".noir-iwt__image-container img {object-fit: none;}",
+        "@media (max-width: 768px) {.rich-text__buttons {justify-content: center; } .noir-iwt__image-container img {object-fit: cover;}}"
+      ],
+      "name": "Noir Image with Text",
+      "settings": {
+        "image": "shopify://shop_images/DAIVA_1600x1200_62b1c1cc-3060-4ecd-88fc-69ef89fe7a70.jpg",
+        "layout": "image_first",
+        "content_alignment": "left",
+        "vertical_alignment": "center",
+        "full_width": true,
+        "show_arrow": false,
+        "color_scheme": "scheme-1b41725b-bbc1-4dea-a870-10c67130b008",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_fmeFWY": {
+      "type": "custom-liquid",
+      "custom_css": [
+        ".globo-form-app .panels {z-index: 0;}",
+        ".gfb__footer.wizard__footer {padding: 0px 10px;}",
+        "@media (max-width: 768px) {.panel.movingIn.block-container {padding: 0 7px; }}"
+      ],
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"globo-formbuilder\" data-id=\"MTM5OTEx\"></div>",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_3xczRj": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_b3jbix": {
+          "type": "heading",
+          "settings": {
+            "heading": "PERSONALISED GIFTING",
+            "heading_size": "h1"
+          }
+        },
+        "text_qdzVjF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>CREATE BESPOKE HAMPERS WITH EASE. MIX AND MATCH FROM OUR CURATED COLLECTION AND LET US HANDLE THE FINISHING TOUCHES WITH PREMIUM PACKAGING AND SEAMLESS DELIVERY.</p>"
+          }
+        },
+        "button_LVxVQM": {
+          "type": "button",
+          "settings": {
+            "button_label": "Create Your Own",
+            "button_link": "shopify://products/bundle-builder-1",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_b3jbix",
+        "text_qdzVjF",
+        "button_LVxVQM"
+      ],
+      "custom_css": [
+        ".rich-text__wrapper {width: 100%;}",
+        "p {line-height: 1.5;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "show_arrow": false,
+        "arrow_color": "#000000",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1b41725b-bbc1-4dea-a870-10c67130b008",
+        "full_width": true,
+        "padding_top": 56,
+        "padding_bottom": 72
+      }
+    }
+  },
+  "order": [
+    "main",
+    "noir_banner_DkpqPA",
+    "rich_text_x7zKFB",
+    "noir_grid_NBTFPa",
+    "featured_collection_HBpehG",
+    "noir_manual_product_eWkmHU",
+    "noir_image_with_text_NF6qRT",
+    "noir_image_with_text_JKG9Th",
+    "noir_image_with_text_6NtaTq",
+    "custom_liquid_fmeFWY",
+    "rich_text_3xczRj"
+  ]
+}

@@ -1,0 +1,389 @@
+
+
+{{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  #Banner-{{ section.id }}::after {
+    opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
+  }
+
+  /* Video/Image Layout Logic */
+  #Banner-{{ section.id }} .banner__media-video {
+    width: 100%; height: 100%; position: absolute; top: 0; left: 0; object-fit: cover;
+  }
+
+  {%- if section.settings.image_height == 'adapt' -%}
+    #Banner-{{ section.id }}::before {
+      content: ''; display: block;
+      padding-bottom: {% if section.settings.video != blank %}56.25%{% else %}{{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%{% endif %};
+    }
+  {%- endif -%}
+
+  /* CSS for Initial Hidden State (Prevents flicker before JS loads) */
+  .noir-animate-item {
+    opacity: 0;
+    visibility: hidden;
+  }
+  p.banner_content {
+    background: linear-gradient(180deg, #f2e4ad, #f3dbc4 45%, #cfb37b 75%, #f3dbc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-size: 14px;
+  }
+  .banner__custom-html p {
+    margin: 0;
+    background: linear-gradient(180deg, #f2e4ad, #f3dbc4 45%, #cfb37b 75%, #f3dbc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-size: 16px;
+    text-transform: uppercase;
+    line-height: normal;
+    padding-top: 10px;
+}
+
+  @media(max-width:768px){
+    /* h2.banner__heading.brand-heading.h0 {
+        display: none;
+    }
+    .noir-animate-item h2{
+      display:none;
+    }
+    .noir-animate-item .banner__custom-html{
+      display:none;
+    }  */
+
+    .banner__custom-html p {
+      font-size: 14px;
+    }
+  }
+{%- endstyle -%}
+
+<div id="Banner-{{ section.id }}" 
+     class="noir-banner banner banner--{{ section.settings.image_height }} 
+     banner--content-align-{{ section.settings.desktop_content_alignment }} 
+     banner--content-align-mobile-{{ section.settings.mobile_content_alignment }}
+     {% if section.settings.show_text_below %} banner--mobile-bottom{%- endif -%} 
+     {% if section.settings.show_text_box == false %} banner--desktop-transparent{% endif %}">
+  
+  <div class="banner__media media">
+    {%- if section.settings.video != blank -%}
+      {{ section.settings.video | video_tag: autoplay: true, loop: true, muted: true, controls: false, class: 'banner__media-video' }}
+    {%- elsif section.settings.image != blank -%}
+      {%- liquid
+        assign image_class = ''
+        if section.settings.image_mobile != blank
+          assign image_class = 'small-hide'
+        endif
+      -%}
+      {{ section.settings.image | image_url: width: 3840 | image_tag: width: section.settings.image.width, class: image_class, widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840', fetchpriority: 'high' }}
+      {%- if section.settings.image_mobile != blank -%}
+        {{ section.settings.image_mobile | image_url: width: 750 | image_tag: width: section.settings.image_mobile.width, class: 'medium-hide large-up-hide', widths: '375, 550, 750' }}
+      {%- endif -%}
+    {%- else -%}
+      {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- endif -%}
+  </div>
+
+  <div class="banner__content banner__content--{{ section.settings.desktop_content_position }} page-width">
+    <div class="banner__box content-container color-{{ section.settings.color_scheme }} gradient">
+      {%- for block in section.blocks -%}
+        <div class="noir-animate-item" {{ block.shopify_attributes }}>
+          {%- case block.type -%}
+            {%- when 'heading' -%}
+              <h2 class="banner__heading {{ block.settings.text_style }} {{ block.settings.heading_size }}">
+                {{ block.settings.heading | newline_to_br }}
+              </h2>
+            {%- when 'text' -%}
+              <div class="banner__text rte {{ block.settings.text_style }} 
+                {{ block.settings.text }}
+              </div>
+            {%- when 'html' -%}
+              <div class="banner__custom-html">
+                {{ block.settings.custom_html }}
+              </div>
+            {%- when 'liquid' -%}
+              <div class="banner__custom-html">
+                {{ block.settings.custom_html }}
+              </div> 
+            {%- when 'buttons' -%}
+              <div class="banner__buttons">
+                {%- if block.settings.button_label_1 != blank -%}
+                  <a href="{{ block.settings.button_link_1 }}" class="button {% if block.settings.button_style_secondary_1 %}button--secondary{% else %}button--primary{% endif %}">
+                    {{- block.settings.button_label_1 | escape -}}
+                  </a>
+                {%- endif -%}
+              </div>
+          {%- endcase -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const banner = document.querySelector("#Banner-{{ section.id }}");
+    const items = banner.querySelectorAll(".noir-animate-item");
+
+    // 1. Set initial state immediately
+    gsap.set(items, { 
+      y: 60, 
+      opacity: 0, 
+      visibility: 'hidden' 
+    });
+
+    const triggerAnimation = () => {
+      gsap.to(items, {
+        y: 0,
+        opacity: 1,
+        visibility: 'visible',
+        duration: 1.4,
+        stagger: 0.15,
+        ease: "expo.out",
+        overwrite: true
+      });
+    };
+
+    const resetAnimation = () => {
+      gsap.set(items, {
+        y: 60,
+        opacity: 0,
+        visibility: 'hidden'
+      });
+    };
+
+    // 2. LOGIC FOR PRELOADER VS SCROLL
+    // We wait 6000ms (matching your preloader Step 4) to check if we should play
+    setTimeout(() => {
+      const rect = banner.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight;
+      
+      if (isVisible) {
+        triggerAnimation();
+      }
+    }, 6000); 
+
+    // 3. ScrollTrigger for "Each Scroll" (Handles the rest of the site)
+    ScrollTrigger.create({
+      trigger: banner,
+      start: "top 85%",
+      onEnter: () => {
+        // Only trigger on scroll if the preloader is gone
+        if(!document.body.classList.contains('loading')) {
+          triggerAnimation();
+        }
+      },
+      onEnterBack: triggerAnimation, 
+      onLeave: resetAnimation,      
+      onLeaveBack: resetAnimation   
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Noir Banner",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video (Priority over images)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Mobile Image (Optional)"
+    },
+    {
+      "type": "range",
+      "id": "image_overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "Overlay opacity",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "image_height",
+      "options": [
+        { "value": "adapt", "label": "Adapt to video/image" },
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" }
+      ],
+      "default": "medium",
+      "label": "Banner height"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Content Settings"
+    },
+    {
+      "type": "select",
+      "id": "desktop_content_position",
+      "options": [
+        { "value": "top-left", "label": "Top left" },
+        { "value": "top-center", "label": "Top center" },
+        { "value": "top-right", "label": "Top right" },
+        { "value": "middle-left", "label": "Middle left" },
+        { "value": "middle-center", "label": "Middle center" },
+        { "value": "middle-right", "label": "Middle right" },
+        { "value": "bottom-left", "label": "Bottom left" },
+        { "value": "bottom-center", "label": "Bottom center" },
+        { "value": "bottom-right", "label": "Bottom right" }
+      ],
+      "default": "middle-center",
+      "label": "Content Position"
+    },
+    {
+      "type": "select",
+      "id": "desktop_content_alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center",
+      "label": "Text Alignment"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_text_box",
+      "default": true,
+      "label": "Show container on desktop"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Layout"
+    },
+    {
+      "type": "select",
+      "id": "mobile_content_alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center",
+      "label": "Mobile Text Alignment"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_text_below",
+      "default": true,
+      "label": "Show content below images on mobile"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Heading",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "heading",
+          "default": "Noir Banner\Headline",
+          "label": "Heading (Use Enter for line breaks)"
+        },
+        { "type": "select", "id": "text_style", "options": [
+          { "value": "default", "label": "default" },
+          { "value": "brand-heading", "label": "brand-heading" }
+        ], "default": "default", "label": "Text Style" },
+        { "type": "select", "id": "heading_size", "options": [
+          { "value": "h2", "label": "Small" },
+          { "value": "h1", "label": "Medium" },
+          { "value": "h0", "label": "Large" },
+          { "value": "hxl", "label": "Extra Large" }
+        ], "default": "h1", "label": "Heading size" }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "limit": 2,
+      "settings": [
+        { 
+          "type": "richtext", 
+          "id": "text", 
+          "default": "<p>Give customers details about your shop.</p>", 
+          "label": "Description" 
+        },
+        { "type": "select", "id": "text_style", "options": [
+          { "value": "body", "label": "Body" },
+          { "value": "subtitle", "label": "Subtitle" },
+          { "value": "caption-with-letter-spacing", "label": "Uppercase Caption" }
+        ], "default": "body", "label": "Text Style" }
+      ]
+    },
+    {
+      "type": "html",
+      "name": "Custom HTML",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "html",
+          "id": "custom_html",
+          "label": "Custom HTML"
+        }
+      ]
+    },
+    {
+      "type": "liquid",
+      "name": "Custom Liquid",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "liquid",
+          "id": "custom_html",
+          "label": "Custom Code"
+        }
+      ]
+    },
+    {
+      "type": "buttons",
+      "name": "Buttons",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "button_label_1", "default": "Button label", "label": "First button label" },
+        { "type": "url", "id": "button_link_1", "label": "First button link" },
+        { "type": "checkbox", "id": "button_style_secondary_1", "default": false, "label": "Use outline button style" },
+        { "type": "text", "id": "button_label_2", "label": "Second button label" },
+        { "type": "url", "id": "button_link_2", "label": "Second button link" },
+        { "type": "checkbox", "id": "button_style_secondary_2", "default": false, "label": "Use secondary style" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Noir Banner",
+      "blocks": [
+        { "type": "heading" },
+        { "type": "text" },
+        { "type": "buttons" }
+      ]
+    }
+  ]
+}
+{% endschema %}

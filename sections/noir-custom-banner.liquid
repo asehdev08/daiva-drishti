@@ -1,0 +1,102 @@
+<div class="noir-ncbd">
+    <!-- Desktop Image -->
+    <img class="noir-ncbd-desktop" src="{{ section.settings.image1 | img_url:'master' }}" alt="The Daily Shift Affirmation Cards">
+    <!-- Mobile Image -->
+    <img class="noir-ncbd-mobile" src="{{ section.settings.image2 | img_url:'master' }}" alt="The Daily Shift Affirmation Cards">
+
+  {% if section.settings.buttontext != blank %}
+  <div class="daily-shift-content">
+    <a href="{{ section.settings.url }}" class="daily-shift-btn">
+      {{ section.settings.buttontext }}
+    </a>
+  </div>
+  {% endif %}
+</div>
+
+
+<style>
+.noir-ncbd {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.noir-ncbd picture,
+.noir-ncbd img {
+  display: block;
+  width: 100%;
+}
+
+.daily-shift-content {
+    position: absolute;
+    left: 7%;
+    bottom: 12%;
+    border: 1px solid rgb(207, 179, 123);
+    background: #00000070;
+    padding: 5px 20px;
+}
+
+.daily-shift-btn {
+    background: linear-gradient(180deg, #f2e4ad, #f3dbc4 45%, #cfb37b 75%, #f3dbc4);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-size: 14px;
+    line-height: normal;
+}
+
+img.noir-ncbd-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    img.noir-ncbd-mobile {
+        display: block;
+    }
+    img.noir-ncbd-desktop {
+        display: none;
+    }
+
+  .daily-shift-content {
+    left: 50%;
+    bottom: 8%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+}
+</style>
+
+
+{% schema %}  
+   {
+       "name": "Noir Custom Banner",
+       "settings": [
+        {
+            "type": "image_picker",
+            "id": "image1",
+            "label": "Desktop Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "image2",
+            "label": "Mobile Image"
+        },
+        {
+            "type": "text",
+            "id": "buttontext",
+            "label": "Button Text",
+            "default": "EXPLORE"
+        },
+        {
+            "type": "url",
+            "id": "url",
+            "label": "Button URL"
+        }
+       ],
+       "presets": [
+           {
+               "name": "Noir Custom Banner"
+           }
+       ]
+   }
+{% endschema %}

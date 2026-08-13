@@ -1,0 +1,173 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_x7zKFB": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_CiK6nq": {
+          "type": "heading",
+          "settings": {
+            "heading": "About Us",
+            "heading_size": "h1"
+          }
+        },
+        "text_zdpADw": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Driven by a passion for health and wellness, we’ve dedicated ourselves to sourcing the best natural ingredients and crafting products that truly supportyour well-being.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_CiK6nq",
+        "text_zdpADw"
+      ],
+      "name": "Rich Text with BG & Arrow",
+      "settings": {
+        "show_arrow": false,
+        "arrow_color": "#000000",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-c87bf4f7-bf22-4081-9f50-735b1918e5b6",
+        "full_width": true,
+        "padding_top": 68,
+        "padding_bottom": 68
+      }
+    },
+    "image_with_text_f46aYx": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_hdRGB9": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our Philosophy",
+            "heading_size": "h1"
+          }
+        },
+        "text_LxRj33": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_hdRGB9",
+        "text_LxRj33"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Gemini_Generated_Image_ysy683ysy683ysy6.png",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-1b41725b-bbc1-4dea-a870-10c67130b008",
+        "color_scheme": "scheme-c87bf4f7-bf22-4081-9f50-735b1918e5b6",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_zWAyzX": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_rGjtMt": {
+          "type": "heading",
+          "settings": {
+            "heading": "Modern Rituals",
+            "heading_size": "h1"
+          }
+        },
+        "text_d3FMFL": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Driven by a passion for health and wellness, we’ve dedicated ourselves to sourcing the best natural ingredients and crafting products that truly supportyour well-being.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_rGjtMt",
+        "text_d3FMFL"
+      ],
+      "name": "Rich Text with BG & Arrow",
+      "settings": {
+        "background_image": "shopify://shop_images/Dark_Textured_Water.png",
+        "show_arrow": false,
+        "arrow_color": "#000000",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-763d6e6f-86f3-489f-913c-57e9c7015165",
+        "full_width": true,
+        "padding_top": 68,
+        "padding_bottom": 68
+      }
+    },
+    "image_with_text_DFYKdG": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_TD4QH8": {
+          "type": "heading",
+          "settings": {
+            "heading": "Founder's Note",
+            "heading_size": "h1"
+          }
+        },
+        "text_YWXqR8": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_TD4QH8",
+        "text_YWXqR8"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/IMG_8458.png",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-c87bf4f7-bf22-4081-9f50-735b1918e5b6",
+        "color_scheme": "scheme-1b41725b-bbc1-4dea-a870-10c67130b008",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_x7zKFB",
+    "image_with_text_f46aYx",
+    "rich_text_zWAyzX",
+    "image_with_text_DFYKdG"
+  ]
+}

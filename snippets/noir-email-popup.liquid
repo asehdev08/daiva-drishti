@@ -1,0 +1,222 @@
+{% comment %}
+  Shopify Email Popup: Noir Aesthetic
+  - Appears after 10 seconds
+  - Shows 2 times per day max
+  - AJAX submission (no page reload)
+{% endcomment %}
+
+<style>
+  :root {
+    --popup-bg: #ffffff;
+    --popup-accent: #000000;
+    --popup-text: #1a1a1a;
+  }
+
+  #NoirPopupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    backdrop-filter: blur(4px);
+  }
+
+  .noir-popup-container {
+    background: var(--popup-bg);
+    width: 90%;
+    max-width: 850px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    animation: fadeInPopup 0.5s ease-out;
+  }
+
+  @keyframes fadeInPopup {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .noir-popup-image {
+    flex: 1;
+    display: flex;
+  }
+
+  .noir-popup-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .noir-popup-content {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    position: relative;
+  }
+
+  .noir-popup-logo {
+    max-width: 120px;
+    margin-bottom: 25px;
+  }
+
+  .noir-popup-content h2 {
+    font-size: 28px;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--popup-accent);
+  }
+
+  .noir-popup-content p {
+    font-size: 15px;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    color: var(--popup-text);
+  }
+
+  .noir-popup-form { width: 100%; }
+
+  .noir-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .noir-popup-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+    outline: none;
+  }
+
+  .noir-popup-submit {
+    background: var(--popup-accent);
+    color: #fff;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: opacity 0.3s;
+  }
+
+  .noir-popup-submit:hover { opacity: 0.9; }
+
+  .noir-thanks-msg {
+    display: none;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #085041; /* Using your signature green for success */
+  }
+
+  .noir-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    line-height: 1;
+    color: var(--popup-accent);
+        z-index: 999;
+  }
+
+  @media (max-width: 767px) {
+    .noir-popup-container { flex-direction: column; max-height: 90vh; overflow-y: auto; }
+    .noir-popup-image { display: none; } /* Hide image on mobile for better focus */
+    .noir-popup-content { padding: 30px 20px; }
+  }
+</style>
+
+<div id="NoirPopupOverlay">
+  <div class="noir-popup-container">
+    <span class="noir-close" onclick="closeNoirPopup()">&times;</span>
+    
+    <div class="noir-popup-image">
+      {% comment %} Replace with your image URL {% endcomment %}
+      <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1000" alt="Join our community">
+    </div>
+
+    <div class="noir-popup-content">
+      <img src="https://cdn.shopify.com/s/files/1/0123/4567/8910/files/logo.png" alt="Logo" class="noir-popup-logo">
+      <h2>Join the Club</h2>
+      <p>Subscribe to receive updates, access to exclusive deals, and more.</p>
+
+      {% form 'customer', class: 'noir-popup-form', id: 'NoirContactForm' %}
+        <input type="hidden" name="contact[tags]" value="prospect, newsletter">
+        <div class="noir-input-group">
+          <input type="email" name="contact[email]" class="noir-popup-input" placeholder="Email Address" required>
+          <button type="submit" class="noir-popup-submit">Subscribe</button>
+        </div>
+        <div class="noir-thanks-msg">Thank you for subscribing!</div>
+      {% endform %}
+    </div>
+  </div>
+</div>
+
+<script>
+  function getCookie(name) {
+    let value = `; ${document.cookie}`;
+    let parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+  }
+
+  function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+      let date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+  }
+
+  function closeNoirPopup() {
+    document.getElementById('NoirPopupOverlay').style.display = 'none';
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    // 2 times per day logic
+    const today = new Date().toISOString().slice(0, 10);
+    const cookieName = 'noir_popup_count_' + today;
+    let viewCount = parseInt(getCookie(cookieName) || 0);
+
+    if (viewCount < 2) {
+      setTimeout(() => {
+        document.getElementById('NoirPopupOverlay').style.display = 'flex';
+        setCookie(cookieName, viewCount + 1, 1);
+      }, 10000); // 10 second delay
+    }
+
+    // AJAX Form Submission
+    const form = document.getElementById('NoirContactForm');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      
+      fetch('/contact', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(() => {
+        form.querySelector('.noir-input-group').style.display = 'none';
+        form.querySelector('.noir-thanks-msg').style.display = 'block';
+        // Auto-close after 3 seconds
+        setTimeout(closeNoirPopup, 3000);
+      })
+      .catch(err => console.error('Error submitting form:', err));
+    });
+  });
+</script>

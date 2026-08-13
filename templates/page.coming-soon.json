@@ -1,0 +1,102 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "newsletter_tUBUmn": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_8CBWPD": {
+          "type": "heading",
+          "settings": {
+            "heading": "Be On Our List",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_3wxKgn": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Be the first to discover our  newest launches!</p>"
+          }
+        },
+        "email_form_9bbtFr": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_8CBWPD",
+        "paragraph_3wxKgn",
+        "email_form_9bbtFr"
+      ],
+      "custom_css": [
+        ".newsletter.center {display: block;}",
+        "@media (max-width: 768px) {.newsletter.center {display: none; }}"
+      ],
+      "name": "t:sections.newsletter.presets.name",
+      "settings": {
+        "color_scheme": "scheme-3",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "newsletter_Pb9cw6": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_VV7gKd": {
+          "type": "heading",
+          "settings": {
+            "heading": "Be On Our List",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_PaNVha": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Be the first to discover our  <br/>newest launches!</p>"
+          }
+        },
+        "email_form_M7NiJU": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_VV7gKd",
+        "paragraph_PaNVha",
+        "email_form_M7NiJU"
+      ],
+      "custom_css": [
+        ".newsletter.center {display: none;}",
+        "@media (max-width: 768px) {.newsletter.center {display: block; }}"
+      ],
+      "name": "t:sections.newsletter.presets.name",
+      "settings": {
+        "color_scheme": "scheme-3",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "newsletter_tUBUmn",
+    "newsletter_Pb9cw6"
+  ]
+}

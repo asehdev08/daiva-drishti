@@ -1,0 +1,373 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "noir_custom_banner_aijAM8": {
+      "type": "noir-custom-banner",
+      "name": "Noir Custom Banner",
+      "settings": {
+        "image1": "shopify://shop_images/PEACE_DESKTOP_BANNER_1600_BY_622_3.jpg",
+        "image2": "shopify://shop_images/PEACE_880_x_1168.png",
+        "buttontext": "",
+        "url": ""
+      }
+    },
+    "noir_banner_y6gzH8": {
+      "type": "noir-banner",
+      "blocks": {
+        "liquid_geGjmC": {
+          "type": "liquid",
+          "settings": {
+            "custom_html": "<h2 class=\"banner__heading brand-heading h0\">{{ collection.title }} </h2>"
+          }
+        },
+        "liquid_eazhTL": {
+          "type": "liquid",
+          "settings": {
+            "custom_html": "{{ collection.description }}"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_geGjmC",
+        "liquid_eazhTL"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "@media screen and (max-width: 989px) {.noir-banner .banner__content {min-height: 48rem !important; align-items: end; }}",
+        ".noir-animate-item {margin: 0;}",
+        "@media (max-width: 768px) {p {display: none; }}"
+      ],
+      "name": "Noir Banner",
+      "settings": {
+        "video": "{{ collection.metafields.custom.banner.value }}",
+        "image": "shopify://shop_images/PEACE_DESKTOP_BANNER_1600_BY_622_3.jpg",
+        "image_mobile": "shopify://shop_images/PEACE_880_x_1168.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "bottom-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-5",
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "rich_text_M4q4mW": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_P3QiPh": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ collection.title }}",
+            "heading_size": "h1"
+          }
+        },
+        "text_F7gfqV": {
+          "type": "text",
+          "settings": {
+            "text": "{{ collection.description }}"
+          }
+        }
+      },
+      "block_order": [
+        "heading_P3QiPh",
+        "text_F7gfqV"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "background_image": "shopify://shop_images/DD4.png",
+        "show_arrow": false,
+        "arrow_color": "#000000",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1b41725b-bbc1-4dea-a870-10c67130b008",
+        "full_width": true,
+        "padding_top": 56,
+        "padding_bottom": 72
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 3,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-763d6e6f-86f3-489f-913c-57e9c7015165",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": false,
+        "filter_type": "horizontal",
+        "enable_sorting": false,
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "noir_custom_banner_t4bzAP": {
+      "type": "noir-custom-banner",
+      "name": "Noir Custom Banner",
+      "settings": {
+        "image1": "shopify://shop_images/WhatsApp_Image_2026-06-01_at_4.20.53_PM.jpg",
+        "image2": "shopify://shop_images/JOY_880_x_1168.png",
+        "buttontext": "",
+        "url": ""
+      }
+    },
+    "noir_banner_anAGhP": {
+      "type": "noir-banner",
+      "blocks": {
+        "liquid_m4yAAG": {
+          "type": "liquid",
+          "settings": {
+            "custom_html": "<h2 class=\"banner__heading brand-heading h0\">{{ collection.title }} </h2>"
+          }
+        },
+        "liquid_hVVW7P": {
+          "type": "liquid",
+          "settings": {
+            "custom_html": "{{ collection.description }}"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_m4yAAG",
+        "liquid_hVVW7P"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "@media screen and (max-width: 989px) {.noir-banner .banner__content {min-height: 48rem !important; align-items: end; }}",
+        ".noir-animate-item {margin: 0;}",
+        "@media (max-width: 768px) {p {display: none; }}"
+      ],
+      "name": "Noir Banner",
+      "settings": {
+        "video": "{{ collection.metafields.custom.banner.value }}",
+        "image": "shopify://shop_images/WhatsApp_Image_2026-06-01_at_4.20.53_PM.jpg",
+        "image_mobile": "shopify://shop_images/JOY_880_x_1168.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "bottom-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-5",
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "featured_collection_QnXkG6": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "joy",
+        "products_to_show": 25,
+        "title": "",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 3,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "noir_custom_banner_dGimCQ": {
+      "type": "noir-custom-banner",
+      "name": "Noir Custom Banner",
+      "settings": {
+        "image1": "shopify://shop_images/LOVE_DESKTOP_BANNER_1600_BY_622_3.jpg",
+        "image2": "shopify://shop_images/Love_880_x_1168.png",
+        "buttontext": "",
+        "url": ""
+      }
+    },
+    "noir_banner_rhH7ef": {
+      "type": "noir-banner",
+      "blocks": {
+        "liquid_CUymH8": {
+          "type": "liquid",
+          "settings": {
+            "custom_html": "<h2 class=\"banner__heading brand-heading h0\">{{ collection.title }} </h2>"
+          }
+        },
+        "liquid_QJHHXE": {
+          "type": "liquid",
+          "settings": {
+            "custom_html": "{{ collection.description }}"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_CUymH8",
+        "liquid_QJHHXE"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "@media screen and (max-width: 989px) {.noir-banner .banner__content {min-height: 48rem !important; align-items: end; }}",
+        ".noir-animate-item {margin: 0;}",
+        "@media (max-width: 768px) {p {display: none; }}"
+      ],
+      "name": "Noir Banner",
+      "settings": {
+        "video": "{{ collection.metafields.custom.banner.value }}",
+        "image": "shopify://shop_images/LOVE_DESKTOP_BANNER_1600_BY_622_3.jpg",
+        "image_mobile": "shopify://shop_images/Love_880_x_1168_2aeb79f3-d7bd-429a-b396-a0671b0128a9.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "bottom-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-5",
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "featured_collection_4tGQi4": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "love",
+        "products_to_show": 25,
+        "title": "",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 3,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "noir_grid_eafmEM": {
+      "type": "noir-grid",
+      "blocks": {
+        "grid_item_PMxXPJ": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/IMG_8479.jpg",
+            "content_position": "absolute",
+            "title": "Alchemy Mugs",
+            "block_heading_size": "h3",
+            "content": "",
+            "link": "shopify://collections/alchemy-mugs"
+          }
+        },
+        "grid_item_xttk4b": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/IMG_8458_e89b1c52-7997-4a58-8a6f-d4896cdbe6f7.jpg",
+            "content_position": "absolute",
+            "title": "Scented Candles",
+            "block_heading_size": "h3",
+            "content": "",
+            "link": "shopify://collections/ritual-candles"
+          }
+        },
+        "grid_item_jTgbaY": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/IMG_8471.jpg",
+            "content_position": "absolute",
+            "title": "Affirmation Cards",
+            "block_heading_size": "h3",
+            "content": "",
+            "link": "shopify://collections/affirmation-cards"
+          }
+        },
+        "grid_item_RxaFwL": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/IMG_8388_c11b0215-085d-4f0c-94a0-ceb59a7e2f2c.jpg",
+            "content_position": "absolute",
+            "title": "Ritual Apparel",
+            "block_heading_size": "h3",
+            "content": "",
+            "link": "shopify://collections/soulwear"
+          }
+        }
+      },
+      "block_order": [
+        "grid_item_PMxXPJ",
+        "grid_item_xttk4b",
+        "grid_item_jTgbaY",
+        "grid_item_RxaFwL"
+      ],
+      "custom_css": [
+        "h2 {/*color: #cfb37b;*/}"
+      ],
+      "name": "Noir Grid",
+      "settings": {
+        "title": "Shop by Ritual",
+        "heading_size": "h1",
+        "show_arrow": true,
+        "background_image": "shopify://shop_images/DD4.png",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1b41725b-bbc1-4dea-a870-10c67130b008",
+        "padding_top": 36,
+        "padding_bottom": 48,
+        "enable_mobile_slider": true
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "noir_custom_banner_aijAM8",
+    "noir_banner_y6gzH8",
+    "rich_text_M4q4mW",
+    "product-grid",
+    "noir_custom_banner_t4bzAP",
+    "noir_banner_anAGhP",
+    "featured_collection_QnXkG6",
+    "noir_custom_banner_dGimCQ",
+    "noir_banner_rhH7ef",
+    "featured_collection_4tGQi4",
+    "noir_grid_eafmEM"
+  ]
+}

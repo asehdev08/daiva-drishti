@@ -446,12 +446,29 @@
 
     // Standard popup showing rule for normal visits
     if (isTestMode || window.Shopify.designMode || showCount < limit) {
-      setTimeout(() => {
-        openNoirPopup();
-        if(!window.Shopify.designMode && !isTestMode) {
-          localStorage.setItem(storageKey, showCount + 1);
+      const delayMs = {{ section.settings.delay | times: 1000 }};
+      const startTime = Date.now();
+      const interactionEvents = ['scroll', 'mousemove', 'touchstart', 'keydown'];
+
+      const triggerPopup = () => {
+        interactionEvents.forEach(evt => document.removeEventListener(evt, triggerPopup));
+
+        const openAfterDelay = () => {
+          openNoirPopup();
+          if (!window.Shopify.designMode && !isTestMode) {
+            localStorage.setItem(storageKey, showCount + 1);
+          }
+        };
+
+        const remaining = delayMs - (Date.now() - startTime);
+        if (remaining > 0) {
+          setTimeout(openAfterDelay, remaining);
+        } else {
+          openAfterDelay();
         }
-      }, {{ section.settings.delay | times: 1000 }});
+      };
+
+      interactionEvents.forEach(evt => document.addEventListener(evt, triggerPopup, { passive: true }));
     }
 
     // 2. SET STICKY MEMORY FLAG ON SUBMIT

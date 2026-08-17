@@ -321,7 +321,7 @@
       <div class="noir-content-side">
         <div class="noir-content-flex">
           {% if section.settings.logo %}
-            <img src="{{ section.settings.logo | image_url: width: 400 }}" class="noir-logo-el" alt="Logo">
+            <img src="{{ section.settings.logo | image_url: width: 400 }}" class="noir-logo-el" alt="{{ shop.name | escape }}">
           {% endif %}
           <h2 class="noir-heading-el">{{ section.settings.heading }}</h2>
           <div class="noir-subtext-el">{{ section.settings.subtext }}</div>

@@ -55,7 +55,7 @@
     {%- unless only_empty_brand -%}
       <div class="footer__content-top page-width">
     <div class="brand-logo">
-         <a href="/"><img src="https://cdn.shopify.com/s/files/1/1000/2232/1446/files/daiva_drishti_logo_highres-01.png?v=1770903416"></a>
+         <a href="/" aria-label="{{ shop.name | escape }} home"><img src="https://cdn.shopify.com/s/files/1/1000/2232/1446/files/daiva_drishti_logo_highres-01.png?v=1770903416" alt="{{ shop.name | escape }}"></a>
     </div>
         {%- if section.blocks.size > 0 -%}
           {%- liquid

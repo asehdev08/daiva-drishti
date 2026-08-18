@@ -131,7 +131,7 @@
   /* Original Meta for Normal Review */
   .customer-meta { display: flex; align-items: center; gap: 1rem; margin-top: auto; }
   .customer-pic { width: 55px; height: 55px; border-radius: 50%; object-fit: cover; filter: grayscale(100%); border: 1px solid #444; }
-  .customer-info h4 { margin: 0; font-size: 1.2rem; text-transform: uppercase; }
+  .customer-info h3 { margin: 0; font-size: 1.2rem; text-transform: uppercase; }
 
   @media screen and (max-width: 749px) {
     .testimonial-card-image-split { flex-direction: column; }
@@ -173,7 +173,7 @@
                         <img src="{{ block.settings.image | image_url: width: 110 }}" class="customer-pic" loading="lazy">
                       {%- endif -%}
                       <div class="customer-info">
-                        <h4>{{ block.settings.name }}</h4>
+                        <h3>{{ block.settings.name }}</h3>
                         <span>{{ block.settings.subtext }}</span>
                       </div>
                     </div>

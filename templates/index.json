@@ -1,1 +1,1256 @@
-{"sections":{"noir_dynamic_popup_gEtnWc":{"type":"noir-dynamic-popup","name":"Noir Email Popup","settings":{"thanks_image":"shopify:\/\/shop_images\/WhatsApp_Image_2026-05-18_at_11.11.40_PM.jpg","thanks_image_mobile":"shopify:\/\/shop_images\/Mobile_2.png","test_mode":false,"delay":5,"frequency_type":"day","frequency_limit":2,"container_width":750,"border_radius":0,"content_bg_image":"shopify:\/\/shop_images\/Desktop.webp","content_overlay_opacity":60,"mobile_image":"shopify:\/\/shop_images\/IMG_2580.png","mobile_overlay_opacity":45,"logo":"shopify:\/\/shop_images\/daiva_drishti_logo_highres-01.png","logo_width":120,"heading":"Join the DAIVA Circle","subtext":"<p>Early access to ritual drops,<br\/>private releases, and 15% welcome<br\/>privilege on your first order.<\/p>","placeholder":"Enter your email address","btn_label":"Join the Circle","thanks_msg":"Welcome to the circle.","bg_color":"#f3e6e0","text_color":"#fbd8b6","overlay_color":"#4a241b","input_bg_color":"#f9f9f9","btn_bg_color":"#4a241b","btn_text_color":"#f3e6e0"}},"noir_banner_TQFLcp":{"type":"noir-banner","blocks":{"text_dCi4bc":{"type":"text","settings":{"text":"<p>INDIAN WISDOM<\/p>","text_style":"body"}},"heading_whtBGE":{"type":"heading","settings":{"heading":"MODERN RITUALS ROOTED IN","text_style":"brand-heading","heading_size":"h0"}},"html_9TWCUD":{"type":"html","settings":{"custom_html":"<p class=\"banner_content\">HANDCRAFTED CANDLES &amp; RITUAL ESSENTIALS FOR PEACE, CLARITY &amp; HEALING.<\/p>"}},"html_ifMEtK":{"type":"html","disabled":true,"settings":{"custom_html":"<div class=\"dd-branding\">\n<p>\nIndian Wisdom\n<\/p>\n<\/div>"}},"buttons_XtXELn":{"type":"buttons","settings":{"button_label_1":"SHOP COLLECTION","button_link_1":"shopify:\/\/collections\/all","button_style_secondary_1":true,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["text_dCi4bc","heading_whtBGE","html_9TWCUD","html_ifMEtK","buttons_XtXELn"],"custom_css":["@media screen and (max-width: 989px) {.noir-banner .banner__content {min-height: 48rem !important; align-items: end; }}",".noir-animate-item {margin: 0;}","@media (max-width: 768px) {.banner__content {display: none; }}"],"name":"Noir Banner","settings":{"image":"shopify:\/\/shop_images\/Website.png","image_mobile":"shopify:\/\/shop_images\/WhatsApp_Image_2026-08-12_at_14.43.08.jpg","image_overlay_opacity":20,"image_height":"large","desktop_content_position":"bottom-center","desktop_content_alignment":"center","show_text_box":false,"color_scheme":"scheme-5","mobile_content_alignment":"center","show_text_below":false}},"noir_banner_pXdb4T":{"type":"noir-banner","blocks":{"text_HrjnVB":{"type":"text","disabled":true,"settings":{"text":"<p>INDIAN WISDOM<\/p>","text_style":"body"}},"heading_dM9jjY":{"type":"heading","disabled":true,"settings":{"heading":"MODERN RITUALS ROOTED IN","text_style":"brand-heading","heading_size":"h0"}},"html_wH8eHn":{"type":"html","disabled":true,"settings":{"custom_html":"<p class=\"banner_content\">HANDCRAFTED CANDLES &amp; RITUAL ESSENTIALS FOR PEACE, CLARITY &amp; HEALING.<\/p>"}},"html_fUJHNG":{"type":"html","disabled":true,"settings":{"custom_html":"<div class=\"dd-branding\">\n<p>\nIndian Wisdom\n<\/p>\n<\/div>"}},"buttons_CYPEew":{"type":"buttons","settings":{"button_label_1":"SHOP COLLECTION","button_link_1":"shopify:\/\/collections\/all","button_style_secondary_1":true,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["text_HrjnVB","heading_dM9jjY","html_wH8eHn","html_fUJHNG","buttons_CYPEew"],"custom_css":["@media screen and (max-width: 989px) {.noir-banner .banner__content {min-height: 48rem !important; align-items: end; }}",".noir-animate-item {margin: 0;}",".noir-banner {display: none;}","@media (max-width: 768px) {.noir-banner {display: block; }}"],"name":"Noir Banner","settings":{"image":"shopify:\/\/shop_images\/Website.png","image_mobile":"shopify:\/\/shop_images\/WhatsApp_Image_2026-08-12_at_14.43.08.jpg","image_overlay_opacity":20,"image_height":"large","desktop_content_position":"middle-center","desktop_content_alignment":"center","show_text_box":false,"color_scheme":"scheme-5","mobile_content_alignment":"center","show_text_below":false}},"noir_grid_cddDpx":{"type":"noir-grid","blocks":{"grid_item_R66NRE":{"type":"grid_item","settings":{"image":"shopify:\/\/shop_images\/image.webp","content_position":"absolute","title":" Reed Diffuser","block_heading_size":"h3","content":"","link":"shopify:\/\/collections\/reed-diffuser"}},"grid_item_NpYeQP":{"type":"grid_item","settings":{"image":"shopify:\/\/shop_images\/Ritual.webp","content_position":"absolute","title":"Ritual Apparel","block_heading_size":"h3","content":"","link":"shopify:\/\/collections\/soulwear"}},"grid_item_QrtKfH":{"type":"grid_item","settings":{"image":"shopify:\/\/shop_images\/daiva_image_1200x1500_f37f22e6-f9c7-4470-ad5c-1652eb75b96b.jpg","content_position":"absolute","title":"Scented Candles","block_heading_size":"h3","content":"","link":"shopify:\/\/collections\/ritual-candles"}},"grid_item_zee4fb":{"type":"grid_item","settings":{"image":"shopify:\/\/shop_images\/d5ddc059-dfdb-4ba1-8a35-8d186ed92d42.jpg","content_position":"absolute","title":"Affirmation Cards","block_heading_size":"h3","content":"","link":"shopify:\/\/collections\/affirmation-cards"}},"grid_item_7gfdnW":{"type":"grid_item","settings":{"image":"shopify:\/\/shop_images\/Group_photo_to_add_in_all_1.webp","content_position":"absolute","title":"Alchemy Mugs","block_heading_size":"h3","content":"","link":"shopify:\/\/collections\/alchemy-mugs"}},"grid_item_kjD6ga":{"type":"grid_item","settings":{"image":"shopify:\/\/shop_images\/Comming_Soon.webp","content_position":"absolute","title":"Fragrance","block_heading_size":"h3","content":"","link":"shopify:\/\/pages\/coming-soon"}}},"block_order":["grid_item_R66NRE","grid_item_NpYeQP","grid_item_QrtKfH","grid_item_zee4fb","grid_item_7gfdnW","grid_item_kjD6ga"],"custom_css":["h2 {\/*color: #cfb37b;*\/}"],"name":"Noir Grid","settings":{"title":"SHOP BY RITUAL","heading_size":"h1","show_arrow":true,"columns_desktop":3,"columns_mobile":"2","color_scheme":"scheme-1b41725b-bbc1-4dea-a870-10c67130b008","padding_top":36,"padding_bottom":24,"enable_mobile_slider":false}},"rich_text_i9bfGf":{"type":"rich-text","blocks":{"heading_iG3UqF":{"type":"heading","settings":{"heading":"RITUAL CANDLES","heading_size":"h1"}},"text_kQ4HUY":{"type":"text","settings":{"text":"<p>SACRED FRAGRANCES.<\/p><p>INTENTIONAL ATMOSPHERES.<\/p><p>DESIGNED TO SHIFT ENERGY AND ANCHOR YOUR SPACE.<\/p>"}},"button_QArHjN":{"type":"button","settings":{"button_label":"Shop Candles","button_link":"shopify:\/\/collections\/ritual-candles-collection","button_style_secondary":true,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["heading_iG3UqF","text_kQ4HUY","button_QArHjN"],"custom_css":["p {margin: 0;}","@media (max-width: 768px) {.rich-text.content-container {display: none; }}"],"name":"t:sections.rich-text.presets.name","settings":{"show_arrow":false,"arrow_color":"#000000","desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-1b41725b-bbc1-4dea-a870-10c67130b008","full_width":true,"padding_top":16,"padding_bottom":16}},"rich_text_Hq7aYz":{"type":"rich-text","blocks":{"heading_G4yXtw":{"type":"heading","settings":{"heading":"RITUAL CANDLES","heading_size":"h1"}},"text_aXhXtB":{"type":"text","settings":{"text":"<p>SACRED FRAGRANCES.<\/p><p>INTENTIONAL ATMOSPHERES.<\/p>"}},"button_wejaKf":{"type":"button","settings":{"button_label":"Shop Candles","button_link":"shopify:\/\/collections\/ritual-candles-collection","button_style_secondary":true,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["heading_G4yXtw","text_aXhXtB","button_wejaKf"],"custom_css":["p {margin: 0;}",".rich-text.content-container {display: none;}","@media (max-width: 768px) {.rich-text.content-container {display: block; }}"],"name":"t:sections.rich-text.presets.name","settings":{"show_arrow":false,"arrow_color":"#000000","desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-1b41725b-bbc1-4dea-a870-10c67130b008","full_width":true,"padding_top":16,"padding_bottom":16}},"noir_grid_KfGe4K":{"type":"noir-grid","blocks":{"grid_item_m3hPw9":{"type":"grid_item","settings":{"image":"shopify:\/\/shop_images\/DSC07517.jpg","content_position":"below","title":"Woody & Sacred","block_heading_size":"h3","content":"","link":"shopify:\/\/collections\/woody-sacred"}},"grid_item_3rTmp4":{"type":"grid_item","settings":{"image":"shopify:\/\/shop_images\/Untitled-6-2.jpg","content_position":"below","title":"Warm & Comforting","block_heading_size":"h3","content":"","link":"shopify:\/\/collections\/warm-comforting"}},"grid_item_irc8MW":{"type":"grid_item","settings":{"image":"shopify:\/\/shop_images\/DSC07654.jpg","content_position":"below","title":"Floral & Soft","block_heading_size":"h3","content":"","link":"shopify:\/\/collections\/floral-soft"}},"grid_item_VTGmYw":{"type":"grid_item","settings":{"image":"shopify:\/\/shop_images\/DSC07604-2_c46a1b8f-1b17-4f6d-a3f8-82020587e594.jpg","content_position":"below","title":"Tropical","block_heading_size":"h3","content":"","link":"shopify:\/\/collections\/tropical"}}},"block_order":["grid_item_m3hPw9","grid_item_3rTmp4","grid_item_irc8MW","grid_item_VTGmYw"],"name":"Noir Grid","settings":{"title":"SHOP BY FRAGRANCE","heading_size":"h1","show_arrow":false,"columns_desktop":4,"columns_mobile":"2","color_scheme":"scheme-1b41725b-bbc1-4dea-a870-10c67130b008","padding_top":16,"padding_bottom":20,"enable_mobile_slider":false}},"rich_text_BEMBUM":{"type":"rich-text","blocks":{"heading_iJHfpj":{"type":"heading","settings":{"heading":"ALCHEMY MUGS","heading_size":"h1"}},"text_H8nLXy":{"type":"text","settings":{"text":"<p>INFUSE YOUR MORNINGS WITH INTENTION, ONE SIP AT A TIME.<\/p>"}},"button_RABe3Q":{"type":"button","settings":{"button_label":"Shop Mugs","button_link":"shopify:\/\/collections\/alchemy-mugs","button_style_secondary":true,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["heading_iJHfpj","text_H8nLXy","button_RABe3Q"],"custom_css":["p {margin: 0;}","@media (max-width: 768px) {.rich-text.content-container {display: none; }}"],"name":"t:sections.rich-text.presets.name","settings":{"show_arrow":false,"arrow_color":"#f3dbc4","desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-4","full_width":true,"padding_top":16,"padding_bottom":16}},"rich_text_xUAFU4":{"type":"rich-text","blocks":{"heading_C3APj4":{"type":"heading","settings":{"heading":"ALCHEMY MUGS","heading_size":"h1"}},"text_XKhqP4":{"type":"text","disabled":true,"settings":{"text":"<p>INFUSE YOUR MORNINGS WITH INTENTION, ONE SIP AT A TIME.<\/p>"}},"button_jt4RPM":{"type":"button","settings":{"button_label":"Shop Mugs","button_link":"shopify:\/\/collections\/alchemy-mugs","button_style_secondary":true,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["heading_C3APj4","text_XKhqP4","button_jt4RPM"],"custom_css":["p {margin: 0;}",".rich-text.content-container {display: none;}","@media (max-width: 768px) {.rich-text.content-container {display: block; }}"],"name":"t:sections.rich-text.presets.name","settings":{"show_arrow":false,"arrow_color":"#f3dbc4","desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-4","full_width":true,"padding_top":16,"padding_bottom":16}},"noir_grid_VriXEW":{"type":"noir-grid","blocks":{"grid_item_VLfWmA":{"type":"grid_item","settings":{"image":"shopify:\/\/shop_images\/Love_880_x_1168.png","content_position":"absolute","title":"Love","block_heading_size":"h3","content":"","link":"shopify:\/\/collections\/love"}},"grid_item_yTepKx":{"type":"grid_item","settings":{"image":"shopify:\/\/shop_images\/PEACE_880_x_1168.png","content_position":"absolute","title":"Peace","block_heading_size":"h3","content":"","link":"shopify:\/\/collections\/peace"}},"grid_item_LYkG4b":{"type":"grid_item","settings":{"image":"shopify:\/\/shop_images\/JOY_880_x_1168.png","content_position":"absolute","title":"Joy","block_heading_size":"h3","content":"","link":"shopify:\/\/collections\/joy"}},"grid_item_wY8LBL":{"type":"grid_item","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/Mugs_4_5_HQ.webp","content_position":"absolute","title":"Shop All","block_heading_size":"h3","content":"","link":"shopify:\/\/collections\/alchemy-mugs"}}},"block_order":["grid_item_VLfWmA","grid_item_yTepKx","grid_item_LYkG4b","grid_item_wY8LBL"],"custom_css":[".noir-grid__content--absolute {display: none;}"],"name":"Noir Grid","settings":{"title":"SHOP BY INTENTION","heading_size":"h1","show_arrow":true,"columns_desktop":3,"columns_mobile":"2","color_scheme":"scheme-1b41725b-bbc1-4dea-a870-10c67130b008","padding_top":16,"padding_bottom":16,"enable_mobile_slider":true}},"rich_text_8y8bCF":{"type":"rich-text","blocks":{"heading_UzzkXJ":{"type":"heading","settings":{"heading":"AFFIRMATION CARDS","heading_size":"h1"}},"text_mUn79U":{"type":"text","settings":{"text":"<p>A DECK FOR DAILY INNER WORK<\/p><p>ALIGN YOUR MIND, BODY & SOUL<\/p>"}},"button_ffT67W":{"type":"button","settings":{"button_label":"Shop Affirmation Cards","button_link":"shopify:\/\/products\/affirmation-cards-the-daily-shift","button_style_secondary":true,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["heading_UzzkXJ","text_mUn79U","button_ffT67W"],"custom_css":["p {margin: 0;}",".rich-text:not(.rich-text--full-width) .rich-text__wrapper {margin: auto; width: calc(100% - 1rem \/ var(--font-body-scale));}","@media (max-width: 768px) {.rich-text.content-container {display: none; }}"],"name":"t:sections.rich-text.presets.name","settings":{"show_arrow":false,"arrow_color":"#000000","desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-1b41725b-bbc1-4dea-a870-10c67130b008","full_width":true,"padding_top":16,"padding_bottom":48}},"rich_text_YCewPd":{"type":"rich-text","blocks":{"heading_6LWJh7":{"type":"heading","settings":{"heading":"AFFIRMATION CARDS","heading_size":"h1"}},"text_kmVMbB":{"type":"text","disabled":true,"settings":{"text":"<p>A DECK FOR DAILY INNER WORK<\/p><p>ALIGN YOUR MIND, BODY & SOUL<\/p>"}},"button_i79TgK":{"type":"button","settings":{"button_label":"Shop Affirmation Cards","button_link":"shopify:\/\/products\/affirmation-cards-the-daily-shift","button_style_secondary":true,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["heading_6LWJh7","text_kmVMbB","button_i79TgK"],"custom_css":["p {margin: 0;}",".rich-text:not(.rich-text--full-width) .rich-text__wrapper {margin: auto; width: calc(100% - 1rem \/ var(--font-body-scale));}",".rich-text.content-container {display: none;}","@media (max-width: 768px) {.rich-text.content-container {display: block; }}"],"name":"t:sections.rich-text.presets.name","settings":{"show_arrow":false,"arrow_color":"#000000","desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-1b41725b-bbc1-4dea-a870-10c67130b008","full_width":true,"padding_top":16,"padding_bottom":48}},"noir_banner_afBfYp":{"type":"noir-banner","blocks":{"heading_AwEawr":{"type":"heading","disabled":true,"settings":{"heading":"THE DAILY SHIFT","text_style":"default","heading_size":"h1"}},"text_mKhG3m":{"type":"text","settings":{"text":"<p>ALIGN YOUR DAY WITH<\/p><p>MINDFUL AFFIRMATIONS.<\/p>","text_style":"body"}},"html_ThDhq3":{"type":"html","settings":{"custom_html":""}},"buttons_hFjTnW":{"type":"buttons","settings":{"button_label_1":"EXPLORE THE RITUAL","button_link_1":"shopify:\/\/products\/affirmation-cards-the-daily-shift","button_style_secondary_1":true,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["heading_AwEawr","text_mKhG3m","html_ThDhq3","buttons_hFjTnW"],"custom_css":["p {line-height: 1.25; margin: 0;}",".noir-banner .button.button--secondary:hover {color: inherit;}","@media screen and (max-width: 767px) {.noir-banner .banner__content {min-height: 55rem !important; align-items: end; }}",".noir-banner .banner__text p {font-size: 18px;}"],"name":"Noir Banner","settings":{"image":"shopify:\/\/shop_images\/THE_DAILY_SHIFT_BANNER_1360_x_768px_121cac4b-e1b4-4747-8861-97a3e8d2399f.jpg","image_mobile":"shopify:\/\/shop_images\/THE_DAILY_SHIFT_BANNER_832_x_1248px_b519a6dc-a92d-4222-8cbc-c7bfc14a2de6.jpg","image_overlay_opacity":0,"image_height":"adapt","desktop_content_position":"bottom-left","desktop_content_alignment":"left","show_text_box":false,"color_scheme":"scheme-5","mobile_content_alignment":"center","show_text_below":false}},"1786009117eea7b9f6":{"type":"apps","blocks":{"quinn_shoppable_reel_app_cards_block_j4iV6x":{"type":"shopify:\/\/apps\/quinn-shoppable-reel\/blocks\/app-cards-block\/483fa771-9c4d-49e4-8c0d-0155f4b872d6","settings":{"custom_metaobject_handle":"","background_color":"#000000","margin_desktop":"10px 0px 0px 0px","margin_mobile":"5px 0px 0px 0px","padding_desktop":"10px 10px 10px 10px","padding_mobile":"10px 5px 10px 5px"}}},"block_order":["quinn_shoppable_reel_app_cards_block_j4iV6x"],"settings":{"include_margins":true}},"rich_text_3qa83r":{"type":"rich-text","blocks":{"heading_bdcHhy":{"type":"heading","settings":{"heading":"RITUAL HOODIES","heading_size":"h1"}},"text_4WtXcH":{"type":"text","settings":{"text":"<p>INTENTIONAL STREETWEAR. AFFIRMATIONS AND MANTRAS<\/p><p>DESIGNED FOR PROTECTION AND COURAGE.<\/p>"}},"button_Yx6YC6":{"type":"button","settings":{"button_label":"Shop Hoodies","button_link":"shopify:\/\/collections\/soulwear","button_style_secondary":true,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["heading_bdcHhy","text_4WtXcH","button_Yx6YC6"],"custom_css":["p {margin: 0;}","@media (max-width: 768px) {.rich-text.content-container {display: none; }}"],"name":"t:sections.rich-text.presets.name","settings":{"show_arrow":false,"arrow_color":"#000000","desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-1b41725b-bbc1-4dea-a870-10c67130b008","full_width":true,"padding_top":32,"padding_bottom":16}},"rich_text_Cipzye":{"type":"rich-text","blocks":{"heading_Qz7Q4g":{"type":"heading","settings":{"heading":"RITUAL HOODIES","heading_size":"h1"}},"text_ThJyNQ":{"type":"text","disabled":true,"settings":{"text":"<p>INTENTIONAL STREETWEAR.<\/p>"}},"button_VxPexj":{"type":"button","settings":{"button_label":"Shop Hoodies","button_link":"shopify:\/\/collections\/soulwear","button_style_secondary":true,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["heading_Qz7Q4g","text_ThJyNQ","button_VxPexj"],"custom_css":["p {margin: 0;}",".rich-text.content-container {display: none;}","@media (max-width: 768px) {.rich-text.content-container {display: block; }}"],"name":"t:sections.rich-text.presets.name","settings":{"show_arrow":false,"arrow_color":"#000000","desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-1b41725b-bbc1-4dea-a870-10c67130b008","full_width":true,"padding_top":32,"padding_bottom":16}},"noir_grid_tF83Wf":{"type":"noir-grid","blocks":{"grid_item_7pYe3U":{"type":"grid_item","settings":{"image":"shopify:\/\/shop_images\/IMG_8477.jpg","content_position":"absolute","title":"Hoodies","block_heading_size":"h3","content":"","link":"shopify:\/\/products\/unisex-hoodies"}},"grid_item_Cf3dHh":{"type":"grid_item","settings":{"image":"shopify:\/\/shop_images\/Sweatshirts_3460_x_4325_px.png","content_position":"absolute","title":"Sweatshirts","block_heading_size":"h3","content":"","link":"shopify:\/\/products\/sweatshirts-round-neck"}},"grid_item_WH7ERA":{"type":"grid_item","settings":{"image":"shopify:\/\/shop_images\/Joggersblack.jpg","content_position":"absolute","title":"Joggers","block_heading_size":"h3","content":"","link":"shopify:\/\/products\/joggers"}},"grid_item_7fQcUm":{"type":"grid_item","settings":{"image":"shopify:\/\/shop_images\/IMG_8388.jpg","content_position":"absolute","title":"Crop Hoodies","block_heading_size":"h3","content":"","link":"shopify:\/\/products\/crop-hoodies-women"}}},"block_order":["grid_item_7pYe3U","grid_item_Cf3dHh","grid_item_WH7ERA","grid_item_7fQcUm"],"name":"Noir Grid","settings":{"title":"SHOP BY PRINT STYLE","heading_size":"h1","show_arrow":true,"columns_desktop":4,"columns_mobile":"2","color_scheme":"scheme-1b41725b-bbc1-4dea-a870-10c67130b008","padding_top":16,"padding_bottom":20,"enable_mobile_slider":false}},"noir_product_grid_7XzVED":{"type":"noir-product-grid","custom_css":["h2 {margin-bottom: 0rem;}"],"name":"Noir Product Grid","settings":{"collection":"the-alchemy-edit","enable_mobile_slider":true,"show_pagination":true,"products_to_show":4,"columns_desktop":3,"columns_mobile":"2","title":"THE ALCHEMY EDIT™","heading_size":"h2","para":"Bundle Builder","color_scheme":"scheme-1b41725b-bbc1-4dea-a870-10c67130b008","image_ratio":"portrait","image_shape":"default","show_secondary_image":true,"show_vendor":false,"show_rating":false,"quick_add":"standard","padding_top":16,"padding_bottom":36}},"noir_banner_XXcNhD":{"type":"noir-banner","blocks":{"heading_RpAMcB":{"type":"heading","disabled":true,"settings":{"heading":"THE GIFT OF<br>MINDFULNESS","text_style":"default","heading_size":"h1"}},"text_F9TE4K":{"type":"text","settings":{"text":"<p>TRANSFORMING CORPORATE GIFTING INTO A MEANINGFUL EXPERIENCE OF WELL-BEING.<\/p>","text_style":"body"}},"buttons_TdPczT":{"type":"buttons","settings":{"button_label_1":"EXPLORE GIFTING ","button_link_1":"shopify:\/\/pages\/corporate-gifting","button_style_secondary_1":true,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["heading_RpAMcB","text_F9TE4K","buttons_TdPczT"],"custom_css":["p {font-weight: 400; line-height: 1.25; font-size: 18px !important; max-width: 30rem;}",".noir-banner .button.button--secondary:hover {color: inherit;}","@media screen and (max-width: 767px) {.noir-banner .banner__content {min-height: 55rem !important; align-items: end; } p {margin: 0 auto; }}"],"name":"Noir Banner","settings":{"image":"shopify:\/\/shop_images\/Gift_of_Mindfulness_1360_x_768_px_41048f2a-9b80-404b-97f0-b99e76ee50da.jpg","image_mobile":"shopify:\/\/shop_images\/Gift_of_Mindfulness_832_x_1248px_5d004ba3-104d-4c9f-a8a8-134d18a016ce.jpg","image_overlay_opacity":0,"image_height":"adapt","desktop_content_position":"bottom-left","desktop_content_alignment":"left","show_text_box":false,"color_scheme":"scheme-5","mobile_content_alignment":"center","show_text_below":false}},"noir_customer_review_RwpT7z":{"type":"noir-customer-review","blocks":{"testimonial_YctDLw":{"type":"testimonial","settings":{"message":"The fragrance is so calming. It’s become part of my evening routine.","name":"Rhea","subtext":"Mumbai","rating":5}},"testimonial_EagB9c":{"type":"testimonial","settings":{"message":"A beautiful little ritual that has become part of my routine.","name":"Mehak","subtext":"Pune","rating":5}},"testimonial_VpGVdt":{"type":"testimonial","settings":{"message":"It instantly makes my space feel warm, calm and peaceful.","name":"Ananya","subtext":"Mumbai","rating":5}},"testimonial_Q8k748":{"type":"testimonial","settings":{"message":"Beautifully made, thoughtfully packed and such a lovely experience.","name":"Kavya","subtext":"Delhi","rating":5}},"testimonial_qmYkqq":{"type":"testimonial","settings":{"message":"Bought one for myself, then ordered another as a gift!","name":"Ishita","subtext":"Delhi","rating":5}},"image_review_UyWtKn":{"type":"image_review","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/1360_BY_768_1.jpg","name":"KASHISH","subtext":"ANALYST","age":"25","message":"The quality is unmatched. Truly a premium experience.","rating":5}},"image_review_K6DaNj":{"type":"image_review","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/1360_BY_768_2.jpg","name":"KASHISH","subtext":"ANALYST","age":"25","message":"The quality is unmatched. Truly a premium experience.","rating":5}},"image_review_pdAdHG":{"type":"image_review","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/1360_BY_768_3.jpg","name":"KASHISH","subtext":"ANALYST","age":"25","message":"The quality is unmatched. Truly a premium experience.","rating":5}},"image_review_pwy9th":{"type":"image_review","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/1360_BY_768_4.jpg","name":"KASHISH","subtext":"ANALYST","age":"25","message":"The quality is unmatched. Truly a premium experience.","rating":5}},"image_review_WnGx7h":{"type":"image_review","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/1360_BY_768_5.jpg","name":"KASHISH","subtext":"ANALYST","age":"25","message":"The quality is unmatched. Truly a premium experience.","rating":5}},"image_review_h7cdgA":{"type":"image_review","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/1360_BY_768_6.jpg","name":"KASHISH","subtext":"ANALYST","age":"25","message":"The quality is unmatched. Truly a premium experience.","rating":5}},"image_review_mRfQqn":{"type":"image_review","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/1360_BY_768_8.jpg","name":"KASHISH","subtext":"ANALYST","age":"25","message":"The quality is unmatched. Truly a premium experience.","rating":5}},"image_review_VkkqBt":{"type":"image_review","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/1360_BY_768_9.jpg","name":"KASHISH","subtext":"ANALYST","age":"25","message":"The quality is unmatched. Truly a premium experience.","rating":5}}},"block_order":["testimonial_YctDLw","testimonial_EagB9c","testimonial_VpGVdt","testimonial_Q8k748","testimonial_qmYkqq","image_review_UyWtKn","image_review_K6DaNj","image_review_pdAdHG","image_review_pwy9th","image_review_WnGx7h","image_review_h7cdgA","image_review_mRfQqn","image_review_VkkqBt"],"custom_css":["h2 {margin-bottom: 2.5rem;}",".image-split-content {display: none;}",".testimonial-card-base {aspect-ratio: auto; height: auto;}",".image-split-media img {display: flex;}"],"name":"Noir Testimonial Slider","settings":{"title":"CUSTOMER REVIEWS","heading_size":"h1","heading_alignment":"center","background_image":"shopify:\/\/shop_images\/DD4.png","overlay_opacity":0,"color_scheme":"scheme-5","show_pagination":true,"desktop_columns":3,"mobile_columns":1,"padding_top":20,"padding_bottom":36}}},"order":["noir_dynamic_popup_gEtnWc","noir_banner_TQFLcp","noir_banner_pXdb4T","noir_grid_cddDpx","rich_text_i9bfGf","rich_text_Hq7aYz","noir_grid_KfGe4K","rich_text_BEMBUM","rich_text_xUAFU4","noir_grid_VriXEW","rich_text_8y8bCF","rich_text_YCewPd","noir_banner_afBfYp","1786009117eea7b9f6","rich_text_3qa83r","rich_text_Cipzye","noir_grid_tF83Wf","noir_product_grid_7XzVED","noir_banner_XXcNhD","noir_customer_review_RwpT7z"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "noir_dynamic_popup_gEtnWc": {
+      "type": "noir-dynamic-popup",
+      "name": "Noir Email Popup",
+      "settings": {
+        "thanks_image": "shopify://shop_images/WhatsApp_Image_2026-05-18_at_11.11.40_PM.jpg",
+        "thanks_image_mobile": "shopify://shop_images/Mobile_2.png",
+        "test_mode": false,
+        "delay": 5,
+        "frequency_type": "day",
+        "frequency_limit": 2,
+        "container_width": 750,
+        "border_radius": 0,
+        "content_bg_image": "shopify://shop_images/Desktop.webp",
+        "content_overlay_opacity": 60,
+        "mobile_image": "shopify://shop_images/IMG_2580.png",
+        "mobile_overlay_opacity": 45,
+        "logo": "shopify://shop_images/daiva_drishti_logo_highres-01.png",
+        "logo_width": 120,
+        "heading": "Join the DAIVA Circle",
+        "subtext": "<p>Early access to ritual drops,<br/>private releases, and 15% welcome<br/>privilege on your first order.</p>",
+        "placeholder": "Enter your email address",
+        "btn_label": "Join the Circle",
+        "thanks_msg": "Welcome to the circle.",
+        "bg_color": "#f3e6e0",
+        "text_color": "#fbd8b6",
+        "overlay_color": "#4a241b",
+        "input_bg_color": "#f9f9f9",
+        "btn_bg_color": "#4a241b",
+        "btn_text_color": "#f3e6e0"
+      }
+    },
+    "noir_banner_TQFLcp": {
+      "type": "noir-banner",
+      "blocks": {
+        "text_dCi4bc": {
+          "type": "text",
+          "settings": {
+            "text": "<p>INDIAN WISDOM</p>",
+            "text_style": "body"
+          }
+        },
+        "heading_whtBGE": {
+          "type": "heading",
+          "settings": {
+            "heading": "MODERN RITUALS ROOTED IN",
+            "text_style": "brand-heading",
+            "heading_size": "h0"
+          }
+        },
+        "html_9TWCUD": {
+          "type": "html",
+          "settings": {
+            "custom_html": "<p class=\"banner_content\">HANDCRAFTED CANDLES &amp; RITUAL ESSENTIALS FOR PEACE, CLARITY &amp; HEALING.</p>"
+          }
+        },
+        "html_ifMEtK": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "custom_html": "<div class=\"dd-branding\">\n<p>\nIndian Wisdom\n</p>\n</div>"
+          }
+        },
+        "buttons_XtXELn": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "SHOP COLLECTION",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "text_dCi4bc",
+        "heading_whtBGE",
+        "html_9TWCUD",
+        "html_ifMEtK",
+        "buttons_XtXELn"
+      ],
+      "custom_css": [
+        "@media screen and (max-width: 989px) {.noir-banner .banner__content {min-height: 48rem !important; align-items: end; }}",
+        ".noir-animate-item {margin: 0;}",
+        "@media (max-width: 768px) {.banner__content {display: none; }}"
+      ],
+      "name": "Noir Banner",
+      "settings": {
+        "image": "shopify://shop_images/Website.webp",
+        "image_mobile": "shopify://shop_images/WhatsApp_Image_2026-08-12_at_14.43.08.webp",
+        "image_overlay_opacity": 20,
+        "image_height": "large",
+        "desktop_content_position": "bottom-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-5",
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "noir_banner_pXdb4T": {
+      "type": "noir-banner",
+      "blocks": {
+        "text_HrjnVB": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>INDIAN WISDOM</p>",
+            "text_style": "body"
+          }
+        },
+        "heading_dM9jjY": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "MODERN RITUALS ROOTED IN",
+            "text_style": "brand-heading",
+            "heading_size": "h0"
+          }
+        },
+        "html_wH8eHn": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "custom_html": "<p class=\"banner_content\">HANDCRAFTED CANDLES &amp; RITUAL ESSENTIALS FOR PEACE, CLARITY &amp; HEALING.</p>"
+          }
+        },
+        "html_fUJHNG": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "custom_html": "<div class=\"dd-branding\">\n<p>\nIndian Wisdom\n</p>\n</div>"
+          }
+        },
+        "buttons_CYPEew": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "SHOP COLLECTION",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "text_HrjnVB",
+        "heading_dM9jjY",
+        "html_wH8eHn",
+        "html_fUJHNG",
+        "buttons_CYPEew"
+      ],
+      "custom_css": [
+        "@media screen and (max-width: 989px) {.noir-banner .banner__content {min-height: 48rem !important; align-items: end; }}",
+        ".noir-animate-item {margin: 0;}",
+        ".noir-banner {display: none;}",
+        "@media (max-width: 768px) {.noir-banner {display: block; }}"
+      ],
+      "name": "Noir Banner",
+      "settings": {
+        "image": "shopify://shop_images/Website.webp",
+        "image_mobile": "shopify://shop_images/WhatsApp_Image_2026-08-12_at_14.43.08.webp",
+        "image_overlay_opacity": 20,
+        "image_height": "large",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-5",
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "noir_grid_cddDpx": {
+      "type": "noir-grid",
+      "blocks": {
+        "grid_item_R66NRE": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/image.webp",
+            "content_position": "absolute",
+            "title": " Reed Diffuser",
+            "block_heading_size": "h3",
+            "content": "",
+            "link": "shopify://collections/reed-diffuser"
+          }
+        },
+        "grid_item_NpYeQP": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Ritual.webp",
+            "content_position": "absolute",
+            "title": "Ritual Apparel",
+            "block_heading_size": "h3",
+            "content": "",
+            "link": "shopify://collections/soulwear"
+          }
+        },
+        "grid_item_QrtKfH": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/daiva_image_1200x1500_f37f22e6-f9c7-4470-ad5c-1652eb75b96b.jpg",
+            "content_position": "absolute",
+            "title": "Scented Candles",
+            "block_heading_size": "h3",
+            "content": "",
+            "link": "shopify://collections/ritual-candles"
+          }
+        },
+        "grid_item_zee4fb": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/d5ddc059-dfdb-4ba1-8a35-8d186ed92d42.jpg",
+            "content_position": "absolute",
+            "title": "Affirmation Cards",
+            "block_heading_size": "h3",
+            "content": "",
+            "link": "shopify://collections/affirmation-cards"
+          }
+        },
+        "grid_item_7gfdnW": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Group_photo_to_add_in_all_1.webp",
+            "content_position": "absolute",
+            "title": "Alchemy Mugs",
+            "block_heading_size": "h3",
+            "content": "",
+            "link": "shopify://collections/alchemy-mugs"
+          }
+        },
+        "grid_item_kjD6ga": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Comming_Soon.webp",
+            "content_position": "absolute",
+            "title": "Fragrance",
+            "block_heading_size": "h3",
+            "content": "",
+            "link": "shopify://pages/coming-soon"
+          }
+        }
+      },
+      "block_order": [
+        "grid_item_R66NRE",
+        "grid_item_NpYeQP",
+        "grid_item_QrtKfH",
+        "grid_item_zee4fb",
+        "grid_item_7gfdnW",
+        "grid_item_kjD6ga"
+      ],
+      "custom_css": [
+        "h2 {/*color: #cfb37b;*/}"
+      ],
+      "name": "Noir Grid",
+      "settings": {
+        "title": "SHOP BY RITUAL",
+        "heading_size": "h1",
+        "show_arrow": true,
+        "columns_desktop": 3,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1b41725b-bbc1-4dea-a870-10c67130b008",
+        "padding_top": 36,
+        "padding_bottom": 24,
+        "enable_mobile_slider": false
+      }
+    },
+    "rich_text_i9bfGf": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_iG3UqF": {
+          "type": "heading",
+          "settings": {
+            "heading": "RITUAL CANDLES",
+            "heading_size": "h1"
+          }
+        },
+        "text_kQ4HUY": {
+          "type": "text",
+          "settings": {
+            "text": "<p>SACRED FRAGRANCES.</p><p>INTENTIONAL ATMOSPHERES.</p><p>DESIGNED TO SHIFT ENERGY AND ANCHOR YOUR SPACE.</p>"
+          }
+        },
+        "button_QArHjN": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Candles",
+            "button_link": "shopify://collections/ritual-candles-collection",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_iG3UqF",
+        "text_kQ4HUY",
+        "button_QArHjN"
+      ],
+      "custom_css": [
+        "p {margin: 0;}",
+        "@media (max-width: 768px) {.rich-text.content-container {display: none; }}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "show_arrow": false,
+        "arrow_color": "#000000",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1b41725b-bbc1-4dea-a870-10c67130b008",
+        "full_width": true,
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "rich_text_Hq7aYz": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_G4yXtw": {
+          "type": "heading",
+          "settings": {
+            "heading": "RITUAL CANDLES",
+            "heading_size": "h1"
+          }
+        },
+        "text_aXhXtB": {
+          "type": "text",
+          "settings": {
+            "text": "<p>SACRED FRAGRANCES.</p><p>INTENTIONAL ATMOSPHERES.</p>"
+          }
+        },
+        "button_wejaKf": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Candles",
+            "button_link": "shopify://collections/ritual-candles-collection",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_G4yXtw",
+        "text_aXhXtB",
+        "button_wejaKf"
+      ],
+      "custom_css": [
+        "p {margin: 0;}",
+        ".rich-text.content-container {display: none;}",
+        "@media (max-width: 768px) {.rich-text.content-container {display: block; }}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "show_arrow": false,
+        "arrow_color": "#000000",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1b41725b-bbc1-4dea-a870-10c67130b008",
+        "full_width": true,
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "noir_grid_KfGe4K": {
+      "type": "noir-grid",
+      "blocks": {
+        "grid_item_m3hPw9": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/DSC07517.jpg",
+            "content_position": "below",
+            "title": "Woody & Sacred",
+            "block_heading_size": "h3",
+            "content": "",
+            "link": "shopify://collections/woody-sacred"
+          }
+        },
+        "grid_item_3rTmp4": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Untitled-6-2.jpg",
+            "content_position": "below",
+            "title": "Warm & Comforting",
+            "block_heading_size": "h3",
+            "content": "",
+            "link": "shopify://collections/warm-comforting"
+          }
+        },
+        "grid_item_irc8MW": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/DSC07654.jpg",
+            "content_position": "below",
+            "title": "Floral & Soft",
+            "block_heading_size": "h3",
+            "content": "",
+            "link": "shopify://collections/floral-soft"
+          }
+        },
+        "grid_item_VTGmYw": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/DSC07604-2_c46a1b8f-1b17-4f6d-a3f8-82020587e594.jpg",
+            "content_position": "below",
+            "title": "Tropical",
+            "block_heading_size": "h3",
+            "content": "",
+            "link": "shopify://collections/tropical"
+          }
+        }
+      },
+      "block_order": [
+        "grid_item_m3hPw9",
+        "grid_item_3rTmp4",
+        "grid_item_irc8MW",
+        "grid_item_VTGmYw"
+      ],
+      "name": "Noir Grid",
+      "settings": {
+        "title": "SHOP BY FRAGRANCE",
+        "heading_size": "h1",
+        "show_arrow": false,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1b41725b-bbc1-4dea-a870-10c67130b008",
+        "padding_top": 16,
+        "padding_bottom": 20,
+        "enable_mobile_slider": false
+      }
+    },
+    "rich_text_BEMBUM": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_iJHfpj": {
+          "type": "heading",
+          "settings": {
+            "heading": "ALCHEMY MUGS",
+            "heading_size": "h1"
+          }
+        },
+        "text_H8nLXy": {
+          "type": "text",
+          "settings": {
+            "text": "<p>INFUSE YOUR MORNINGS WITH INTENTION, ONE SIP AT A TIME.</p>"
+          }
+        },
+        "button_RABe3Q": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Mugs",
+            "button_link": "shopify://collections/alchemy-mugs",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_iJHfpj",
+        "text_H8nLXy",
+        "button_RABe3Q"
+      ],
+      "custom_css": [
+        "p {margin: 0;}",
+        "@media (max-width: 768px) {.rich-text.content-container {display: none; }}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "show_arrow": false,
+        "arrow_color": "#f3dbc4",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-4",
+        "full_width": true,
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "rich_text_xUAFU4": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_C3APj4": {
+          "type": "heading",
+          "settings": {
+            "heading": "ALCHEMY MUGS",
+            "heading_size": "h1"
+          }
+        },
+        "text_XKhqP4": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>INFUSE YOUR MORNINGS WITH INTENTION, ONE SIP AT A TIME.</p>"
+          }
+        },
+        "button_jt4RPM": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Mugs",
+            "button_link": "shopify://collections/alchemy-mugs",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_C3APj4",
+        "text_XKhqP4",
+        "button_jt4RPM"
+      ],
+      "custom_css": [
+        "p {margin: 0;}",
+        ".rich-text.content-container {display: none;}",
+        "@media (max-width: 768px) {.rich-text.content-container {display: block; }}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "show_arrow": false,
+        "arrow_color": "#f3dbc4",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-4",
+        "full_width": true,
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "noir_grid_VriXEW": {
+      "type": "noir-grid",
+      "blocks": {
+        "grid_item_VLfWmA": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Love_880_x_1168.png",
+            "content_position": "absolute",
+            "title": "Love",
+            "block_heading_size": "h3",
+            "content": "",
+            "link": "shopify://collections/love"
+          }
+        },
+        "grid_item_yTepKx": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/PEACE_880_x_1168.png",
+            "content_position": "absolute",
+            "title": "Peace",
+            "block_heading_size": "h3",
+            "content": "",
+            "link": "shopify://collections/peace"
+          }
+        },
+        "grid_item_LYkG4b": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/JOY_880_x_1168.png",
+            "content_position": "absolute",
+            "title": "Joy",
+            "block_heading_size": "h3",
+            "content": "",
+            "link": "shopify://collections/joy"
+          }
+        },
+        "grid_item_wY8LBL": {
+          "type": "grid_item",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Mugs_4_5_HQ.webp",
+            "content_position": "absolute",
+            "title": "Shop All",
+            "block_heading_size": "h3",
+            "content": "",
+            "link": "shopify://collections/alchemy-mugs"
+          }
+        }
+      },
+      "block_order": [
+        "grid_item_VLfWmA",
+        "grid_item_yTepKx",
+        "grid_item_LYkG4b",
+        "grid_item_wY8LBL"
+      ],
+      "custom_css": [
+        ".noir-grid__content--absolute {display: none;}"
+      ],
+      "name": "Noir Grid",
+      "settings": {
+        "title": "SHOP BY INTENTION",
+        "heading_size": "h1",
+        "show_arrow": true,
+        "columns_desktop": 3,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1b41725b-bbc1-4dea-a870-10c67130b008",
+        "padding_top": 16,
+        "padding_bottom": 16,
+        "enable_mobile_slider": true
+      }
+    },
+    "rich_text_8y8bCF": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_UzzkXJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "AFFIRMATION CARDS",
+            "heading_size": "h1"
+          }
+        },
+        "text_mUn79U": {
+          "type": "text",
+          "settings": {
+            "text": "<p>A DECK FOR DAILY INNER WORK</p><p>ALIGN YOUR MIND, BODY & SOUL</p>"
+          }
+        },
+        "button_ffT67W": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Affirmation Cards",
+            "button_link": "shopify://products/affirmation-cards-the-daily-shift",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_UzzkXJ",
+        "text_mUn79U",
+        "button_ffT67W"
+      ],
+      "custom_css": [
+        "p {margin: 0;}",
+        ".rich-text:not(.rich-text--full-width) .rich-text__wrapper {margin: auto; width: calc(100% - 1rem / var(--font-body-scale));}",
+        "@media (max-width: 768px) {.rich-text.content-container {display: none; }}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "show_arrow": false,
+        "arrow_color": "#000000",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1b41725b-bbc1-4dea-a870-10c67130b008",
+        "full_width": true,
+        "padding_top": 16,
+        "padding_bottom": 48
+      }
+    },
+    "rich_text_YCewPd": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_6LWJh7": {
+          "type": "heading",
+          "settings": {
+            "heading": "AFFIRMATION CARDS",
+            "heading_size": "h1"
+          }
+        },
+        "text_kmVMbB": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>A DECK FOR DAILY INNER WORK</p><p>ALIGN YOUR MIND, BODY & SOUL</p>"
+          }
+        },
+        "button_i79TgK": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Affirmation Cards",
+            "button_link": "shopify://products/affirmation-cards-the-daily-shift",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_6LWJh7",
+        "text_kmVMbB",
+        "button_i79TgK"
+      ],
+      "custom_css": [
+        "p {margin: 0;}",
+        ".rich-text:not(.rich-text--full-width) .rich-text__wrapper {margin: auto; width: calc(100% - 1rem / var(--font-body-scale));}",
+        ".rich-text.content-container {display: none;}",
+        "@media (max-width: 768px) {.rich-text.content-container {display: block; }}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "show_arrow": false,
+        "arrow_color": "#000000",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1b41725b-bbc1-4dea-a870-10c67130b008",
+        "full_width": true,
+        "padding_top": 16,
+        "padding_bottom": 48
+      }
+    },
+    "noir_banner_afBfYp": {
+      "type": "noir-banner",
+      "blocks": {
+        "heading_AwEawr": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "THE DAILY SHIFT",
+            "text_style": "default",
+            "heading_size": "h1"
+          }
+        },
+        "text_mKhG3m": {
+          "type": "text",
+          "settings": {
+            "text": "<p>ALIGN YOUR DAY WITH</p><p>MINDFUL AFFIRMATIONS.</p>",
+            "text_style": "body"
+          }
+        },
+        "html_ThDhq3": {
+          "type": "html",
+          "settings": {
+            "custom_html": ""
+          }
+        },
+        "buttons_hFjTnW": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "EXPLORE THE RITUAL",
+            "button_link_1": "shopify://products/affirmation-cards-the-daily-shift",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_AwEawr",
+        "text_mKhG3m",
+        "html_ThDhq3",
+        "buttons_hFjTnW"
+      ],
+      "custom_css": [
+        "p {line-height: 1.25; margin: 0;}",
+        ".noir-banner .button.button--secondary:hover {color: inherit;}",
+        "@media screen and (max-width: 767px) {.noir-banner .banner__content {min-height: 55rem !important; align-items: end; }}",
+        ".noir-banner .banner__text p {font-size: 18px;}"
+      ],
+      "name": "Noir Banner",
+      "settings": {
+        "image": "shopify://shop_images/THE_DAILY_SHIFT_BANNER_1360_x_768px_121cac4b-e1b4-4747-8861-97a3e8d2399f.webp",
+        "image_mobile": "shopify://shop_images/THE_DAILY_SHIFT_BANNER_832_x_1248px_b519a6dc-a92d-4222-8cbc-c7bfc14a2de6.webp",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "bottom-left",
+        "desktop_content_alignment": "left",
+        "show_text_box": false,
+        "color_scheme": "scheme-5",
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "1786009117eea7b9f6": {
+      "type": "apps",
+      "blocks": {
+        "quinn_shoppable_reel_app_cards_block_j4iV6x": {
+          "type": "shopify://apps/quinn-shoppable-reel/blocks/app-cards-block/483fa771-9c4d-49e4-8c0d-0155f4b872d6",
+          "settings": {
+            "custom_metaobject_handle": "",
+            "background_color": "#000000",
+            "margin_desktop": "10px 0px 0px 0px",
+            "margin_mobile": "5px 0px 0px 0px",
+            "padding_desktop": "10px 10px 10px 10px",
+            "padding_mobile": "10px 5px 10px 5px"
+          }
+        }
+      },
+      "block_order": [
+        "quinn_shoppable_reel_app_cards_block_j4iV6x"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "rich_text_3qa83r": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_bdcHhy": {
+          "type": "heading",
+          "settings": {
+            "heading": "RITUAL HOODIES",
+            "heading_size": "h1"
+          }
+        },
+        "text_4WtXcH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>INTENTIONAL STREETWEAR. AFFIRMATIONS AND MANTRAS</p><p>DESIGNED FOR PROTECTION AND COURAGE.</p>"
+          }
+        },
+        "button_Yx6YC6": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Hoodies",
+            "button_link": "shopify://collections/soulwear",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_bdcHhy",
+        "text_4WtXcH",
+        "button_Yx6YC6"
+      ],
+      "custom_css": [
+        "p {margin: 0;}",
+        "@media (max-width: 768px) {.rich-text.content-container {display: none; }}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "show_arrow": false,
+        "arrow_color": "#000000",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1b41725b-bbc1-4dea-a870-10c67130b008",
+        "full_width": true,
+        "padding_top": 32,
+        "padding_bottom": 16
+      }
+    },
+    "rich_text_Cipzye": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Qz7Q4g": {
+          "type": "heading",
+          "settings": {
+            "heading": "RITUAL HOODIES",
+            "heading_size": "h1"
+          }
+        },
+        "text_ThJyNQ": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>INTENTIONAL STREETWEAR.</p>"
+          }
+        },
+        "button_VxPexj": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Hoodies",
+            "button_link": "shopify://collections/soulwear",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_Qz7Q4g",
+        "text_ThJyNQ",
+        "button_VxPexj"
+      ],
+      "custom_css": [
+        "p {margin: 0;}",
+        ".rich-text.content-container {display: none;}",
+        "@media (max-width: 768px) {.rich-text.content-container {display: block; }}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "show_arrow": false,
+        "arrow_color": "#000000",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1b41725b-bbc1-4dea-a870-10c67130b008",
+        "full_width": true,
+        "padding_top": 32,
+        "padding_bottom": 16
+      }
+    },
+    "noir_grid_tF83Wf": {
+      "type": "noir-grid",
+      "blocks": {
+        "grid_item_7pYe3U": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/IMG_8477.jpg",
+            "content_position": "absolute",
+            "title": "Hoodies",
+            "block_heading_size": "h3",
+            "content": "",
+            "link": "shopify://products/unisex-hoodies"
+          }
+        },
+        "grid_item_Cf3dHh": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Sweatshirts_3460_x_4325_px.png",
+            "content_position": "absolute",
+            "title": "Sweatshirts",
+            "block_heading_size": "h3",
+            "content": "",
+            "link": "shopify://products/sweatshirts-round-neck"
+          }
+        },
+        "grid_item_WH7ERA": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Joggersblack.jpg",
+            "content_position": "absolute",
+            "title": "Joggers",
+            "block_heading_size": "h3",
+            "content": "",
+            "link": "shopify://products/joggers"
+          }
+        },
+        "grid_item_7fQcUm": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/IMG_8388.jpg",
+            "content_position": "absolute",
+            "title": "Crop Hoodies",
+            "block_heading_size": "h3",
+            "content": "",
+            "link": "shopify://products/crop-hoodies-women"
+          }
+        }
+      },
+      "block_order": [
+        "grid_item_7pYe3U",
+        "grid_item_Cf3dHh",
+        "grid_item_WH7ERA",
+        "grid_item_7fQcUm"
+      ],
+      "name": "Noir Grid",
+      "settings": {
+        "title": "SHOP BY PRINT STYLE",
+        "heading_size": "h1",
+        "show_arrow": true,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1b41725b-bbc1-4dea-a870-10c67130b008",
+        "padding_top": 16,
+        "padding_bottom": 20,
+        "enable_mobile_slider": false
+      }
+    },
+    "noir_product_grid_7XzVED": {
+      "type": "noir-product-grid",
+      "custom_css": [
+        "h2 {margin-bottom: 0rem;}"
+      ],
+      "name": "Noir Product Grid",
+      "settings": {
+        "collection": "the-alchemy-edit",
+        "enable_mobile_slider": true,
+        "show_pagination": true,
+        "products_to_show": 4,
+        "columns_desktop": 3,
+        "columns_mobile": "2",
+        "title": "THE ALCHEMY EDIT™",
+        "heading_size": "h2",
+        "para": "Bundle Builder",
+        "color_scheme": "scheme-1b41725b-bbc1-4dea-a870-10c67130b008",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "padding_top": 16,
+        "padding_bottom": 36
+      }
+    },
+    "noir_banner_XXcNhD": {
+      "type": "noir-banner",
+      "blocks": {
+        "heading_RpAMcB": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "THE GIFT OF<br>MINDFULNESS",
+            "text_style": "default",
+            "heading_size": "h1"
+          }
+        },
+        "text_F9TE4K": {
+          "type": "text",
+          "settings": {
+            "text": "<p>TRANSFORMING CORPORATE GIFTING INTO A MEANINGFUL EXPERIENCE OF WELL-BEING.</p>",
+            "text_style": "body"
+          }
+        },
+        "buttons_TdPczT": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "EXPLORE GIFTING ",
+            "button_link_1": "shopify://pages/corporate-gifting",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_RpAMcB",
+        "text_F9TE4K",
+        "buttons_TdPczT"
+      ],
+      "custom_css": [
+        "p {font-weight: 400; line-height: 1.25; font-size: 18px !important; max-width: 30rem;}",
+        ".noir-banner .button.button--secondary:hover {color: inherit;}",
+        "@media screen and (max-width: 767px) {.noir-banner .banner__content {min-height: 55rem !important; align-items: end; } p {margin: 0 auto; }}"
+      ],
+      "name": "Noir Banner",
+      "settings": {
+        "image": "shopify://shop_images/Gift_of_Mindfulness_1360_x_768_px_41048f2a-9b80-404b-97f0-b99e76ee50da.webp",
+        "image_mobile": "shopify://shop_images/Gift_of_Mindfulness_832_x_1248px_5d004ba3-104d-4c9f-a8a8-134d18a016ce.webp",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "bottom-left",
+        "desktop_content_alignment": "left",
+        "show_text_box": false,
+        "color_scheme": "scheme-5",
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "noir_customer_review_RwpT7z": {
+      "type": "noir-customer-review",
+      "blocks": {
+        "testimonial_YctDLw": {
+          "type": "testimonial",
+          "settings": {
+            "message": "The fragrance is so calming. It’s become part of my evening routine.",
+            "name": "Rhea",
+            "subtext": "Mumbai",
+            "rating": 5
+          }
+        },
+        "testimonial_EagB9c": {
+          "type": "testimonial",
+          "settings": {
+            "message": "A beautiful little ritual that has become part of my routine.",
+            "name": "Mehak",
+            "subtext": "Pune",
+            "rating": 5
+          }
+        },
+        "testimonial_VpGVdt": {
+          "type": "testimonial",
+          "settings": {
+            "message": "It instantly makes my space feel warm, calm and peaceful.",
+            "name": "Ananya",
+            "subtext": "Mumbai",
+            "rating": 5
+          }
+        },
+        "testimonial_Q8k748": {
+          "type": "testimonial",
+          "settings": {
+            "message": "Beautifully made, thoughtfully packed and such a lovely experience.",
+            "name": "Kavya",
+            "subtext": "Delhi",
+            "rating": 5
+          }
+        },
+        "testimonial_qmYkqq": {
+          "type": "testimonial",
+          "settings": {
+            "message": "Bought one for myself, then ordered another as a gift!",
+            "name": "Ishita",
+            "subtext": "Delhi",
+            "rating": 5
+          }
+        },
+        "image_review_UyWtKn": {
+          "type": "image_review",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/1360_BY_768_1.jpg",
+            "name": "KASHISH",
+            "subtext": "ANALYST",
+            "age": "25",
+            "message": "The quality is unmatched. Truly a premium experience.",
+            "rating": 5
+          }
+        },
+        "image_review_K6DaNj": {
+          "type": "image_review",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/1360_BY_768_2.jpg",
+            "name": "KASHISH",
+            "subtext": "ANALYST",
+            "age": "25",
+            "message": "The quality is unmatched. Truly a premium experience.",
+            "rating": 5
+          }
+        },
+        "image_review_pdAdHG": {
+          "type": "image_review",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/1360_BY_768_3.jpg",
+            "name": "KASHISH",
+            "subtext": "ANALYST",
+            "age": "25",
+            "message": "The quality is unmatched. Truly a premium experience.",
+            "rating": 5
+          }
+        },
+        "image_review_pwy9th": {
+          "type": "image_review",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/1360_BY_768_4.jpg",
+            "name": "KASHISH",
+            "subtext": "ANALYST",
+            "age": "25",
+            "message": "The quality is unmatched. Truly a premium experience.",
+            "rating": 5
+          }
+        },
+        "image_review_WnGx7h": {
+          "type": "image_review",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/1360_BY_768_5.jpg",
+            "name": "KASHISH",
+            "subtext": "ANALYST",
+            "age": "25",
+            "message": "The quality is unmatched. Truly a premium experience.",
+            "rating": 5
+          }
+        },
+        "image_review_h7cdgA": {
+          "type": "image_review",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/1360_BY_768_6.jpg",
+            "name": "KASHISH",
+            "subtext": "ANALYST",
+            "age": "25",
+            "message": "The quality is unmatched. Truly a premium experience.",
+            "rating": 5
+          }
+        },
+        "image_review_mRfQqn": {
+          "type": "image_review",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/1360_BY_768_8.jpg",
+            "name": "KASHISH",
+            "subtext": "ANALYST",
+            "age": "25",
+            "message": "The quality is unmatched. Truly a premium experience.",
+            "rating": 5
+          }
+        },
+        "image_review_VkkqBt": {
+          "type": "image_review",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/1360_BY_768_9.jpg",
+            "name": "KASHISH",
+            "subtext": "ANALYST",
+            "age": "25",
+            "message": "The quality is unmatched. Truly a premium experience.",
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_YctDLw",
+        "testimonial_EagB9c",
+        "testimonial_VpGVdt",
+        "testimonial_Q8k748",
+        "testimonial_qmYkqq",
+        "image_review_UyWtKn",
+        "image_review_K6DaNj",
+        "image_review_pdAdHG",
+        "image_review_pwy9th",
+        "image_review_WnGx7h",
+        "image_review_h7cdgA",
+        "image_review_mRfQqn",
+        "image_review_VkkqBt"
+      ],
+      "custom_css": [
+        "h2 {margin-bottom: 2.5rem;}",
+        ".image-split-content {display: none;}",
+        ".testimonial-card-base {aspect-ratio: auto; height: auto;}",
+        ".image-split-media img {display: flex;}"
+      ],
+      "name": "Noir Testimonial Slider",
+      "settings": {
+        "title": "CUSTOMER REVIEWS",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "background_image": "shopify://shop_images/DD4.png",
+        "overlay_opacity": 0,
+        "color_scheme": "scheme-5",
+        "show_pagination": true,
+        "desktop_columns": 3,
+        "mobile_columns": 1,
+        "padding_top": 20,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "noir_dynamic_popup_gEtnWc",
+    "noir_banner_TQFLcp",
+    "noir_banner_pXdb4T",
+    "noir_grid_cddDpx",
+    "rich_text_i9bfGf",
+    "rich_text_Hq7aYz",
+    "noir_grid_KfGe4K",
+    "rich_text_BEMBUM",
+    "rich_text_xUAFU4",
+    "noir_grid_VriXEW",
+    "rich_text_8y8bCF",
+    "rich_text_YCewPd",
+    "noir_banner_afBfYp",
+    "1786009117eea7b9f6",
+    "rich_text_3qa83r",
+    "rich_text_Cipzye",
+    "noir_grid_tF83Wf",
+    "noir_product_grid_7XzVED",
+    "noir_banner_XXcNhD",
+    "noir_customer_review_RwpT7z"
+  ]
+}

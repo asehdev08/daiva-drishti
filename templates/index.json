@@ -56,11 +56,11 @@
             "subheading_style": "body",
             "button_label": "SHOP COLLECTION",
             "button_link": "shopify://collections",
-            "button_style_secondary": false,
+            "button_style_secondary": true,
             "desktop_content_position": "middle-center",
             "desktop_content_alignment": "center",
             "show_text_box": false,
-            "color_scheme": "scheme-1b41725b-bbc1-4dea-a870-10c67130b008",
+            "color_scheme": "scheme-3",
             "mobile_content_alignment": "center",
             "show_text_below": false
           }

@@ -1,0 +1,391 @@
+{{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  /* CSS for Initial Hidden State (Prevents flicker before JS loads) */
+  .noir-animate-item {
+    opacity: 0;
+    visibility: hidden;
+  }
+  p.banner_content {
+    background: linear-gradient(180deg, #f2e4ad, #f3dbc4 45%, #cfb37b 75%, #f3dbc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-size: 14px;
+  }
+  .banner__custom-html p {
+    margin: 0;
+    background: linear-gradient(180deg, #f2e4ad, #f3dbc4 45%, #cfb37b 75%, #f3dbc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-size: 16px;
+    text-transform: uppercase;
+    line-height: normal;
+    padding-top: 10px;
+  }
+
+  @media(max-width:768px){
+    .banner__custom-html p {
+      font-size: 14px;
+    }
+  }
+
+  /* Carousel wiring: Swiper controls which .banner-carousel__slide is shown;
+     each slide reuses the exact .banner/.banner__media/.banner__content markup
+     from noir-banner.liquid so the existing CSS applies unchanged. */
+  #BannerCarousel-{{ section.id }} .swiper,
+  #BannerCarousel-{{ section.id }} .swiper-wrapper,
+  #BannerCarousel-{{ section.id }} .swiper-slide {
+    height: 100%;
+    width: 100%;
+  }
+  #BannerCarousel-{{ section.id }} .swiper-slide .banner {
+    height: 100%;
+  }
+  #BannerCarousel-{{ section.id }} .swiper-button-next,
+  #BannerCarousel-{{ section.id }} .swiper-button-prev {
+    color: #fff;
+  }
+  #BannerCarousel-{{ section.id }} .swiper-pagination {
+    position: absolute;
+    bottom: 2rem;
+    z-index: 3;
+  }
+{%- endstyle -%}
+
+<div id="BannerCarousel-{{ section.id }}" class="noir-banner-carousel">
+  <div class="swiper noir-banner-carousel__swiper-{{ section.id }}">
+    <div class="swiper-wrapper">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'slide' -%}
+          {%- liquid
+            assign image_class = ''
+            if block.settings.image_mobile != blank
+              assign image_class = 'small-hide'
+            endif
+
+            assign img_loading = 'lazy'
+            assign img_fetchpriority = 'auto'
+            if forloop.first
+              assign img_loading = 'eager'
+              assign img_fetchpriority = 'high'
+            endif
+          -%}
+          <div class="swiper-slide" {{ block.shopify_attributes }}>
+            <div id="Banner-{{ section.id }}-{{ forloop.index }}"
+                 class="noir-banner banner banner--{{ block.settings.image_height }}
+                 banner--content-align-{{ block.settings.desktop_content_alignment }}
+                 banner--content-align-mobile-{{ block.settings.mobile_content_alignment }}
+                 {% if block.settings.show_text_below %} banner--mobile-bottom{%- endif -%}
+                 {% if block.settings.show_text_box == false %} banner--desktop-transparent{% endif %}">
+
+              <div class="banner__media media">
+                {%- if block.settings.image != blank -%}
+                  {{ block.settings.image | image_url: width: 3840 | image_tag: width: block.settings.image.width, class: image_class, widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840', fetchpriority: img_fetchpriority, loading: img_loading }}
+                  {%- if block.settings.image_mobile != blank -%}
+                    {{ block.settings.image_mobile | image_url: width: 750 | image_tag: width: block.settings.image_mobile.width, class: 'medium-hide large-up-hide', widths: '375, 550, 750', fetchpriority: img_fetchpriority, loading: img_loading }}
+                  {%- endif -%}
+                {%- else -%}
+                  {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                {%- endif -%}
+              </div>
+
+              <div class="banner__content banner__content--{{ block.settings.desktop_content_position }} page-width">
+                <div class="banner__box content-container color-{{ block.settings.color_scheme }} gradient">
+                  {%- if block.settings.heading != blank -%}
+                    <div class="noir-animate-item">
+                      <h2 class="banner__heading {{ block.settings.text_style }} {{ block.settings.heading_size }}">
+                        {{ block.settings.heading | newline_to_br }}
+                      </h2>
+                    </div>
+                  {%- endif -%}
+                  {%- if block.settings.subheading != blank -%}
+                    <div class="noir-animate-item">
+                      <div class="banner__text rte {{ block.settings.subheading_style }}">
+                        {{ block.settings.subheading }}
+                      </div>
+                    </div>
+                  {%- endif -%}
+                  {%- if block.settings.button_label != blank -%}
+                    <div class="noir-animate-item">
+                      <div class="banner__buttons">
+                        <a href="{{ block.settings.button_link }}" class="button {% if block.settings.button_style_secondary %}button--secondary{% else %}button--primary{% endif %}">
+                          {{- block.settings.button_label | escape -}}
+                        </a>
+                      </div>
+                    </div>
+                  {%- endif -%}
+                </div>
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    {%- assign slide_count = section.blocks | where: 'type', 'slide' | size -%}
+    {%- if slide_count > 1 -%}
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-pagination"></div>
+    {%- endif -%}
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const root = document.querySelector('#BannerCarousel-{{ section.id }}');
+    if (!root) return;
+
+    const slideCount = {{ slide_count }};
+    const swiperEl = root.querySelector('.noir-banner-carousel__swiper-{{ section.id }}');
+
+    // Only initialize Swiper when there's more than one slide; a single slide
+    // renders as a static banner (no nav/pagination/autoplay overhead).
+    if (slideCount > 1 && typeof Swiper !== 'undefined') {
+      new Swiper(swiperEl, {
+        effect: 'fade',
+        fadeEffect: { crossFade: true },
+        slidesPerView: 1,
+        loop: true,
+        speed: 800,
+        {%- if section.settings.enable_autoplay %}
+        autoplay: {
+          delay: {{ section.settings.autoplay_speed }},
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true
+        },
+        {%- endif %}
+        navigation: {
+          nextEl: root.querySelector('.swiper-button-next'),
+          prevEl: root.querySelector('.swiper-button-prev')
+        },
+        pagination: {
+          el: root.querySelector('.swiper-pagination'),
+          clickable: true
+        }
+      });
+    }
+
+    if (typeof gsap !== 'undefined') {
+      gsap.registerPlugin(ScrollTrigger);
+
+      const banner = root;
+      const items = banner.querySelectorAll(".noir-animate-item");
+
+      gsap.set(items, {
+        y: 60,
+        opacity: 0,
+        visibility: 'hidden'
+      });
+
+      const triggerAnimation = () => {
+        gsap.to(items, {
+          y: 0,
+          opacity: 1,
+          visibility: 'visible',
+          duration: 1.4,
+          stagger: 0.15,
+          ease: "expo.out",
+          overwrite: true
+        });
+      };
+
+      const resetAnimation = () => {
+        gsap.set(items, {
+          y: 60,
+          opacity: 0,
+          visibility: 'hidden'
+        });
+      };
+
+      setTimeout(() => {
+        const rect = banner.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight;
+
+        if (isVisible) {
+          triggerAnimation();
+        }
+      }, 6000);
+
+      ScrollTrigger.create({
+        trigger: banner,
+        start: "top 85%",
+        onEnter: () => {
+          if(!document.body.classList.contains('loading')) {
+            triggerAnimation();
+          }
+        },
+        onEnterBack: triggerAnimation,
+        onLeave: resetAnimation,
+        onLeaveBack: resetAnimation
+      });
+
+      // Fallback: if the banner is already in view on load (ScrollTrigger's
+      // onEnter won't fire for elements already past the trigger point, and
+      // the 6s preloader timeout above may not have elapsed yet either),
+      // reveal now so above-the-fold slides don't stay stuck at opacity:0.
+      requestAnimationFrame(() => {
+        const rect = banner.getBoundingClientRect();
+        if (rect.top < window.innerHeight && !document.body.classList.contains('loading')) {
+          triggerAnimation();
+        }
+      });
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Noir Banner Carousel",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_autoplay",
+      "default": true,
+      "label": "Auto-rotate slides"
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "min": 3000,
+      "max": 9000,
+      "step": 500,
+      "unit": "ms",
+      "label": "Autoplay speed",
+      "default": 5000
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Desktop Image" },
+        { "type": "image_picker", "id": "image_mobile", "label": "Mobile Image (Optional)" },
+        {
+          "type": "select",
+          "id": "image_height",
+          "options": [
+            { "value": "adapt", "label": "Adapt to video/image" },
+            { "value": "small", "label": "Small" },
+            { "value": "medium", "label": "Medium" },
+            { "value": "large", "label": "Large" }
+          ],
+          "default": "medium",
+          "label": "Banner height"
+        },
+        { "type": "header", "content": "Content" },
+        {
+          "type": "textarea",
+          "id": "heading",
+          "default": "Noir Banner\nHeadline",
+          "label": "Heading (Use Enter for line breaks)"
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "options": [
+            { "value": "default", "label": "default" },
+            { "value": "brand-heading", "label": "brand-heading" }
+          ],
+          "default": "default",
+          "label": "Heading Text Style"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "options": [
+            { "value": "h2", "label": "Small" },
+            { "value": "h1", "label": "Medium" },
+            { "value": "h0", "label": "Large" },
+            { "value": "hxl", "label": "Extra Large" }
+          ],
+          "default": "h1",
+          "label": "Heading size"
+        },
+        {
+          "type": "richtext",
+          "id": "subheading",
+          "default": "<p>Give customers details about your shop.</p>",
+          "label": "Subheading"
+        },
+        {
+          "type": "select",
+          "id": "subheading_style",
+          "options": [
+            { "value": "body", "label": "Body" },
+            { "value": "subtitle", "label": "Subtitle" },
+            { "value": "caption-with-letter-spacing", "label": "Uppercase Caption" }
+          ],
+          "default": "body",
+          "label": "Subheading Text Style"
+        },
+        { "type": "header", "content": "Button" },
+        { "type": "text", "id": "button_label", "default": "Button label", "label": "Button label" },
+        { "type": "url", "id": "button_link", "label": "Button link" },
+        { "type": "checkbox", "id": "button_style_secondary", "default": false, "label": "Use outline button style" },
+        { "type": "header", "content": "Desktop Content Settings" },
+        {
+          "type": "select",
+          "id": "desktop_content_position",
+          "options": [
+            { "value": "top-left", "label": "Top left" },
+            { "value": "top-center", "label": "Top center" },
+            { "value": "top-right", "label": "Top right" },
+            { "value": "middle-left", "label": "Middle left" },
+            { "value": "middle-center", "label": "Middle center" },
+            { "value": "middle-right", "label": "Middle right" },
+            { "value": "bottom-left", "label": "Bottom left" },
+            { "value": "bottom-center", "label": "Bottom center" },
+            { "value": "bottom-right", "label": "Bottom right" }
+          ],
+          "default": "middle-center",
+          "label": "Content Position"
+        },
+        {
+          "type": "select",
+          "id": "desktop_content_alignment",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": "center",
+          "label": "Text Alignment"
+        },
+        { "type": "checkbox", "id": "show_text_box", "default": true, "label": "Show container on desktop" },
+        { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
+        { "type": "header", "content": "Mobile Layout" },
+        {
+          "type": "select",
+          "id": "mobile_content_alignment",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": "center",
+          "label": "Mobile Text Alignment"
+        },
+        { "type": "checkbox", "id": "show_text_below", "default": true, "label": "Show content below images on mobile" }
+      ]
+    }
+  ],
+  "max_blocks": 5,
+  "presets": [
+    {
+      "name": "Noir Banner Carousel",
+      "blocks": [
+        { "type": "slide" },
+        { "type": "slide" }
+      ]
+    }
+  ]
+}
+{% endschema %}

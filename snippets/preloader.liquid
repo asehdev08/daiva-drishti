@@ -13,7 +13,7 @@
     align-items: center;
     justify-content: center;
     opacity: 1;
-    transition: opacity 1.2s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
   }
 
   .preloader.fade-out {
@@ -26,7 +26,7 @@
     width: 180px;
     height: 180px;
     opacity: 0;
-    transition: opacity 2.5s ease-in-out; /* very slow fade */
+    transition: opacity 0.9s ease-in-out; /* very slow fade */
   }
 
   .deity-container.fade-in {
@@ -76,18 +76,18 @@
       // 1. Fade image IN
       setTimeout(() => {
         ddBox.classList.add('fade-in');
-      }, 500);
+      }, 200);
 
       // 2. Fade image OUT
       setTimeout(() => {
         ddBox.classList.remove('fade-in');
         ddBox.classList.add('fade-out');
-      }, 4000);
+      }, 1300);
 
       // 3. Fade out background black screen
       setTimeout(() => {
         preloader.classList.add('fade-out');
-      }, 5500);
+      }, 1600);
 
       // 4. Final Cleanup
       setTimeout(() => {
@@ -98,7 +98,7 @@
         localStorage.setItem(HAS_SEEN_KEY, 'true');
         
         window.dispatchEvent(new Event('preloaderFinished'));
-      }, 6000);
+      }, 1900);
     };
 
     // Safety fallback
@@ -107,6 +107,6 @@
         preloader.remove();
         document.body.classList.remove('loading');
       }
-    }, 9000);
+    }, 4000);
   }
 </script>

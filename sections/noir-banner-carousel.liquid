@@ -74,6 +74,11 @@
               assign img_fetchpriority = 'high'
             endif
           -%}
+          {%- style -%}
+            #Banner-{{ section.id }}-{{ forloop.index }}::after {
+              opacity: {{ block.settings.image_overlay_opacity | divided_by: 100.0 }};
+            }
+          {%- endstyle -%}
           <div class="swiper-slide" {{ block.shopify_attributes }}>
             <div id="Banner-{{ section.id }}-{{ forloop.index }}"
                  class="noir-banner banner banner--{{ block.settings.image_height }}
@@ -279,6 +284,16 @@
           ],
           "default": "medium",
           "label": "Banner height"
+        },
+        {
+          "type": "range",
+          "id": "image_overlay_opacity",
+          "min": 0,
+          "max": 100,
+          "step": 10,
+          "unit": "%",
+          "label": "Image overlay opacity",
+          "default": 0
         },
         { "type": "header", "content": "Content" },
         {

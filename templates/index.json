@@ -57,7 +57,7 @@
             "button_label": "SHOP COLLECTION",
             "button_link": "shopify://collections",
             "button_style_secondary": true,
-            "desktop_content_position": "middle-center",
+            "desktop_content_position": "bottom-center",
             "desktop_content_alignment": "center",
             "show_text_box": false,
             "color_scheme": "scheme-4",

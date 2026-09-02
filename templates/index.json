@@ -40,6 +40,41 @@
         "btn_text_color": "#f3e6e0"
       }
     },
+    "noir_banner_carousel_WxdVBL": {
+      "type": "noir-banner-carousel",
+      "blocks": {
+        "slide_wnLWjz": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Website.webp",
+            "image_mobile": "shopify://shop_images/WhatsApp_Image_2026-08-12_at_14.43.08.webp",
+            "image_height": "medium",
+            "heading": "MODERN RITUALS ROOTED IN",
+            "text_style": "default",
+            "heading_size": "h1",
+            "subheading": "<p>HANDCRAFTED CANDLES & RITUAL ESSENTIALS FOR PEACE, CLARITY & HEALING.</p>",
+            "subheading_style": "body",
+            "button_label": "SHOP COLLECTION",
+            "button_link": "shopify://collections",
+            "button_style_secondary": true,
+            "desktop_content_position": "bottom-center",
+            "desktop_content_alignment": "center",
+            "show_text_box": false,
+            "color_scheme": "scheme-4",
+            "mobile_content_alignment": "center",
+            "show_text_below": false
+          }
+        }
+      },
+      "block_order": [
+        "slide_wnLWjz"
+      ],
+      "name": "Noir Banner Carousel",
+      "settings": {
+        "enable_autoplay": true,
+        "autoplay_speed": 5000
+      }
+    },
     "noir_banner_TQFLcp": {
       "type": "noir-banner",
       "blocks": {
@@ -90,6 +125,7 @@
         "html_ifMEtK",
         "buttons_XtXELn"
       ],
+      "disabled": true,
       "custom_css": [
         "@media screen and (max-width: 989px) {.noir-banner .banner__content {min-height: 48rem !important; align-items: end; }}",
         ".noir-animate-item {margin: 0;}",
@@ -162,6 +198,7 @@
         "html_fUJHNG",
         "buttons_CYPEew"
       ],
+      "disabled": true,
       "custom_css": [
         "@media screen and (max-width: 989px) {.noir-banner .banner__content {min-height: 48rem !important; align-items: end; }}",
         ".noir-animate-item {margin: 0;}",
@@ -1233,6 +1270,7 @@
   },
   "order": [
     "noir_dynamic_popup_gEtnWc",
+    "noir_banner_carousel_WxdVBL",
     "noir_banner_TQFLcp",
     "noir_banner_pXdb4T",
     "noir_grid_cddDpx",

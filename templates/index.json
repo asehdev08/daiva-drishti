@@ -46,14 +46,14 @@
         "slide_wnLWjz": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/B4.jpg",
-            "image_mobile": "shopify://shop_images/B_1.jpg",
+            "image": "shopify://shop_images/Website.webp",
+            "image_mobile": "shopify://shop_images/WhatsApp_Image_2026-08-12_at_14.43.08.webp",
             "image_height": "medium",
             "image_overlay_opacity": 40,
-            "heading": "",
+            "heading": "MODERN RITUALS ROOTED IN",
             "text_style": "default",
             "heading_size": "h1",
-            "subheading": "",
+            "subheading": "<p>HANDCRAFTED CANDLES & RITUAL ESSENTIALS FOR PEACE, CLARITY & HEALING.</p>",
             "subheading_style": "body",
             "button_label": "SHOP COLLECTION",
             "button_link": "shopify://collections",

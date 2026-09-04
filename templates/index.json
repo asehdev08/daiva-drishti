@@ -43,17 +43,38 @@
     "noir_banner_carousel_WxdVBL": {
       "type": "noir-banner-carousel",
       "blocks": {
+        "slide_XDcDYd": {
+          "type": "slide",
+          "settings": {
+            "image_height": "medium",
+            "image_overlay_opacity": 0,
+            "heading": "Noir Banner\nHeadline",
+            "text_style": "default",
+            "heading_size": "h1",
+            "subheading": "<p>Give customers details about your shop.</p>",
+            "subheading_style": "body",
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "desktop_content_position": "middle-center",
+            "desktop_content_alignment": "center",
+            "show_text_box": true,
+            "color_scheme": "scheme-1",
+            "mobile_content_alignment": "center",
+            "show_text_below": true
+          }
+        },
         "slide_wnLWjz": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Website.webp",
-            "image_mobile": "shopify://shop_images/WhatsApp_Image_2026-08-12_at_14.43.08.webp",
+            "image": "shopify://shop_images/B4.jpg",
+            "image_mobile": "shopify://shop_images/B_1.jpg",
             "image_height": "medium",
             "image_overlay_opacity": 40,
-            "heading": "MODERN RITUALS ROOTED IN",
+            "heading": "",
             "text_style": "default",
             "heading_size": "h1",
-            "subheading": "<p>HANDCRAFTED CANDLES & RITUAL ESSENTIALS FOR PEACE, CLARITY & HEALING.</p>",
+            "subheading": "",
             "subheading_style": "body",
             "button_label": "SHOP COLLECTION",
             "button_link": "shopify://collections",
@@ -68,6 +89,7 @@
         }
       },
       "block_order": [
+        "slide_XDcDYd",
         "slide_wnLWjz"
       ],
       "name": "Noir Banner Carousel",

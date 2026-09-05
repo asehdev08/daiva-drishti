@@ -45,8 +45,8 @@
       ],
       "name": "Noir Banner",
       "settings": {
-        "image": "shopify://shop_images/IMG_0718.png",
-        "image_mobile": "shopify://shop_images/IMG_0718.png",
+        "image": "shopify://shop_images/IMG_0714.png",
+        "image_mobile": "shopify://shop_images/IMG_0714.png",
         "image_overlay_opacity": 40,
         "image_height": "large",
         "desktop_content_position": "bottom-center",

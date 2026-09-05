@@ -602,56 +602,6 @@
         "enable_mobile_slider": true
       }
     },
-    "rich_text_8y8bCF": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_UzzkXJ": {
-          "type": "heading",
-          "settings": {
-            "heading": "AFFIRMATION CARDS",
-            "heading_size": "h1"
-          }
-        },
-        "text_mUn79U": {
-          "type": "text",
-          "settings": {
-            "text": "<p>A DECK FOR DAILY INNER WORK</p><p>ALIGN YOUR MIND, BODY & SOUL</p>"
-          }
-        },
-        "button_ffT67W": {
-          "type": "button",
-          "settings": {
-            "button_label": "Shop Affirmation Cards",
-            "button_link": "shopify://products/affirmation-cards-the-daily-shift",
-            "button_style_secondary": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_UzzkXJ",
-        "text_mUn79U",
-        "button_ffT67W"
-      ],
-      "custom_css": [
-        "p {margin: 0;}",
-        ".rich-text:not(.rich-text--full-width) .rich-text__wrapper {margin: auto; width: calc(100% - 1rem / var(--font-body-scale));}",
-        "@media (max-width: 768px) {.rich-text.content-container {display: none; }}"
-      ],
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "show_arrow": false,
-        "arrow_color": "#000000",
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-1b41725b-bbc1-4dea-a870-10c67130b008",
-        "full_width": true,
-        "padding_top": 16,
-        "padding_bottom": 48
-      }
-    },
     "rich_text_YCewPd": {
       "type": "rich-text",
       "blocks": {
@@ -702,69 +652,6 @@
         "full_width": true,
         "padding_top": 16,
         "padding_bottom": 48
-      }
-    },
-    "noir_banner_afBfYp": {
-      "type": "noir-banner",
-      "blocks": {
-        "heading_AwEawr": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "heading": "THE DAILY SHIFT",
-            "text_style": "default",
-            "heading_size": "h1"
-          }
-        },
-        "text_mKhG3m": {
-          "type": "text",
-          "settings": {
-            "text": "<p>ALIGN YOUR DAY WITH</p><p>MINDFUL AFFIRMATIONS.</p>",
-            "text_style": "body"
-          }
-        },
-        "html_ThDhq3": {
-          "type": "html",
-          "settings": {
-            "custom_html": ""
-          }
-        },
-        "buttons_hFjTnW": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "EXPLORE THE RITUAL",
-            "button_link_1": "shopify://products/affirmation-cards-the-daily-shift",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_AwEawr",
-        "text_mKhG3m",
-        "html_ThDhq3",
-        "buttons_hFjTnW"
-      ],
-      "custom_css": [
-        "p {line-height: 1.25; margin: 0;}",
-        ".noir-banner .button.button--secondary:hover {color: inherit;}",
-        "@media screen and (max-width: 767px) {.noir-banner .banner__content {min-height: 55rem !important; align-items: end; }}",
-        ".noir-banner .banner__text p {font-size: 18px;}"
-      ],
-      "name": "Noir Banner",
-      "settings": {
-        "image": "shopify://shop_images/THE_DAILY_SHIFT_BANNER_1360_x_768px_121cac4b-e1b4-4747-8861-97a3e8d2399f.webp",
-        "image_mobile": "shopify://shop_images/THE_DAILY_SHIFT_BANNER_832_x_1248px_b519a6dc-a92d-4222-8cbc-c7bfc14a2de6.webp",
-        "image_overlay_opacity": 0,
-        "image_height": "adapt",
-        "desktop_content_position": "bottom-left",
-        "desktop_content_alignment": "left",
-        "show_text_box": false,
-        "color_scheme": "scheme-5",
-        "mobile_content_alignment": "center",
-        "show_text_below": false
       }
     },
     "1786009117eea7b9f6": {
@@ -1176,9 +1063,7 @@
     "noir_grid_KfGe4K",
     "rich_text_xUAFU4",
     "noir_grid_VriXEW",
-    "rich_text_8y8bCF",
     "rich_text_YCewPd",
-    "noir_banner_afBfYp",
     "1786009117eea7b9f6",
     "rich_text_3qa83r",
     "rich_text_Cipzye",

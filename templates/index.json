@@ -49,7 +49,7 @@
             "image": "shopify://shop_images/DSC09317-jh.jpg",
             "image_mobile": "shopify://shop_images/DSC09317-jh.jpg",
             "image_height": "medium",
-            "image_overlay_opacity": 20,
+            "image_overlay_opacity": 50,
             "heading": "MODERN RITUALS ROOTED IN",
             "text_style": "default",
             "heading_size": "h2",

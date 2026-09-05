@@ -303,8 +303,8 @@
       ],
       "name": "Noir Grid",
       "settings": {
-        "title": "Rituals by category",
-        "heading_size": "h1",
+        "title": "Meaningful rituals for your mood, space and self",
+        "heading_size": "h2",
         "show_arrow": true,
         "columns_desktop": 3,
         "columns_mobile": "2",

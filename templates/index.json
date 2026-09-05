@@ -303,7 +303,7 @@
       ],
       "name": "Noir Grid",
       "settings": {
-        "title": "SHOP BY RITUAL",
+        "title": "Rituals by category",
         "heading_size": "h1",
         "show_arrow": true,
         "columns_desktop": 3,

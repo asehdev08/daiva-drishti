@@ -314,55 +314,6 @@
         "enable_mobile_slider": false
       }
     },
-    "rich_text_i9bfGf": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_iG3UqF": {
-          "type": "heading",
-          "settings": {
-            "heading": "RITUAL CANDLES",
-            "heading_size": "h1"
-          }
-        },
-        "text_kQ4HUY": {
-          "type": "text",
-          "settings": {
-            "text": "<p>SACRED FRAGRANCES.</p><p>INTENTIONAL ATMOSPHERES.</p><p>DESIGNED TO SHIFT ENERGY AND ANCHOR YOUR SPACE.</p>"
-          }
-        },
-        "button_QArHjN": {
-          "type": "button",
-          "settings": {
-            "button_label": "Shop Candles",
-            "button_link": "shopify://collections/ritual-candles-collection",
-            "button_style_secondary": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_iG3UqF",
-        "text_kQ4HUY",
-        "button_QArHjN"
-      ],
-      "custom_css": [
-        "p {margin: 0;}",
-        "@media (max-width: 768px) {.rich-text.content-container {display: none; }}"
-      ],
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "show_arrow": false,
-        "arrow_color": "#000000",
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-1b41725b-bbc1-4dea-a870-10c67130b008",
-        "full_width": true,
-        "padding_top": 16,
-        "padding_bottom": 16
-      }
-    },
     "rich_text_Hq7aYz": {
       "type": "rich-text",
       "blocks": {
@@ -856,9 +807,9 @@
         "products_to_show": 4,
         "columns_desktop": 3,
         "columns_mobile": "2",
-        "title": "THE ALCHEMY EDIT™",
+        "title": "GIFTING MADE BETTER",
         "heading_size": "h2",
-        "para": "Bundle Builder",
+        "para": "",
         "color_scheme": "scheme-1b41725b-bbc1-4dea-a870-10c67130b008",
         "image_ratio": "portrait",
         "image_shape": "default",
@@ -1058,7 +1009,6 @@
     "noir_banner_TQFLcp",
     "noir_banner_pXdb4T",
     "noir_grid_cddDpx",
-    "rich_text_i9bfGf",
     "rich_text_Hq7aYz",
     "noir_grid_KfGe4K",
     "rich_text_xUAFU4",

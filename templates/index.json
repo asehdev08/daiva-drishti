@@ -248,7 +248,7 @@
         "grid_item_QrtKfH": {
           "type": "grid_item",
           "settings": {
-            "image": "shopify://shop_images/daiva_image_1200x1500_f37f22e6-f9c7-4470-ad5c-1652eb75b96b.jpg",
+            "image": "shopify://shop_images/IMG_0715.png",
             "content_position": "absolute",
             "title": "Scented Candles",
             "block_heading_size": "h3",
@@ -259,7 +259,7 @@
         "grid_item_zee4fb": {
           "type": "grid_item",
           "settings": {
-            "image": "shopify://shop_images/d5ddc059-dfdb-4ba1-8a35-8d186ed92d42.jpg",
+            "image": "shopify://shop_images/IMG_0716.png",
             "content_position": "absolute",
             "title": "Affirmation Cards",
             "block_heading_size": "h3",

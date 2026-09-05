@@ -640,7 +640,7 @@
         "text_4WtXcH": {
           "type": "text",
           "settings": {
-            "text": "<p>INTENTIONAL STREETWEAR. AFFIRMATIONS AND MANTRAS</p><p>DESIGNED FOR PROTECTION AND COURAGE.</p>"
+            "text": "<p>INTENTIONAL STREETWEAR</p><p>DESIGNED TO SPEAK YOUR TRUTH</p>"
           }
         },
         "button_Yx6YC6": {
@@ -783,7 +783,7 @@
       ],
       "name": "Noir Grid",
       "settings": {
-        "title": "SHOP BY PRINT STYLE",
+        "title": "FIND YOUR FIT",
         "heading_size": "h1",
         "show_arrow": true,
         "columns_desktop": 4,

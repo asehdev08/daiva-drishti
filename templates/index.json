@@ -49,7 +49,7 @@
             "image": "shopify://shop_images/Website.webp",
             "image_mobile": "shopify://shop_images/WhatsApp_Image_2026-08-12_at_14.43.08.webp",
             "image_height": "medium",
-            "image_overlay_opacity": 40,
+            "image_overlay_opacity": 20,
             "heading": "RITUALS ROOTED IN PEACE & CLARITY",
             "text_style": "default",
             "heading_size": "h2",

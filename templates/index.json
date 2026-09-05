@@ -46,8 +46,8 @@
         "slide_wnLWjz": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Website.webp",
-            "image_mobile": "shopify://shop_images/WhatsApp_Image_2026-08-12_at_14.43.08.webp",
+            "image": "shopify://shop_images/DSC09317-jh.jpg",
+            "image_mobile": "shopify://shop_images/DSC09317-jh.jpg",
             "image_height": "medium",
             "image_overlay_opacity": 20,
             "heading": "RITUALS ROOTED IN PEACE & CLARITY",
@@ -55,9 +55,9 @@
             "heading_size": "h2",
             "subheading": "",
             "subheading_style": "body",
-            "button_label": "SHOP COLLECTION",
+            "button_label": "",
             "button_link": "shopify://collections",
-            "button_style_secondary": true,
+            "button_style_secondary": false,
             "desktop_content_position": "bottom-center",
             "desktop_content_alignment": "center",
             "show_text_box": false,

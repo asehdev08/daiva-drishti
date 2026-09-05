@@ -480,55 +480,6 @@
         "enable_mobile_slider": false
       }
     },
-    "rich_text_BEMBUM": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_iJHfpj": {
-          "type": "heading",
-          "settings": {
-            "heading": "ALCHEMY MUGS",
-            "heading_size": "h1"
-          }
-        },
-        "text_H8nLXy": {
-          "type": "text",
-          "settings": {
-            "text": "<p>INFUSE YOUR MORNINGS WITH INTENTION, ONE SIP AT A TIME.</p>"
-          }
-        },
-        "button_RABe3Q": {
-          "type": "button",
-          "settings": {
-            "button_label": "Shop Mugs",
-            "button_link": "shopify://collections/alchemy-mugs",
-            "button_style_secondary": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_iJHfpj",
-        "text_H8nLXy",
-        "button_RABe3Q"
-      ],
-      "custom_css": [
-        "p {margin: 0;}",
-        "@media (max-width: 768px) {.rich-text.content-container {display: none; }}"
-      ],
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "show_arrow": false,
-        "arrow_color": "#f3dbc4",
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-4",
-        "full_width": true,
-        "padding_top": 16,
-        "padding_bottom": 16
-      }
-    },
     "rich_text_xUAFU4": {
       "type": "rich-text",
       "blocks": {
@@ -1032,61 +983,6 @@
         "padding_bottom": 36
       }
     },
-    "noir_banner_XXcNhD": {
-      "type": "noir-banner",
-      "blocks": {
-        "heading_RpAMcB": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "heading": "THE GIFT OF<br>MINDFULNESS",
-            "text_style": "default",
-            "heading_size": "h1"
-          }
-        },
-        "text_F9TE4K": {
-          "type": "text",
-          "settings": {
-            "text": "<p>TRANSFORMING CORPORATE GIFTING INTO A MEANINGFUL EXPERIENCE OF WELL-BEING.</p>",
-            "text_style": "body"
-          }
-        },
-        "buttons_TdPczT": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "EXPLORE GIFTING ",
-            "button_link_1": "shopify://pages/corporate-gifting",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_RpAMcB",
-        "text_F9TE4K",
-        "buttons_TdPczT"
-      ],
-      "custom_css": [
-        "p {font-weight: 400; line-height: 1.25; font-size: 18px !important; max-width: 30rem;}",
-        ".noir-banner .button.button--secondary:hover {color: inherit;}",
-        "@media screen and (max-width: 767px) {.noir-banner .banner__content {min-height: 55rem !important; align-items: end; } p {margin: 0 auto; }}"
-      ],
-      "name": "Noir Banner",
-      "settings": {
-        "image": "shopify://shop_images/Gift_of_Mindfulness_1360_x_768_px_41048f2a-9b80-404b-97f0-b99e76ee50da.webp",
-        "image_mobile": "shopify://shop_images/Gift_of_Mindfulness_832_x_1248px_5d004ba3-104d-4c9f-a8a8-134d18a016ce.webp",
-        "image_overlay_opacity": 0,
-        "image_height": "adapt",
-        "desktop_content_position": "bottom-left",
-        "desktop_content_alignment": "left",
-        "show_text_box": false,
-        "color_scheme": "scheme-5",
-        "mobile_content_alignment": "center",
-        "show_text_below": false
-      }
-    },
     "noir_customer_review_RwpT7z": {
       "type": "noir-customer-review",
       "blocks": {
@@ -1278,7 +1174,6 @@
     "rich_text_i9bfGf",
     "rich_text_Hq7aYz",
     "noir_grid_KfGe4K",
-    "rich_text_BEMBUM",
     "rich_text_xUAFU4",
     "noir_grid_VriXEW",
     "rich_text_8y8bCF",
@@ -1289,7 +1184,6 @@
     "rich_text_Cipzye",
     "noir_grid_tF83Wf",
     "noir_product_grid_7XzVED",
-    "noir_banner_XXcNhD",
     "noir_customer_review_RwpT7z"
   ]
 }

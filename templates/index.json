@@ -56,7 +56,7 @@
             "subheading": "",
             "subheading_style": "body",
             "button_label": "Bestsellers",
-            "button_link": "shopify://collections",
+            "button_link": "shopify://collections/ritual-candles",
             "button_style_secondary": true,
             "desktop_content_position": "bottom-center",
             "desktop_content_alignment": "center",

@@ -49,7 +49,7 @@
             "image": "shopify://shop_images/DSC09317-jh.jpg",
             "image_mobile": "shopify://shop_images/IMG_0756.jpg",
             "image_height": "medium",
-            "image_overlay_opacity": 50,
+            "image_overlay_opacity": 30,
             "heading": "",
             "text_style": "default",
             "heading_size": "h2",
@@ -61,15 +61,23 @@
             "desktop_content_position": "bottom-center",
             "desktop_content_alignment": "center",
             "show_text_box": false,
-            "color_scheme": "scheme-5",
+            "color_scheme": "scheme-1",
             "mobile_content_alignment": "center",
-            "show_text_below": false
+            "show_text_below": true
           }
         }
       },
       "block_order": [
         "slide_wnLWjz"
       ],
+      "name": "Noir Banner Carousel",
+      "settings": {
+        "enable_autoplay": true,
+        "autoplay_speed": 5000
+      }
+    },
+    "noir_banner_carousel_74rbLF": {
+      "type": "noir-banner-carousel",
       "name": "Noir Banner Carousel",
       "settings": {
         "enable_autoplay": true,
@@ -1006,6 +1014,7 @@
   "order": [
     "noir_dynamic_popup_gEtnWc",
     "noir_banner_carousel_WxdVBL",
+    "noir_banner_carousel_74rbLF",
     "noir_banner_TQFLcp",
     "noir_banner_pXdb4T",
     "noir_grid_cddDpx",

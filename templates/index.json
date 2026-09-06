@@ -55,13 +55,13 @@
             "heading_size": "h2",
             "subheading": "",
             "subheading_style": "body",
-            "button_label": "",
+            "button_label": "Bestsellers",
             "button_link": "shopify://collections",
-            "button_style_secondary": false,
+            "button_style_secondary": true,
             "desktop_content_position": "bottom-center",
             "desktop_content_alignment": "center",
             "show_text_box": false,
-            "color_scheme": "scheme-1",
+            "color_scheme": "scheme-763d6e6f-86f3-489f-913c-57e9c7015165",
             "mobile_content_alignment": "center",
             "show_text_below": true
           }

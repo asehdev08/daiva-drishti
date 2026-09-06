@@ -49,7 +49,7 @@
             "image": "shopify://shop_images/DSC09317-jh.jpg",
             "image_mobile": "shopify://shop_images/IMG_0756.jpg",
             "image_height": "medium",
-            "image_overlay_opacity": 30,
+            "image_overlay_opacity": 10,
             "heading": "",
             "text_style": "default",
             "heading_size": "h2",
